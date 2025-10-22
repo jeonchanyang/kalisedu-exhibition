@@ -284,7 +284,6 @@ const initTabs = (containerSelector) => {
                 activeTab.scrollIntoView({
                     behavior: 'smooth',
                     block: 'nearest',
-                    inline: 'center'
                 });
             }
         };
@@ -482,10 +481,6 @@ function scrollControlFn(){
 }
 
 
-
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
     DropdownMenus();
     bnToggle();
@@ -493,7 +488,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initTabs('.tab-container.sub');
     initTabs('.tab-container.notice-wrap');
     accoSch();
-    scrollControlFn();
      //mobile
     if (window.innerWidth > 1024) {
         gnbOpen();

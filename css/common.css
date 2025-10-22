@@ -2,7 +2,7 @@
 
 /* layout */
 .wrap{display:flex; flex-direction:column; min-height:100vh;}
-.content-wrap{flex-grow:1; height:100%; padding-bottom:12rem; background:#f2f4f6;}
+.content-wrap{flex-grow:1; overflow:hidden; height:100%; padding-bottom:12rem; background:#f2f4f6;}
 
 /* header 공통 (s) */
 header{display:flex; flex-direction:column; background:#fff; z-index:999;}
@@ -61,7 +61,7 @@ header .head-bottom{display:flex; flex-wrap:wrap; justify-content:space-between;
 .location li a,
 .location li button{display:inline-block; position:relative; width:100%; height:100%; padding:1.3rem 1.5rem; font-size:var(--font-size-16);; text-align:left;}
 .location .dropdown-wrap{position:relative;}
-.location .dropdown-wrap .dropdown-list{position:absolute; margin:0;}
+.location .dropdown-wrap .dropdown-list{position:absolute; width:100%; margin:0;}
 .location .dropdown-wrap.is-open .dropdown-list{z-index:100; background:#f2f4f6; border:none; border-radius:0; outline:.1rem solid #A6A8AB;}
 .location .dropdown-wrap .btn-dropdown{height:5rem; background:transparent; border:none;}
 .location .dropdown-wrap.dropdown-link .btn-dropdown{color:#034EA1;  font-weight:500;}
@@ -91,7 +91,7 @@ header .head-bottom{display:flex; flex-wrap:wrap; justify-content:space-between;
 
 /* footer */
 .footer{background:#fff;}
-.max-width-inner{max-width:152rem; margin:0 auto;}
+.max-width-inner{max-width:158rem; margin:0 auto;}
 .bd-line-grp{border-top:.1rem solid #DFE3EB; border-bottom:.1rem solid #DFE3EB;}
 .footer-banner-slider{position:relative; padding:1.6rem 0;}
 .footer-banner-slider .swiper{max-width:131.2rem;}
@@ -101,7 +101,7 @@ header .head-bottom{display:flex; flex-wrap:wrap; justify-content:space-between;
 .footer-banner-slider .swiper .swiper-slide > a{display:inline-block;}
 .footer-banner-slider .swiper .swiper-slide > a img{display:block;}
 
-.footer-cont{display:flex; gap:3.8rem; padding:3.2rem 0 4.4rem; font-size:var(--font-size-16);}
+.footer-cont{display:flex; gap:3.8rem; padding:3.2rem 2rem 4.4rem; font-size:var(--font-size-16);}
 .footer-cont .address-grp{flex-grow:1; max-width:96rem;}
 .footer-cont .link-area{display:flex; flex-wrap:wrap; gap:1rem 3rem; height:5.8rem;}
 .footer-cont .link-area > a{display:inline-flex; align-items:center;}
