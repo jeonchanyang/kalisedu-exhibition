@@ -1,0 +1,391 @@
+@charset "utf-8";
+
+/* Pretendard */
+@font-face {
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 200;
+    src: local("Pretendard-ExtraLight"),
+        url("/fonts/pretendard/Pretendard-ExtraLight.woff2") format("woff2"),
+        /* Super Modern Browsers */
+        url("/fonts/pretendard/Pretendard-ExtraLight.woff") format("woff"),
+        /* Modern Browsers */
+        url("/fonts/pretendard/Pretendard-ExtraLight.ttf") format("truetype");
+        /* Safari, Android, iOS */
+}
+@font-face {
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 300;
+    src: local("Pretendard-Light"),
+        url("/fonts/pretendard/Pretendard-Light.woff2") format("woff2"),
+        /* Super Modern Browsers */
+        url("/fonts/pretendard/Pretendard-Light.woff") format("woff"),
+        /* Modern Browsers */
+        url("/fonts/pretendard/Pretendard-Light.ttf") format("truetype");
+        /* Safari, Android, iOS */
+}
+@font-face {
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Pretendard-Regular"),
+        url("/fonts/pretendard/Pretendard-Regular.woff2") format("woff2"),
+        /* Super Modern Browsers */
+        url("/fonts/pretendard/Pretendard-Regular.woff") format("woff"),
+        /* Modern Browsers */
+        url("/fonts/pretendard/Pretendard-Regular.ttf") format("truetype");
+        /* Safari, Android, iOS */
+}
+@font-face {
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 500;
+    src: local("Pretendard-Medium"),
+        url("/fonts/pretendard/Pretendard-Medium.woff2") format("woff2"),
+        /* Super Modern Browsers */
+        url("/fonts/pretendard/Pretendard-Medium.woff") format("woff"),
+        /* Modern Browsers */
+        url("/fonts/pretendard/Pretendard-Medium.ttf") format("truetype");
+        /* Safari, Android, iOS */
+}
+@font-face {
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 600;
+    src: local("Pretendard-SemiBold"),
+        url("/fonts/pretendard/Pretendard-SemiBold.woff2") format("woff2"),
+        /* Super Modern Browsers */
+        url("/fonts/pretendard/Pretendard-SemiBold.woff") format("woff"),
+        /* Modern Browsers */
+        url("/fonts/pretendard/Pretendard-SemiBold.ttf") format("truetype");
+        /* Safari, Android, iOS */
+}
+@font-face {
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 700;
+    src: local("Pretendard-Bold"),
+        url("/fonts/pretendard/Pretendard-Bold.woff2") format("woff2"),
+        /* Super Modern Browsers */
+        url("/fonts/pretendard/Pretendard-Bold.woff") format("woff"),
+        /* Modern Browsers */
+        url("/fonts/pretendard/Pretendard-Bold.ttf") format("truetype");
+        /* Safari, Android, iOS */
+}
+@font-face {
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 800;
+    src: local("Pretendard-ExtraBold"),
+        url("/fonts/pretendard/Pretendard-ExtraBold.woff2") format("woff2"),
+        /* Super Modern Browsers */
+        url("/fonts/pretendard/Pretendard-ExtraBold.woff") format("woff"),
+        /* Modern Browsers */
+        url("/fonts/pretendard/Pretendard-ExtraBold.ttf") format("truetype");
+        /* Safari, Android, iOS */
+}
+@font-face {
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 900;
+    src: local("Pretendard-Black"),
+        url("/fonts/pretendard/Pretendard-Black.woff2") format("woff2"),
+        /* Super Modern Browsers */
+        url("/fonts/pretendard/Pretendard-Black.woff") format("woff"),
+        /* Modern Browsers */
+        url("/fonts/pretendard/Pretendard-Black.ttf") format("truetype");
+        /* Safari, Android, iOS */
+}
+
+@font-face {
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 900;
+    src: local("Pretendard-Black"),
+        url("/fonts/pretendard/Pretendard-Black.woff2") format("woff2"),
+        /* Super Modern Browsers */
+        url("/fonts/pretendard/Pretendard-Black.woff") format("woff"),
+        /* Modern Browsers */
+        url("/fonts/pretendard/Pretendard-Black.ttf") format("truetype");
+        /* Safari, Android, iOS */
+}
+
+@font-face {
+    font-family: "NanumSquareRound";
+    font-style: normal;
+    font-weight: 300;
+    src: local("NanumSquareRoundR"),
+        url("/fonts/nanum-square-round/NanumSquareRoundR.ttf") format("truetype");
+        /* Safari, Android, iOS */
+}
+
+@font-face {
+    font-family: "NanumSquareRound";
+    font-style: normal;
+    font-weight: 400;
+    src: local("NanumSquareRoundR"),
+        url("/fonts/nanum-square-round/NanumSquareRoundR.ttf") format("truetype");
+        /* Safari, Android, iOS */
+}
+
+@font-face {
+    font-family: "NanumSquareRound";
+    font-style: normal;
+    font-weight: 700;
+    src: local("NanumSquareRoundB"),
+        url("/fonts/nanum-square-round/NanumSquareRoundB.ttf") format("truetype");
+        /* Safari, Android, iOS */
+}
+
+@font-face {
+    font-family: "NanumSquareRound";
+    font-style: normal;
+    font-weight: 800;
+    src: local("NanumSquareRoundEB"),
+        url("/fonts/nanum-square-round/NanumSquareRoundEB.ttf") format("truetype");
+        /* Safari, Android, iOS */
+}
+
+
+
+
+
+
+
+/* RESET */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+
+caption{
+    overflow: hidden;
+    position: absolute;
+    width: 0;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    border: 0;
+    text-align: left;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: auto;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* box-sizing 초기화 추가 */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    /* 밑줄 제거 */
+    color: inherit;
+    /* 부모 요소의 색상 상속 */
+    background-color: transparent;
+    /* 배경색 초기화 */
+}
+
+.ir-text, .sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+button{padding:0; border:0; background:0; outline:0; cursor:pointer;}
+
+html,body{margin: 0; padding: 0; color: #121212; font-size: 62.5%; font-family: "Pretendard";}
+body *{font-family: inherit; font-style: normal; -webkit-text-size-adjust: none; font-size:inherit;}
+input{background-color:#f1f3f8;}
+input:focus,
+input:focus-visible{background-color:#E8F2FF; outline:none;}
+input::placeholder{color:#6C6C6C;}
+/* skip nav */
+.skip {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    height: 0px;
+    font-size: 0px;
+    z-index: 999999;
+}
+
+.skip a {
+    left: -3000%;
+    position: absolute;
+    font-size: 12px;
+}
+
+.skip a:hover,
+.skip a:focus,
+.skip a:active {
+    color: rgb(255, 255, 255);
+    display: block;
+    height: 30px;
+    left: 0px;
+    line-height: 30px;
+    text-align: center;
+    top: 0px;
+    width: 100%;
+    z-index: 999999;
+    background: rgb(29, 96, 167);
+}
+
+:root{
+    --font-size-12: 1.2rem;
+    --font-size-14: 1.4rem;
+    --font-size-16: 1.6rem;
+    --font-size-18: 1.8rem;
+    --font-size-20: 2rem;
+    --font-size-22: 2.2rem;
+    --font-size-24: 2.4rem;
+    --font-size-26: 2.6rem;
+    --font-size-28: 2.8rem;
+    --font-size-30: 3rem;
+    --font-size-32: 3.2rem;
+    --font-size-34: 3.4rem;
+    --font-size-36: 3.6rem;
+    --font-size-48: 4.8rem; 
+    --font-size-40: 4rem; 
+    --font-size-60: 6rem;
+    --font-color-gray:#6c6c6c;
+    --font-color-black:#121212;
+    --font-color-blue:#0080C5;
+    --pd-0-17: 0 17rem;
+    --layout-max-width: 192rem;
+    --primary-color: #034EA1;
+    --normal-color:#f5f5f5;
+    --bg-gray:#f2f4f6;
+    --ff-nsr:"NanumSquareRound";
+    --ff-default:"Pretendard";
+}
