@@ -480,6 +480,57 @@ function scrollControlFn(){
     });
 }
 
+//예약하기 인원추가
+function resAddFn(){
+
+    const usrList = document.querySelector(".usr-list");
+    const addBtn = usrList.querySelector(".btn-add");
+    const addLi = usrList.querySelector(".add-li");
+
+    if(!usrList){
+        return
+    }
+
+    // 원본 li
+    const baseLi = usrList.querySelector("li:not(.add-li)");
+
+    let userIndex = 1;
+
+    addBtn.addEventListener("click", () => {
+        // li clone
+        const newLi = baseLi.cloneNode(true);
+
+        userIndex++;
+
+        // 복제한 li 내부의 input/select/textarea/id/label for 갱신
+        newLi.querySelectorAll("[id]").forEach((el) => {
+            const oldId = el.id;
+            const newId = `${oldId}_${userIndex}`;
+            el.id = newId;
+
+            // 연결된 label의 for도 함께 수정
+            const label = newLi.querySelector(`label[for='${oldId}']`);
+            if (label) label.setAttribute("for", newId);
+        });
+
+        // value init
+        newLi.querySelectorAll("input, select, textarea").forEach((el) => {
+            if (el.tagName === "SELECT") el.selectedIndex = 0;
+            else el.value = "";
+        });
+
+        // li추가
+        usrList.insertBefore(newLi, addLi);
+    });
+
+    // 삭제 버튼
+    usrList.addEventListener("click", (e) => {
+        if (e.target.classList.contains("btn-del")) {
+            e.target.closest("li").remove();
+        }
+    });
+}
+
 
 document.addEventListener('DOMContentLoaded', () => {
     DropdownMenus();
@@ -488,6 +539,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initTabs('.tab-container.sub');
     initTabs('.tab-container.notice-wrap');
     accoSch();
+    resAddFn();
      //mobile
     if (window.innerWidth > 1024) {
         gnbOpen();

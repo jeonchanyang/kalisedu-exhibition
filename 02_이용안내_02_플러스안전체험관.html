@@ -534,6 +534,12 @@
     <script src="/js/common.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", ()=>{
+            // 현재 화면의 값을 가져와 scroll container의 width 값 적용.
+            const scrollWidth = document.querySelector('.inner-wrap.experience').getBoundingClientRect().right;
+            const scrollWrap = document.querySelector('.inner-wrap.experience .scroll-wrap');
+
+            scrollWrap.style.width = scrollWidth / 10 + 'rem';
+
             scrollControlFn();
         });
     </script>

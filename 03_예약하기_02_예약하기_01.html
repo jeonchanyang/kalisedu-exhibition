@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>국토안전관리원 - 안전체험관</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/content.css">
+    <link rel="stylesheet" href="/css/swiper-bundle.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
+    <script src="/js/swiper-bundle.min.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <ul class="skip">
+            <li><a href="#content">본문내용 바로가기</a></li>
+            <li><a href="#gnb">주내용 바로가기</a></li>
+        </ul>
+        <header>
+            <div class="head-top">
+                <h1 class="logo"><a href="/index.html">국토안전관리원 안전체험관 로고</a></h1>
+                <div class="sch-area">
+                    <label for="searchInput" class="sr-only">검색어 입력</label>
+                    <input type="text" placeholder="검색어를 입력하세요" id="searchInput">
+                    <button type="button" class="btn-sch"></button>
+                </div>
+                <div class="mo-only mo-btn-grp">
+                    <button class="mo-btn-search btn-sch">검색버튼</button>
+                    <button class="mo-btn-mnu">메뉴열기</button>
+                </div>
+            </div>
+
+            <div class="head-bottom">
+                <nav id="gnb">
+                    <ul class="gnb">
+                        <li>
+                            <a href="#">안전체험관 소개</a>
+                            <ul class="gnb-depth2">
+                                <li class="tit">전시체험관 소개</li>
+                                <li>
+                                    <a href="#">인사말</a>
+                                </li>
+                                <li>
+                                    <a href="#">체험관 안내</a>
+                                </li>
+                                <li>
+                                    <a href="#">시설안내</a>
+                                </li>
+                                <li>
+                                    <a href="#">찾아오시는 길</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">이용안내</a>
+                            <ul class="gnb-depth2">
+                                <li class="tit">이용안내</li>
+                                <li>
+                                    <a href="#">국토안전동행관</a>
+                                </li>
+                                <li>
+                                    <a href="#">플러스안전체험관</a>
+                                </li>
+                                <li>
+                                    <a href="#">스마트안전체험관</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">예약하기</a>
+                            <ul class="gnb-depth2">
+                                <li class="tit">예약하기</li>
+                                <li>
+                                    <a href="#">예약안내</a>
+                                </li>
+                                <li>
+                                    <a href="#">예약하기</a>
+                                </li>
+                                <li>
+                                    <a href="#">예약확인 및 취소</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">커뮤니티</a>
+                            <ul class="gnb-depth2">
+                                <li class="tit">공지사항</li>
+                                <li>
+                                    <a href="#">전시체험관 후기</a>
+                                </li>
+                                <li>
+                                    <a href="#">자주 묻는질문(FAQ)</a>
+                                </li>
+                                <li>
+                                    <a href="#">질의응답(Q&A)</a>
+                                </li>
+                                <li>
+                                    <a href="#">포토갤러리</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="mnu-info">
+                    <!-- 기존 html에서 div로 묶어서 변수명.style.display="none", "flex"로 활용 -->
+                    <div class="before" style="display:none;">
+                        <p><b>홍길동</b>님 안녕하세요</p>
+                        <a href="#" class="btn-mypage" aria-label="마이페이지로 이동">마이페이지</a>
+                        <button type="button" class="btn-logout">로그아웃</button>
+                    </div>
+                    <div class="after" style="display:flex;">
+                        <a href="/회원가입.html" class="btn-mypage access" aria-label="회원가입 페이지로">회원가입</a>
+                        <a href="/아이디_로그인.html" class="btn-logout login" aria-label="로그인 페이지로">로그인</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="content-wrap" id="content">
+            <div class="location"> 
+                <ol>
+                    <li>
+                        <a href="/index.html" aria-label="메인화면으로 이동"><i class="ico icon-home"></i></a>
+                    </li>
+                    <li>
+                        <div class="dropdown-wrap dropdown-link">
+                            <button type="button" class="btn btn-dropdown">
+                                예약하기
+                            </button>
+                            <div class="dropdown-list is-up is-open">
+                                <a href="#" class="link" target="_blank">예약안내</a>
+                                <a href="/03_예약하기_02_예약하기_01.html" class="link" target="_blank">예약하기</a>
+                                <a href="#" class="link" target="_blank">예약확인 및 취소</a>
+                            </div>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <section class="inner-wrap max-width res-step">
+                <h2 class="h2-title">예약하기</h2>
+                <div class="inner">
+                    <ul class="res-grp">
+                        <li class="on">
+                            <span class="level">01</span>
+                            <span class="txt">약관<br class="mo-only">동의</span>
+                            <img src="/images/common/icon_res_tory_01.svg" alt="tory 아이콘 이미지">
+                        </li>
+                        <li>
+                            <span class="level">02</span> 
+                            <span class="txt">코스<br class="mo-only">선택</span>
+                            <img src="/images/common/icon_res_tory_01.svg" alt="tory 아이콘 이미지">
+                        </li>
+                        <li>
+                            <span class="level">03</span>
+                            <span class="txt">예약정보<br class="mo-only">입력</span>
+                            <img src="/images/common/icon_res_tory_01.svg" alt="tory 아이콘 이미지">
+                        </li>
+                        <li>
+                            <span class="level">04</span>
+                            <span class="txt">예약<br class="mo-only">완료</span>
+                            <img src="/images/common/icon_res_tory_01.svg" alt="tory 아이콘 이미지">
+                        </li>
+                    </ul>
+
+                    <div class="bg-wh-box agree">
+                        <p>
+                            안전체험관 예약을 위해 이용약관 및 개인정보 수집ㆍ이용 내역에 대한 동의를 받고자 합니다.<br class="pc-only">
+                            내용을 자세히 읽으신 후 동의 여부를 결정하여 주십시오.
+                        </p>
+                        <div class="checkbox-group">
+                            <label for="chkAll" class="checkbox-item fwb">
+                                <input type="checkbox" id="chkAll" name="chkAll">
+                                <span class="custom-check"></span>
+                                모두 동의합니다.
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="inner">
+                    <div class="tit-grp">
+                        <h3 class="h3-title"><img src="/images/common/icon_h3_tit_logo.svg" alt="메뉴타이틀 로고">이용약관 (필수)</h3>
+                    </div>
+                    <div class="terms-list">
+                        <div class="txt-grp">
+                            <div class="txt-area">
+                                <b>제1조 - 목적</b><br>
+                                회원약관은 국토안전관리원('www.kalisedu.or.kr'이하'인재교육원')에서 제공하는 모든 서비스와 이를 이용하기 위하여 가입하는 회원에 관한 전반적인 사항을 규정함을 그 목적으로 한다.<br><br>
+                                <b>제2조 - 약관의 효력과 회원의 동의</b><br>
+                                (1) 약관은 회원에게 '인재교육원' 또는 그 이외의 방법으로 공시함으로써 효력을 발생한다.<br>
+                                (2) 회원이 '인재교육원'에서 정한 절차에 따라 가입함으로써 약관내용에 동의하고 계약이 성립된 것으로 본다.<br>
+                                (3) 약관의 변경 또는 수정의 경우 회원에게 적절한 방법으로 공시함으로써 효력을 발생하는 것으로 본다.<br><br>
+                                <b>제3조 - 회원가입</b><br>
+                                (1) 회원가입은 약관을 숙지하고 '인재교육원'가 정한 절차에 따른 회원가입 신청절차를 마침으로써 성립된다.
+                                <b>제1조 - 목적</b><br>
+                                회원약관은 국토안전관리원('www.kalisedu.or.kr'이하'인재교육원')에서 제공하는 모든 서비스와 이를 이용하기 위하여 가입하는 회원에 관한 전반적인 사항을 규정함을 그 목적으로 한다.<br><br>
+                                <b>제2조 - 약관의 효력과 회원의 동의</b><br><br>
+                                (1) 약관은 회원에게 '인재교육원' 또는 그 이외의 방법으로 공시함으로써 효력을 발생한다.<br>
+                                (2) 회원이 '인재교육원'에서 정한 절차에 따라 가입함으로써 약관내용에 동의하고 계약이 성립된 것으로 본다.<br>
+                                (3) 약관의 변경 또는 수정의 경우 회원에게 적절한 방법으로 공시함으로써 효력을 발생하는 것으로 본다.<br><br>
+                                <b>제3조 - 회원가입</b><br>
+                                (1) 회원가입은 약관을 숙지하고 '인재교육원'가 정한 절차에 따른 회원가입 신청절차를 마침으로써 성립된다.<br><br>
+                                <b>제1조 - 목적</b><br>
+                                회원약관은 국토안전관리원('www.kalisedu.or.kr'이하'인재교육원')에서 제공하는 모든 서비스와 이를 이용하기 위하여 가입하는 회원에 관한 전반적인 사항을 규정함을 그 목적으로 한다.<br><br>
+                                <b>제2조 - 약관의 효력과 회원의 동의</b><br><br>
+                                (1) 약관은 회원에게 '인재교육원' 또는 그 이외의 방법으로 공시함으로써 효력을 발생한다.<br>
+                                (2) 회원이 '인재교육원'에서 정한 절차에 따라 가입함으로써 약관내용에 동의하고 계약이 성립된 것으로 본다.<br>
+                                (3) 약관의 변경 또는 수정의 경우 회원에게 적절한 방법으로 공시함으로써 효력을 발생하는 것으로 본다.<br><br>
+                                <b>제3조 - 회원가입</b><br>
+                                (1) 회원가입은 약관을 숙지하고 '인재교육원'가 정한 절차에 따른 회원가입 신청절차를 마침으로써 성립된다.<br><br>
+                                <b>제1조 - 목적</b><br>
+                                회원약관은 국토안전관리원('www.kalisedu.or.kr'이하'인재교육원')에서 제공하는 모든 서비스와 이를 이용하기 위하여 가입하는 회원에 관한 전반적인 사항을 규정함을 그 목적으로 한다.<br><br>
+                                <b>제2조 - 약관의 효력과 회원의 동의</b><br><br>
+                                (1) 약관은 회원에게 '인재교육원' 또는 그 이외의 방법으로 공시함으로써 효력을 발생한다.<br>
+                                (2) 회원이 '인재교육원'에서 정한 절차에 따라 가입함으로써 약관내용에 동의하고 계약이 성립된 것으로 본다.<br>
+                                (3) 약관의 변경 또는 수정의 경우 회원에게 적절한 방법으로 공시함으로써 효력을 발생하는 것으로 본다.<br><br>
+                                <b>제3조 - 회원가입</b><br>
+                                (1) 회원가입은 약관을 숙지하고 '인재교육원'가 정한 절차에 따른 회원가입 신청절차를 마침으로써 성립된다.<br><br>
+                            </div>
+                        </div>
+                        <div class="agree-cont">
+                            <p>위의 이용약관에 대한 동의를 거부할 권리가 있습니다. 그러나 동의를 거부할 경우 홈페이지 서비스 제공에 일부 제한을 받을 수 있습니다.</p>
+                            <div class="radio-group">
+                                <label for="rdo-1" class="radio-item">
+                                    <input type="radio" id="rdo-1" name="rdo1" checked>
+                                    <span class="custom-radio"></span>
+                                    동의
+                                </label>
+                                <label for="rdo-2" class="radio-item">
+                                    <input type="radio" id="rdo-2" name="rdo1">
+                                    <span class="custom-radio"></span>
+                                    미동의
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="inner">
+                    <div class="tit-grp">
+                        <h3 class="h3-title"><img src="/images/common/icon_h3_tit_logo.svg" alt="메뉴타이틀 로고">개인정보 수집 · 이용 및 제공에 관한 안내</h3>
+                    </div>
+                    <div class="terms-list">
+                        <div class="txt-grp">
+                            <div class="txt-area">
+                                <b>수집하는 개인정보의 항목</b><br>
+                                '인재교육원'는 시설물의 안전관리에 관한 특별법 및 사업주 직업능력개발훈련 지원규정에 따라 정밀안전기술자 및 안전점검 교육과정 및 시스템의 원활한 운영 및 관리를 위해 아래와 같은 개인정보를 수집하고 있습니다.<br>
+                                ① 회원가입 시- [필수] 아이디, 성명, 휴대폰번호, 이메일, 생년월일<br><br>
+                                <b>개인정보의 수집 이용목적</b><br>
+                                ‘국토안전교육원 시스템’은 수집한 개인정보를 다음의 목적을 위해 활용합니다.<br>
+                                ①본인확인을 위한 회원 식별, ②개인 식별, 가입의사 확인, 연령확인, ③불량회원의 부정 이용 방지와 비인가 사용 방지, ④불만처리, 민원처리 및 고객상담<br><br>
+                                <b>개인정보의 보유 및 이용기간 :</b>  <b class="txt-red">회원탈퇴 시 즉시 파기</b><br><br>
+                                <b>수집하는 개인정보의 항목</b><br>
+                                '인재교육원'는 시설물의 안전관리에 관한 특별법 및 사업주 직업능력개발훈련 지원규정에 따라 정밀안전기술자 및 안전점검 교육과정 및 시스템의 원활한 운영 및 관리를 위해 아래와 같은 개인정보를 수집하고 있습니다.<br>
+                                ① 회원가입 시- [필수] 아이디, 성명, 휴대폰번호, 이메일, 생년월일<br><br>
+                                <b>개인정보의 수집 이용목적</b><br>
+                                ‘국토안전교육원 시스템’은 수집한 개인정보를 다음의 목적을 위해 활용합니다.<br>
+                                ①본인확인을 위한 회원 식별, ②개인 식별, 가입의사 확인, 연령확인, ③불량회원의 부정 이용 방지와 비인가 사용 방지, ④불만처리, 민원처리 및 고객상담<br><br>
+                                <b>개인정보의 보유 및 이용기간 :</b>  <b class="txt-red">회원탈퇴 시 즉시 파기</b><br><br>
+                                <b>수집하는 개인정보의 항목</b><br>
+                                '인재교육원'는 시설물의 안전관리에 관한 특별법 및 사업주 직업능력개발훈련 지원규정에 따라 정밀안전기술자 및 안전점검 교육과정 및 시스템의 원활한 운영 및 관리를 위해 아래와 같은 개인정보를 수집하고 있습니다.<br>
+                                ① 회원가입 시- [필수] 아이디, 성명, 휴대폰번호, 이메일, 생년월일<br><br>
+                                <b>개인정보의 수집 이용목적</b><br>
+                                ‘국토안전교육원 시스템’은 수집한 개인정보를 다음의 목적을 위해 활용합니다.<br>
+                                ①본인확인을 위한 회원 식별, ②개인 식별, 가입의사 확인, 연령확인, ③불량회원의 부정 이용 방지와 비인가 사용 방지, ④불만처리, 민원처리 및 고객상담<br><br>
+                                <b>개인정보의 보유 및 이용기간 :</b>  <b class="txt-red">회원탈퇴 시 즉시 파기</b><br><br>
+                            </div>
+                        </div>
+
+                        <div class="agree-cont">
+                            <p>위의 개인정보 수집 · 이용 및 제공에 관한 안내에 대한 동의를 거부할 권리가 있습니다. 그러나 동의를 거부할 경우 홈페이지 서비스 제공에 일부 제한을 받을 수 있습니다.</p>
+                            <div class="radio-group">
+                                <label for="rdo2-1" class="radio-item">
+                                    <input type="radio" id="rdo2-1" name="rdo2" checked>
+                                    <span class="custom-radio"></span>
+                                    동의
+                                </label>
+                                <label for="rdo2-2" class="radio-item">
+                                    <input type="radio" id="rdo2-2" name="rdo2">
+                                    <span class="custom-radio"></span>
+                                    미동의
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-area">
+                    <a href="#" class="btn btn-cmn">다음</a>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <!-- 협력기관 배너 슬라이더 -->
+            <div class="bd-line-grp">
+                <div class="footer-banner-slider max-width-inner">
+                    <div class="swiper mySwiper type02">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide">
+                                <a href="#" target="_blank">
+                                    <img src="/images/common/img_footer_bn01.svg" alt="국토안전관리원">
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#" target="_blank">
+                                    <img src="/images/common/img_footer_bn02.svg" alt="시설물통합정보관리시스템">
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#" target="_blank">
+                                    <img src="/images/common/img_footer_bn03.svg" alt="한국건설기술인협회">
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#" target="_blank">
+                                    <img src="/images/common/img_footer_bn01.svg" alt="국토안전관리원">
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#" target="_blank">
+                                    <img src="/images/common/img_footer_bn02.svg" alt="시설물통합정보관리시스템">
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#" target="_blank">
+                                    <img src="/images/common/img_footer_bn03.svg" alt="한국건설기술인협회">
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#" target="_blank">
+                                    <img src="/images/common/img_footer_bn01.svg" alt="국토안전관리원">
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#" target="_blank">
+                                    <img src="/images/common/img_footer_bn02.svg" alt="시설물통합정보관리시스템">
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#" target="_blank">
+                                    <img src="/images/common/img_footer_bn03.svg" alt="한국건설기술인협회">
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#" target="_blank">
+                                    <img src="/images/common/img_footer_bn01.svg" alt="국토안전관리원">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="swiper-button">
+                        <button type="button" class="swiper-button-next"><img src="/images/common/icon_footer_btn_next.svg" alt="다음버튼 아이콘"></button>
+                        <button type="button" class="swiper-button-prev"><img src="/images/common/icon_footer_btn_prev.svg" alt="이전버튼 아이콘"></button>
+                    </div>
+                    <script>
+                    const swiper2 = new Swiper(".mySwiper.type02", {
+                        slidesPerView: "auto", // 한번에 보여지는 슬라이드 숫자
+                        slidesPerGroup: 1, // 한번에 이동되는 슬라이드 숫자
+                        loop: true,
+                        breakpoints: {
+                            0: {
+                                spaceBetween: 14,
+                            },
+                            1024: {
+                                spaceBetween: 28
+                            }
+                        },
+                        navigation: {
+                            nextEl: ".footer-banner-slider .swiper-button-next",
+                            prevEl: ".footer-banner-slider .swiper-button-prev",
+                        },
+                    });
+                    /* 자동재생 추후 적용 여부 확인 후 추가해서 적용
+                    // 정지 버튼 
+                    document.querySelector(".mySwiper.type02 .swiper-autoplay-button .pause").addEventListener("click", function() {
+                        swiper2.autoplay.stop();
+                        this.style.display = "none";
+                        document.querySelector(".mySwiper.type02 .swiper-autoplay-button .play").style.display = "block";
+                    });
+    
+                    // 재생 버튼
+                    document.querySelector(".mySwiper.type02 .swiper-autoplay-button .play").addEventListener("click", function() {
+                        swiper2.autoplay.start();
+                        this.style.display = "none";
+                        document.querySelector(".mySwiper.type02 .swiper-autoplay-button .pause").style.display = "block";
+                    });
+                    */
+                    </script>
+                </div>
+            </div>
+            <!-- 약관/패밀리사이트 등 상단 정보 -->
+            <div class="footer-cont max-width-inner">
+                <div class="logo-grp">
+                    <h3><a href="/index.html" class="footer-logo"><img src="/images/common/icon_footer_logo.svg" alt="국토안전관리원"></a></h3>
+                </div>
+                <div class="address-grp">
+                    <div class="link-area">
+                        <a href="#">이용약관</a>
+                        <a href="#">개인정보처리방침</a>
+                        <a href="#">저작권정책</a>
+                        <a href="#">고정형 영상정보처리기기 운영관리방침</a>
+                        <a href="#">찾아오시는길</a>
+                    </div>
+                    <ul class="txt-list">
+                        <li>
+                            <p class="tit icon-location">교육원소재지</p>
+                            <dl>
+                                <dt>진주교육장</dt>
+                                <dd>(52852) 경상남도 진주시 사들로 131 인재교육관</dd>
+                                <dt>김천교육장</dt>
+                                <dd>(39660) 경상북도 김천시 혁신6로 12</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <p class="tit icon-counsel">교육 문의</p>
+                            <dl>
+                                <dt>대표전화</dt>
+                                <dd>1588-8788(6, 기술자 교육훈련)  |  055-771-1905</dd>
+                                <dt>팩스</dt>
+                                <dd>055-771-1915</dd>
+                            </dl>
+                        </li>
+                    </ul>
+                    <address>Copyrightⓒ2025 KALIS. All right Reserved.</address>
+                </div>
+                <div class="family-grp">
+                    <div class="dropdown-wrap">
+                        <button type="button" class="btn btn-dropdown">
+                            패밀리사이트
+                        </button>
+                        <div class="dropdown-list is-up is-open">
+                            <a href="#" class="footer-link" target="_blank">패밀리사이트1</a>
+                            <a href="#" class="footer-link" target="_blank">패밀리사이트2</a>
+                            <a href="#" class="footer-link" target="_blank">패밀리사이트3</a>
+                            <a href="#" class="footer-link" target="_blank">패밀리사이트4</a>
+                            <a href="#" class="footer-link" target="_blank">패밀리사이트5</a>
+                            <a href="#" class="footer-link" target="_blank">패밀리사이트6</a>
+                            <a href="#" class="footer-link" target="_blank">패밀리사이트7</a>
+                            <a href="#" class="footer-link" target="_blank">패밀리사이트8</a>
+                            <a href="#" class="footer-link" target="_blank">패밀리사이트9</a>
+                            <a href="#" class="footer-link" target="_blank">패밀리사이트10</a>           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/js/common.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", ()=>{
+
+        });
+    </script>
+</body>
+</html>
