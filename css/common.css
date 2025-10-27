@@ -122,8 +122,8 @@ input[type="password"]{padding-right:3.5rem; background-image:url(/images/common
 .footer-banner-slider .swiper .swiper-slide{width:auto;}
 .footer-banner-slider .swiper-button-next:after, 
 .footer-banner-slider .swiper-button-prev:after{display:none;}
-.footer-banner-slider .swiper .swiper-slide > a{display:inline-block;}
-.footer-banner-slider .swiper .swiper-slide > a img{display:block;}
+.footer-banner-slider .swiper .swiper-slide > a{display:inline-block; width:24rem; height:5rem;}
+.footer-banner-slider .swiper .swiper-slide > a img{display:block; width:100%;}
 
 .footer-cont{display:flex; gap:3.8rem; padding:3.2rem 0 4.4rem; font-size:var(--font-size-16);}
 .footer-cont .address-grp{flex-grow:1; max-width:96rem;}

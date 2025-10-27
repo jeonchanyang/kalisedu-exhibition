@@ -482,15 +482,13 @@ function scrollControlFn(){
 
 //예약하기 인원추가
 function resAddFn(){
-
     const usrList = document.querySelector(".usr-list");
-    const addBtn = usrList.querySelector(".btn-add");
-    const addLi = usrList.querySelector(".add-li");
-
     if(!usrList){
         return
     }
-
+    
+    const addBtn = usrList.querySelector(".btn-add");
+    const addLi = usrList.querySelector(".add-li");
     // 원본 li
     const baseLi = usrList.querySelector("li:not(.add-li)");
 
