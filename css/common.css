@@ -109,8 +109,9 @@ select{appearance:none;}
 .ipt{min-width:14.5rem; color:#121212; padding:1.3rem 2rem; line-height:2.4rem; font-size:var(--font-size-18); background:#fff; border:.1rem solid #A6A8AB; border-radius:1rem; outline:none;}
 select.ipt{padding-right:4rem; background:#fff url(/images/common/icon_select_arrow.svg) right 1.9rem center / 1.4rem 1.4rem no-repeat;}
 input[type="password"]{padding-right:3.5rem; background-image:url(/images/common/icon_lock.svg); background-position:center right 2rem; background-size:1.4rem 1.6rem ; background-repeat:no-repeat;}
-
-
+.ipt02{width:100%; height:3.4rem; padding-bottom:1rem; font-weight:400; line-height:2.4rem; font-size:2rem; background:transparent; border:none; border-bottom:.1rem solid #000;}
+textarea.ipt02{min-height:6.5rem; resize: none;}
+select.ipt02{background:url(/images/common/icon_select_down.svg) right top .6rem / 1.4rem 1.2rem no-repeat;}
 .txtarea textarea{max-width:100%; width:100%; height:100%; padding:1.8rem 1.6rem; line-height:2.4rem; font-size:var(--font-size-18); border:.1rem solid #A6A8AB;}
 
 /* footer */
@@ -170,8 +171,10 @@ input[type="password"]{padding-right:3.5rem; background-image:url(/images/common
 tbody.pc-only{display:table-row-group;}
 thead.pc-only{display:table-row-group;}
 colgroup.pc-only{display:table-column-group;}
-
 .bg-gray{background-color:var(--bg-gray);}
+.numbering{counter-reset:cnt;}
+.numbering li{counter-increment:cnt;}
+.numbering li .txt-list::before{content:counter(cnt);}
 
 /* modal */
 body.modal-open{height:100vh; overflow:hidden;}
@@ -231,7 +234,7 @@ body.modal-open{height:100vh; overflow:hidden;}
     tbody.mo-only{display:table-row-group;}
     thead.mo-only{display:table-row-group;}
     .pc-only, tbody.pc-only, thead.pc-only, colgroup.pc-only{display:none;}
-
+    
     .content-wrap{padding-bottom:7rem;}
 
     header{position:relative;}
@@ -304,6 +307,7 @@ body.modal-open{height:100vh; overflow:hidden;}
     .cmp-modal .modal-container.find{min-width:unset;}
 
     .ipt, .btn-cmn{min-width:unset;}
+    .ipt02{font-size:1.8rem;}
 }
 
 @media screen and (max-width:768px){

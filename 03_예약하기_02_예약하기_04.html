@@ -21,8 +21,8 @@
             <div class="head-top">
                 <h1 class="logo"><a href="/index.html">국토안전관리원 안전체험관 로고</a></h1>
                 <div class="sch-area">
-                    <label for="searchinput" class="ipt sr-only">검색어 입력</label>
-                    <input class="ipt" type="text" placeholder="검색어를 입력하세요" id="searchinput">
+                    <label for="searchInput" class="sr-only">검색어 입력</label>
+                    <input type="text" placeholder="검색어를 입력하세요" id="searchInput">
                     <button type="button" class="btn-sch"></button>
                 </div>
                 <div class="mo-only mo-btn-grp">
@@ -145,7 +145,7 @@
                             <span class="txt">약관<br class="mo-only">동의</span>
                             <img src="/images/common/icon_res_tory_01.svg" alt="tory 아이콘 이미지">
                         </li>
-                        <li class="on">
+                        <li>
                             <span class="level">02</span> 
                             <span class="txt">코스<br class="mo-only">선택</span>
                             <img src="/images/common/icon_res_tory_01.svg" alt="tory 아이콘 이미지">
@@ -155,244 +155,53 @@
                             <span class="txt">예약정보<br class="mo-only">입력</span>
                             <img src="/images/common/icon_res_tory_01.svg" alt="tory 아이콘 이미지">
                         </li>
-                        <li>
+                        <li class="on">
                             <span class="level">04</span>
                             <span class="txt">예약<br class="mo-only">완료</span>
                             <img src="/images/common/icon_res_tory_01.svg" alt="tory 아이콘 이미지">
                         </li>
                     </ul>
-                    <div class="tab-container full res-type">
-                        <ul class="tab-head">
-                            <li>
-                                <button type="button" class="tab-menu is-active" data-tab="tab1-con1">
-                                    <div class="txt-grp">
-                                        <strong class="tit"><span class="floor">1층</span>국토안전동행관</strong>
-                                        <ul>
-                                            <li class="bullet">단체만 예약 가능</li>
-                                            <li class="bullet">연령 : 전체</li>
-                                            <li class="bullet">개인은 현장 발권을 진행해주세요.</li>
-                                        </ul>
-                                    </div>
-                                    <div class="img-grp">
-                                        <img src="/images/common/icon_res_tab_thumb.svg" alt="tory 아이콘 이미지">
-                                    </div>
-                                </button>
+                </div>
+                <div class="inner res-com">
+                    <h3 class="complete-txt">
+                        <img src="/images/common/icon_complete.svg" alt="예약완료 아이콘">
+                        예약이 완료되었습니다.
+                    </h3>
+                    <div class="res-com-wrap">
+                        <strong class="tit">예약정보</strong>
+                        <dl class="list">
+                            <dt>예약번호</dt>
+                            <dd>KAS-20250828002-01</dd>
+                            <dt>체험명</dt>
+                            <dd>2층 플러스 안전체험관 – A코스 생활안전체험 (60분)</dd>
+                            <dt>체험일시</dt>
+                            <dd>2025.09.01(월) 09:30 (1회차)</dd>
+                            <dt>예약자</dt>
+                            <dd>이현영</dd>
+                            <dt>연락처</dt>
+                            <dd>010-0000-1123</dd>
+                            <dt>예약구분</dt>
+                            <dd>단체</dd>
+                            <dt>단체명</dt>
+                            <dd>한국고등학교</dd>
+                            <dt>체험인원</dt>
+                            <dd>10명 (성인 : 2명, 청소년 : 8명, 소인 : 0명)</dd>
+                        </dl>
+                        <ul>
+                            <li class="bullet">
+                                예약취소는 체험일 전 24시까지 취소 가능하며, 예약내역에서 취소할 수 있습니다.<br>
+                                이후에 예약을 취소하실 경우 055-000-0000으로 연락주시기 바랍니다.
                             </li>
-                            <li>
-                                <button type="button" class="tab-menu" data-tab="tab1-con2">
-                                    <div class="txt-grp">
-                                        <strong class="tit"><span class="floor">2층</span>플러스안전체험관</strong>
-                                        <ul>
-                                            <li class="bullet">개인,단체 예약 가능</li>
-                                            <li class="bullet">연령 : 10세 이상</li>
-                                        </ul>
-                                    </div>
-                                    <div class="img-grp">
-                                        <img src="/images/common/icon_res_tab_thumb.svg" alt="tory 아이콘 이미지">
-                                    </div>
-                                </button>
+                            <li class="bullet">
+                                예약은 고객님과의 소중한 약속입니다. 원활한 운영을 위해 사전 통보 없이 불참하실 경우,<br>
+                                향후 예약 이용에 제한이 있을 수 있음을 알려드립니다.
                             </li>
-                            <li>
-                                <button type="button" class="tab-menu" data-tab="tab1-con3">
-                                    <div class="txt-grp">
-                                        <strong class="tit"><span class="floor">1층</span>스마트안전체험관</strong>
-                                        <ul>
-                                            <li class="bullet">개인,단체 예약 가능</li>
-                                            <li class="bullet">연령 : 성인</li>
-                                            <li class="bullet">4존 전문인력</li>
-                                        </ul>
-                                    </div>
-                                    <div class="img-grp">
-                                        <img src="/images/common/icon_res_tab_thumb.svg" alt="tory 아이콘 이미지">
-                                    </div>
-                                </button>
-                            </li>
-                        </ul>
-                        <div class="tab-content-wrap">
-                            <div class="tab-content is-active" id="tab1-con1">
-                                <div class="tab-container sub res-type">
-                                    <ul class="tab-head">
-                                        <li>
-                                            <button type="button" class="tab-menu is-active" data-tab="tab1-sub1">
-                                                <span class="course"><b>A</b>코스</span>
-                                                <div class="tit-grp">
-                                                    <div class="txt">
-                                                        <strong>생활안전체험</strong>
-                                                        <span class="zone-grp">
-                                                            <span class="badge">1존</span>
-                                                            VR체험
-                                                        </span>
-                                                        <span class="zone-grp">
-                                                            <span class="badge">2존</span>
-                                                            생활안전
-                                                        </span>
-                                                    </div>
-                                                    <img class="img-timer" src="/images/common/icon_res_timer.svg" alt="타이머 알림 아이콘 이미지">
-                                                </div>
-                                            </button>
-                                        </li>
-                                        <li>
-                                            <button type="button" class="tab-menu" data-tab="tab1-sub2">
-                                                <span class="course"><b>B</b>코스</span>
-                                                <div class="tit-grp">
-                                                    <div class="txt">
-                                                        <strong>시설안전체험</strong>
-                                                        <span class="zone-grp">
-                                                            <span class="badge">3존</span>
-                                                            시설안전
-                                                        </span>
-                                                        <span class="zone-grp">
-                                                            <span class="badge">1존</span>
-                                                            VR체험
-                                                        </span>
-                                                    </div>
-                                                    <img class="img-timer" src="/images/common/icon_res_timer.svg" alt="타이머 알림 아이콘 이미지">
-                                                </div>
-                                            </button>
-                                        </li>
-                                        <li>
-                                            <button type="button" class="tab-menu" data-tab="tab1-sub3">
-                                                <span class="course"><b>C</b>코스</span>
-                                                <div class="tit-grp">
-                                                    <div class="txt">
-                                                        <strong>응급처치체험</strong>
-                                                        <span class="zone-grp">
-                                                            <span class="badge">1존</span>
-                                                            VR체험
-                                                        </span>
-                                                        <span class="zone-grp">
-                                                            <span class="badge">1존</span>
-                                                            CPR코너
-                                                        </span>
-                                                    </div>
-                                                    <img class="img-timer" src="/images/common/icon_res_timer.svg" alt="타이머 알림 아이콘 이미지">
-                                                </div>
-                                            </button>
-                                        </li>
-                                    </ul>
-                                    <div class="tab-content-wrap">
-                                        <div class="tab-content is-active" id="tab1-sub1">
-                                            <div class="cal-wrap">
-                                                <div class="calendar-header">
-                                                    <div class="badge-grp">
-                                                        <span class="badge badge-type01">예약가능</span>
-                                                        <span class="badge badge-type02">예약불가</span>
-                                                    </div>
-                                                </div>
-                                                <div id="calendar" class="full-calendar">
-                                                </div>
-                                                <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
-                                                <script>
-                                                document.addEventListener('DOMContentLoaded', function () {
-                                                    const calendarEl = document.getElementById('calendar');
-            
-                                                    const holidays = [
-                                                        '2025-01-01', // 신정
-                                                        '2025-02-10', // 설날
-                                                        '2025-02-11',
-                                                        '2025-02-12',
-                                                        '2025-03-01', // 삼일절
-                                                        '2025-05-05', // 어린이날
-                                                        '2025-06-06', // 현충일
-                                                        '2025-08-15', // 광복절
-                                                        '2025-09-07', // 추석
-                                                        '2025-09-08',
-                                                        '2025-09-09',
-                                                        '2025-10-03', // 개천절
-                                                        '2025-10-09', // 한글날
-                                                        '2025-12-25'  // 성탄절
-                                                    ];
-            
-                                                    const calendar = new FullCalendar.Calendar(calendarEl, {
-                                                        initialView: 'dayGridMonth',
-                                                        selectable: true,
-                                                        contentHeight: 'auto',
-                                                        locale: 'en', // 영어 요일 표기를 위해 locale 변경
-                                                        initialDate: '2025-08-01',
-                                                        headerToolbar: {
-                                                            left: 'prev',
-                                                            center: 'title',
-                                                            right: 'next'
-                                                        },
-            
-                                                        // 요일 헤더 포맷 (SUN, MON 등)
-                                                        dayHeaderFormat: { weekday: 'short' }, // short: SUN, MON...
-            
-                                                        // 날짜 셀 숫자만 표시 (1, 2, 3...)
-                                                        dayCellContent: function(arg) {
-                                                            return { html: `<span class="fc-day-number">${arg.date.getDate()}</span>` };
-                                                        },
-                                                        dayCellDidMount: function(info) {
-                                                            const date = info.date;
-                                                            const dateStr = `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;
-                                                            
-                                                            if (holidays.includes(dateStr)) {
-                                                                const numberEl = info.el.querySelector('.fc-day-number'); // span 선택
-            
-                                                                if(numberEl) {
-                                                                    numberEl.style.color = 'red';
-                                                                    numberEl.style.fontWeight = 'bold';
-                                                                }
-                                                            }
-                                                        },
-                                                        titleFormat: (date) => {
-                                                            const year = date.date.year;
-                                                            const month = String(date.date.month + 1).padStart(2, '0');
-                                                            return `${year}.${month}`;
-                                                        },
-                                                        events: [//end일의 경우 +1일 해야 UI상으로 그 전일까지 표기
-                                                            {
-                                                                title: '09:30 A코스 생활안전 30/80',
-                                                                start: '2025-08-04',
-                                                                className: 'res'
-                                                            },
-                                                            {
-                                                                title: '11:00 A코스 생활안전 80/80',
-                                                                start: '2025-08-04',
-                                                                className: 'res disabled'
-                                                            },
-                                                            {
-                                                                title: '13:30 A코스 생활안전 80/80',
-                                                                start: '2025-08-04',
-                                                                className: 'res disabled'
-                                                            },
-                                                            {
-                                                                title: '15:00 A코스 생활안전 80/80',
-                                                                start: '2025-08-04',
-                                                                className: 'res disabled'
-                                                            },
-                                                        ]
-                                                    });
-                                                    setTimeout(() => {
-                                                        calendar.updateSize();
-                                                    }, 100);
-                                                    calendar.render();
-                                                });
-                                                </script>
-                                            </div>
-                                        </div>
-                                        <div class="tab-content" id="tab1-sub2">
-                                            
-                                        </div>
-                                        <div class="tab-content" id="tab1-sub3">
-                                            33
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-content" id="tab1-con2">
-                                2
-                            </div>
-                            <div class="tab-content" id="tab1-con3">
-                                3
-                            </div>
+                        </ul>                        
+                        <div class="btn-area">
+                            <a href="#" class="btn btn-cmn green">확인</a>
+                            <a href="#" class="btn btn-cmn">예약내역</a>
                         </div>
                     </div>
-                </div>
-
-                <div class="btn-area">
-                    <a href="#" class="btn btn-cmn gray">이전</a>
-                    <a href="#" class="btn btn-cmn">다음</a>
                 </div>
             </section>
         </main>
@@ -553,5 +362,10 @@
         </footer>
     </div>
     <script src="/js/common.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", ()=>{
+
+        });
+    </script>
 </body>
 </html>

@@ -269,7 +269,7 @@ section {
 }
 
 body {
-    line-height: auto;
+    line-height: normal;
 }
 
 ol,
