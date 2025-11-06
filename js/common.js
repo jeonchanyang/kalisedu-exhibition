@@ -76,7 +76,7 @@ window.setModal = setModal;
 const openModal = (event, type) => {
     event.preventDefault();
     const btn = event.currentTarget;
-    const modalId = btn.getAttribute('modal-id');
+    const modalId = btn.getAttribute('data-modal-id');
     
 
     const target = safeQuerySelector(`#${modalId}`);
@@ -276,9 +276,13 @@ const initTabs = (containerSelector) => {
         const tabMenuWrap = container.querySelector('.tab-head');
         if (!tabMenuWrap) return;
 
-        const tabMenus = tabMenuWrap.querySelectorAll('.tab-menu');
+        // 현재 tab-head의 직계 하위 탭만 선택 (중첩 탭 무시)
+        const tabMenus = tabMenuWrap.querySelectorAll(':scope > li > .tab-menu');
+
+        const isMobile = window.matchMedia('(max-width: 1024px)').matches;
 
         const scrollActiveTabIntoView = () => {
+            if (isMobile) return;
             const activeTab = tabMenuWrap.querySelector('.tab-menu.is-active');
             if (activeTab) {
                 activeTab.scrollIntoView({
@@ -293,26 +297,27 @@ const initTabs = (containerSelector) => {
             if (!clickedTab || !tabMenuWrap.contains(clickedTab)) return;
             event.stopPropagation();
 
-            // 현재 컨테이너의 탭만 활성화
+            // 직속 탭만 비활성화
             tabMenus.forEach(tab => removeClass(tab, 'is-active'));
             addClass(clickedTab, 'is-active');
 
             const targetId = clickedTab.getAttribute('data-tab');
+            if (!targetId) return;
+
+            // 현재 컨테이너 범위에서만 tab-content 활성화
             const targetContent = container.querySelector(`#${targetId}`);
-
             if (targetContent) {
-                // 자신의 형제들만 비활성화 (하위탭 보호)
                 const siblings = Array.from(targetContent.parentElement.children);
-                siblings.forEach(content => removeClass(content, 'is-active'));
-
+                siblings.forEach(content => {
+                    if (content.classList.contains('tab-content')) {
+                        removeClass(content, 'is-active');
+                    }
+                });
                 addClass(targetContent, 'is-active');
             }
 
             scrollActiveTabIntoView();
         });
-
-
-
     });
 };
 
@@ -535,6 +540,7 @@ document.addEventListener('DOMContentLoaded', () => {
     bnToggle();
     initTabs('.tab-container.full');
     initTabs('.tab-container.sub');
+    initTabs('.tab-container.sub.res-type');
     initTabs('.tab-container.notice-wrap');
     accoSch();
     resAddFn();
