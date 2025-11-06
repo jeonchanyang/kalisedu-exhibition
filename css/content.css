@@ -401,6 +401,7 @@
 .full-calendar.fc .fc-h-event .fc-event-title{color:#fff; font-weight:500; font-size:1.4rem; white-space:normal;}
 .full-calendar.fc .fc-daygrid-event{margin:.1rem 0 0; border-radius:1.8rem; border:none; cursor:pointer;}
 .full-calendar.fc .fc-daygrid-event.res{background:#8AC650;}
+.full-calendar.fc .fc-daygrid-event.res.closed{background:#A6A8AB; cursor:default; pointer-events:none;}
 .full-calendar.fc .fc-daygrid-event.res.disabled{background:#A6A8AB; cursor:default; pointer-events:none;}
 .full-calendar.fc .fc-col-header-cell-cushion{margin-bottom:.8rem; padding:0; font-weight:400; font-size:var(--font-size-12); text-transform: uppercase;}
 .full-calendar.fc .fc-col-header-cell-cushion[aria-label="Saturday"],
@@ -540,7 +541,6 @@
     .tab-container.full.res-type > .tab-head > li:has(.sub.res-type > ul > li:first-child .tab-menu.is-active) > button.is-active::after{z-index:1; visibility:visible;}
 
 
-   
     /* fullcalendar custom */
     .cal-wrap{margin-top:6rem;}
     .cal-wrap .calendar-header{top:4rem; right:unset;}

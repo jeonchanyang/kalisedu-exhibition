@@ -602,119 +602,91 @@
                         <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
                         <script>
                         document.addEventListener('DOMContentLoaded', function () {
-                            const calendarEl = document.getElementById('calendar');
-                            const isMobile = window.innerWidth <= 1024;
+                        const calendarEl = document.getElementById('calendar');
+                        const holidays = [
+                            '2025-01-01','2025-02-10','2025-02-11','2025-02-12',
+                            '2025-03-01','2025-05-05','2025-06-06','2025-08-15',
+                            '2025-09-07','2025-09-08','2025-09-09','2025-10-03',
+                            '2025-10-09','2025-12-25'
+                        ];
 
-                            const holidays = [
-                                '2025-01-01', // 신정
-                                '2025-02-10', // 설날
-                                '2025-02-11',
-                                '2025-02-12',
-                                '2025-03-01', // 삼일절
-                                '2025-05-05', // 어린이날
-                                '2025-06-06', // 현충일
-                                '2025-08-15', // 광복절
-                                '2025-09-07', // 추석
-                                '2025-09-08',
-                                '2025-09-09',
-                                '2025-10-03', // 개천절
-                                '2025-10-09', // 한글날
-                                '2025-12-25'  // 성탄절
-                            ];
+                        const events = [
+                            { date: '2025-11-04', title: '09:30 A코스 생활안전 30/80', status: 'available' },
+                            { date: '2025-11-04', title: '11:00 A코스 생활안전 80/80', status: 'closed' },
+                            { date: '2025-11-05', title: '14:00 B코스 심화안전 50/60', status: 'available' },
+                        ];
 
-                            // PC fullcalendar
-                            if(!isMobile){
-                                const calendar = new FullCalendar.Calendar(calendarEl, {
-                                    initialView: 'dayGridMonth',
-                                    selectable: true,
-                                    contentHeight: 'auto',
-                                    locale: 'en', // 영어 요일 표기를 위해 locale 변경
-                                    initialDate: '2025-08-01',
-                                    headerToolbar: {
-                                        left: 'prev',
-                                        center: 'title',
-                                        right: 'next'
-                                    },
-    
-                                    // 요일 헤더 포맷 (SUN, MON 등)
-                                    dayHeaderFormat: { weekday: 'short' }, // short: SUN, MON...
-    
-                                    // 날짜 셀 숫자만 표시 (1, 2, 3...)
-                                    dayCellContent: function(arg) {
-                                        return { html: `<span class="fc-day-number">${arg.date.getDate()}</span>` };
-                                    },
-                                    dayCellDidMount: function(info) {
-                                        const date = info.date;
-                                        const dateStr = `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;
-                                        
-                                        if (holidays.includes(dateStr)) {
-                                            const numberEl = info.el.querySelector('.fc-day-number'); // span 선택
-    
-                                            if(numberEl) {
-                                                numberEl.style.color = 'red';
-                                                numberEl.style.fontWeight = 'bold';
-                                            }
+                        const today = new Date();
+                        let currentYear = today.getFullYear();
+                        let currentMonth = today.getMonth(); // 0=1월
+
+                        // PC용 fullcalendar 생성 함수
+                        function renderDesktopCalendar() {
+                            const calendar = new FullCalendar.Calendar(calendarEl, {
+                                initialView: 'dayGridMonth',
+                                selectable: true,
+                                contentHeight: 'auto',
+                                locale: 'en',
+                                initialDate: `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-01`,
+                                headerToolbar: {
+                                    left: 'prev',
+                                    center: 'title',
+                                    right: 'next'
+                                },
+                                dayHeaderFormat: { weekday: 'short' },
+                                dayCellContent: (arg) => ({
+                                    html: `<span class="fc-day-number">${arg.date.getDate()}</span>`
+                                }),
+                                dayCellDidMount: (info) => {
+                                    const dateStr = info.date.toISOString().split('T')[0];
+                                    if (holidays.includes(dateStr)) {
+                                        const numberEl = info.el.querySelector('.fc-day-number');
+                                        if (numberEl) {
+                                            numberEl.style.color = 'red';
+                                            numberEl.style.fontWeight = 'bold';
                                         }
-                                    },
-                                    titleFormat: (date) => {
-                                        const year = date.date.year;
-                                        const month = String(date.date.month + 1).padStart(2, '0');
-                                        return `${year}.${month}`;
-                                    },
-                                    events: [//end일의 경우 +1일 해야 UI상으로 그 전일까지 표기
-                                        {
-                                            title: '09:30 A코스 생활안전 30/80',
-                                            start: '2025-08-04',
-                                            className: 'res'
-                                        },
-                                        {
-                                            title: '11:00 A코스 생활안전 80/80',
-                                            start: '2025-08-04',
-                                            className: 'res disabled'
-                                        },
-                                        {
-                                            title: '13:30 A코스 생활안전 80/80',
-                                            start: '2025-08-04',
-                                            className: 'res disabled'
-                                        },
-                                        {
-                                            title: '15:00 A코스 생활안전 80/80',
-                                            start: '2025-08-04',
-                                            className: 'res disabled'
-                                        },
-                                    ]
-                                });
-                                setTimeout(() => {
-                                    calendar.updateSize();
-                                }, 100);
-                                calendar.render();
-                                return;
+                                    }
+                                },
+                                titleFormat: (date) => {
+                                    const year = date.date.year;
+                                    const month = String(date.date.month + 1).padStart(2, '0');
+                                    return `${year}.${month}`;
+                                },
+                                events: events.map(e => ({
+                                    title: e.title,
+                                    start: e.date,
+                                    className: e.status === 'closed' ? 'res closed' : 'res available'
+                                }))
+                            });
+                            calendar.render();
+                            return calendar;
+                        }
+
+                        // 모바일용 세로형 달력 생성 함수
+                        function renderMobileCalendar() {
+                            
+
+                            function getWeekday(dateStr) {
+                                const kor = ['일', '월', '화', '수', '목', '금', '토'];
+                                const eng = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+                                const date = new Date(dateStr);
+                                const dayIndex = date.getDay();
+                                return {
+                                    weekdayKor: kor[dayIndex],
+                                    weekdayEng: eng[dayIndex],
+                                    dayIndex
+                                };
                             }
 
-                            // Mobile 버전 (세로형 리스트)
-                            const today = new Date();
-                            let currentYear = today.getFullYear();
-                            let currentMonth = today.getMonth();
-
-                            // status default = "available", 마감시 = "closed"
-                            const events = [
-                                { date: '2025-11-04', title: '09:30 A코스 생활안전 30/80', status: 'available' },
-                                { date: '2025-11-04', title: '11:00 A코스 생활안전 80/80', status: 'available' },
-                                { date: '2025-11-04', title: '13:30 A코스 생활안전 80/80', status: 'closed' },
-                                { date: '2025-11-04', title: '15:00 A코스 생활안전 80/80', status: 'closed' },
-                            ];
-
-                            // custom
                             function renderVerticalMonth(container, year, month) {
                                 const lastDay = new Date(year, month + 1, 0).getDate();
-
                                 let html = `
                                     <div class="vertical-month-header">
-                                        <div class="vm-nav">
+                                    <div class="vm-nav">
                                         <button class="vm-prev">‹</button>
                                         <span class="vm-title">${year}.${String(month + 1).padStart(2, '0')}</span>
                                         <button class="vm-next">›</button>
-                                        </div>
+                                    </div>
                                     </div>
                                     <div class="vertical-month">
                                 `;
@@ -724,41 +696,33 @@
                                     const isHoliday = holidays.includes(dateStr);
                                     const { weekdayKor, weekdayEng, dayIndex } = getWeekday(dateStr);
                                     const eventForDay = events.filter(e => e.date === dateStr);
-
-                                    // 토, 일요일 class추가
                                     const weekdayClass = dayIndex === 0 ? 'sun' : dayIndex === 6 ? 'sat' : '';
-
                                     let eventContent = '';
+                                    
                                     if (eventForDay.length) {
-                                        eventContent = eventForDay.map(e => `<div class="vm-event ${e.status || ''}">${e.title}</div>`).join('');
-                                    } else {
-                                        if (isHoliday) {
-                                            // 공휴일
-                                            eventContent = `<div class="vm-empty holiday-msg">휴관</div>`;
-                                        } else {
-                                            // 평일/주말
-                                            eventContent = '';
-                                        }
+                                        // pc버전의 fc-events 처럼 아래의 <div role="button" class="vm-event"> 를 이벤트타겟으로 활용
+                                        eventContent = eventForDay.map(e => `
+                                            <div role="button" class="vm-event ${e.status || ''}">${e.title}</div>
+                                        `).join('');
+                                    }else{
+                                        eventContent = isHoliday ? `<div class="vm-empty holiday-msg">휴관</div>` : '';
                                     }
 
                                     html += `
-                                        <div class="vm-day${isHoliday ? ' holiday' : ''} ${weekdayClass}">
+                                    <div class="vm-day${isHoliday ? ' holiday' : ''} ${weekdayClass}">
                                         <div class="vm-date">
-                                            <span class="day-num">${day}</span>
-                                            <span class="day-kor">${weekdayKor}요일</span>
-                                            <span class="day-eng">(${weekdayEng.toUpperCase()})</span>
+                                        <span class="day-num">${day}</span>
+                                        <span class="day-kor">${weekdayKor}요일</span>
+                                        <span class="day-eng">(${weekdayEng.toUpperCase()})</span>
                                         </div>
-                                        <div class="vm-events">
-                                            ${eventContent}
-                                        </div>
-                                        </div>
+                                        <div class="vm-events">${eventContent}</div>
+                                    </div>
                                     `;
                                 }
 
                                 html += `</div>`;
                                 container.innerHTML = html;
 
-                                // 네비게이션 버튼 이벤트
                                 container.querySelector('.vm-prev').addEventListener('click', () => {
                                     currentMonth--;
                                     if (currentMonth < 0) {
@@ -767,6 +731,7 @@
                                     }
                                     renderVerticalMonth(container, currentYear, currentMonth);
                                 });
+
                                 container.querySelector('.vm-next').addEventListener('click', () => {
                                     currentMonth++;
                                     if (currentMonth > 11) {
@@ -778,19 +743,25 @@
                             }
 
                             renderVerticalMonth(calendarEl, currentYear, currentMonth);
+                        }
 
-                            function getWeekday(dateStr) {
-                                const kor = ['일', '월', '화', '수', '목', '금', '토'];
-                                const eng = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
-                                const date = new Date(dateStr);
-                                const dayIndex = date.getDay();
-                                return {
-                                    weekdayKor: kor[date.getDay()],
-                                    weekdayEng: eng[date.getDay()],
-                                    dayIndex
-                                };
+                        // 반응형 렌더링
+                        function renderCalendarByDevice() {
+                            calendarEl.innerHTML = ''; // 기존 내용 제거
+                            if (window.innerWidth <= 1024) {
+                                renderMobileCalendar();
+                            } else {
+                                renderDesktopCalendar();
                             }
+                        }
+
+                            renderCalendarByDevice();
+                            window.addEventListener('resize', () => {
+                                clearTimeout(window._calendarResizeTimeout);
+                                window._calendarResizeTimeout = setTimeout(() => renderCalendarByDevice(), 300);
+                            });
                         });
+                        
                         </script>
                     </div>
                 </div>
