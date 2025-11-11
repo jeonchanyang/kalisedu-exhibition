@@ -351,7 +351,6 @@ function initMoDropdown() {
 
                 let labelText = '';
                 // tabmenu
-                debugger
                 if (item.classList.contains('tab-menu')) {
                     const tabId = item.getAttribute('data-tab');
                     const container = dropdown.closest('.tab-container'); 
@@ -534,6 +533,27 @@ function resAddFn(){
     });
 }
 
+// bbs - accodion
+function bbsAccoFn() {
+    const accoBtn = document.querySelectorAll('.bbs-list.acco li .btn-acco');
+    if (!accoBtn) return;
+
+    accoBtn.forEach((el) => {
+        el.addEventListener('click', (e) => {
+            const targetItem = e.currentTarget.closest("li");
+            const list = targetItem.parentElement.querySelectorAll("li");
+
+            // 모든 형제 li에서 on 제거
+            list.forEach(li => {
+                li.classList.remove('on');
+            });
+
+            // 클릭한 li만 toggle
+            targetItem.classList.add('on');
+        });
+    });
+}
+
 
 document.addEventListener('DOMContentLoaded', () => {
     DropdownMenus();
@@ -544,6 +564,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initTabs('.tab-container.notice-wrap');
     accoSch();
     resAddFn();
+    bbsAccoFn();
      //mobile
     if (window.innerWidth > 1024) {
         gnbOpen();
