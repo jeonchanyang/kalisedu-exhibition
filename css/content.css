@@ -512,6 +512,25 @@
 .tb-layout.bbs table td{padding-right:4rem;}
 .tb-layout.bbs table .ipt{height:4.8rem;}
 
+/* review-wrap */
+.review-wrap{padding:4rem 0; border-top:.2rem solid #0F2A43; border-bottom:.1rem solid #0F2A43;}
+.review-wrap .re-gen-list{display:flex; flex-wrap:wrap; gap:5rem 3rem;}
+.review-wrap .re-gen-list li{width:calc(100% / 4 - 3rem * 3 / 4);}
+.review-wrap .re-gen-list li img{display:block; width:100%; transition:all .3s ease;}
+.review-wrap .re-gen-list li:hover img:not(.empty){scale:1.1;}
+.review-wrap .re-gen-list li .frame{display:block; overflow:hidden; width:100%; border-radius:1.5rem;}
+.review-wrap .re-gen-list li .frame + .txt-grp{margin-top:1rem;}
+.review-wrap .re-gen-list li .txt-grp .tit{font-weight:500; line-height:2.4rem; font-size:2rem;}
+.review-wrap .re-gen-list li .txt-grp .info{display:flex; justify-content:space-between; margin-top:.5rem; color:#6C6C6C; font-weight:300; line-height:2.4rem; font-size:1.6rem;}
+.review-wrap .re-gen-list li .txt-grp .info + .score-grp{margin-top:1rem;}
+.review-wrap .re-gen-list li .txt-grp .score-grp{display:flex; gap:1rem; line-height:2.4rem; font-size:1.6rem;}
+.review-wrap .re-gen-list li .txt-grp .score-grp dt{flex:0 0 auto; font-weight:500;}
+.review-wrap .re-gen-list li .txt-grp .score-grp dd{display:flex; justify-content:space-between; width:100%; color:#6C6C6C;}
+.review-wrap .re-gen-list li .txt-grp .score-grp .thumb{display:inline-flex; gap:.7rem; align-items:center;}
+.review-wrap .re-gen-list li .txt-grp .score-grp .thumb .icon.star{display:inline-block; width:1.46rem; height:1.4rem; background:url(/images/common/icon_star.svg) center center / 100% no-repeat;}
+.review-wrap .re-gen-list li .txt-grp .score-grp .thumb .icon.star.on{background-image:url(/images/common/icon_star_on.svg);}
+.inner-wrap.review .page-list + .btn-area{margin-top:5rem;}
+
 
 /* title */
 .h2-title{padding:8.3rem 0 6rem; font-weight:500; font-size:6rem; text-align:center;}
@@ -919,6 +938,12 @@
     .page-list > .btn-paging.pc-only{display:none;}
     .page-list > .btn-paging.mo-only{display:inline-flex;}
     
+    .review-wrap{padding:3rem 0;}
+    .review-wrap .re-gen-list{gap:3rem;}
+    .review-wrap .re-gen-list > li{width:100%;}
+
+
+
 
 }   
 
