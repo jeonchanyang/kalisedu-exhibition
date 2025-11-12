@@ -294,7 +294,7 @@
 .inner.res-com .res-com-wrap .list + ul{margin-top:3rem; margin-bottom:4rem;}
 .inner.res-com .res-com-wrap > ul li{font-weight:300; font-size:1.8rem; line-height:2.6rem;}
 .inner.res-com .res-com-wrap > ul li + li{margin-top:1rem;}
-.inner.res-com .res-com-wrap .btn-area{display:flex; overflow:hidden; position:relative; left:-5rem; width:calc(100% + 10rem); border-radius:0 0 1rem 1rem;}
+.inner.res-com .res-com-wrap .btn-area{display:flex; gap:0; overflow:hidden; position:relative; left:-5rem; width:calc(100% + 10rem); border-radius:0 0 1rem 1rem;}
 .inner.res-com .res-com-wrap .btn-area .btn{width:100%; height:10rem; line-height:2.6rem; font-size:2.4rem; border-radius:0;}
 
 /* res-com detail */
