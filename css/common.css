@@ -3,6 +3,7 @@
 /* layout */
 .wrap{display:flex; flex-direction:column; min-height:100vh;}
 .content-wrap{flex-grow:1; height:100%; padding-bottom:12rem; background:#f2f4f6;}
+.hidden{overflow:hidden;}
 
 /* header 공통 (s) */
 header{display:flex; flex-direction:column; background:#fff; z-index:999;}
