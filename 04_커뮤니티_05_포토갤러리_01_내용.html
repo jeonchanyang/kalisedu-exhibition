@@ -123,65 +123,71 @@
                         <a href="./index.html" aria-label="메인화면으로 이동"><i class="ico icon-home"></i></a>
                     </li>
                     <li>
-                        <div class="dropdown-wrap dropdown-link">
+                        <div class="dropdown-wrap dropdown-select">
                             <button type="button" class="btn btn-dropdown">
-                                예약하기
+                                커뮤니티
                             </button>
                             <div class="dropdown-list is-up is-open">
-                                <a href="#" class="link" target="_blank">예약안내</a>
-                                <a href="./03_예약하기_02_예약하기_01.html" class="link" target="_blank">예약하기</a>
-                                <a href="#" class="link" target="_blank">예약확인 및 취소</a>
+                                <button type="button" class="dropdown-item">안전체험관 소개</button>
+                                <button type="button" class="dropdown-item">이용안내</button>
+                                <button type="button" class="dropdown-item">예약하기</button>
+                                <button type="button" class="dropdown-item">커뮤니티</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dropdown-wrap dropdown-link">
+                            <button type="button" class="btn btn-dropdown">
+                                포토갤러리
+                            </button>
+                            <div class="dropdown-list is-up is-open">
+                                <a href="#" class="link" target="_blank">전시체험관 후기</a>
+                                <a href="#" class="link" target="_blank">자주묻는질문(FAQ)</a>
+                                <a href="#" class="link" target="_blank">질의응답(Q&A)</a>
+                                <a href="#" class="link" target="_blank">포토갤러리</a>
+                                
                             </div>
                         </div>
                     </li>
                 </ol>
             </div>
-            <section class="inner-wrap max-width res">
-                <h2 class="h2-title">예약하기</h2>
+            <section class="inner-wrap max-width mt-type2">
+                <h2 class="h2-title">포토갤러리</h2>
                 <div class="inner">
-                    <div class="choice-wrap">
-                        <p class="choice">
-                            예약할 체험 대상자를 선택해주세요.
-                            <img src="./images/common/icon_choice.svg" alt="체험 대상자 선택 아이콘">
-                        </p>
+                    <div class="bbs-view gallery">
+                        <div class="tit-grp">
+                            <strong class="tit">체험관 방문 단체 사진</strong>
+                            <div class="date-grp">
+                                <dl class="owner">
+                                    <dt>등록일 :</dt>
+                                    <dd>2025.10.01</dd>
+                                </dl> 
+                            </div>
+                        </div>
+                        <div class="txt-grp review">
+                            <div class="contents">
+                                <img src="./images/common/img_sample_contents_gallery.png" alt="샘플 이미지">
+                                <p>
+                                    체험관 방문 단체사진 01<br>
+                                    여러 건일 경우 세로 정렬로 (가로 기본 사이즈 1024 ~ 더 큰 이미지 일 경우, 1024 이내 일 경우는 원본 사이즈로 제공)
+                                </p>
+                                <img style="width:50rem;" src="./images/common/img_sample_contents_gallery.png" alt="샘플 이미지">
+                                <p>
+                                    체험관 방문 단체사진 02<br>
+                                    여러 건일 경우 세로 정렬로 (가로 기본 사이즈 1024 ~ 더 큰 이미지 일 경우, 1024 이내 일 경우는 원본 사이즈로 제공)
+                                </p>
+                                <img style="width:20rem;" src="./images/common/img_sample_contents_gallery.png" alt="샘플 이미지">
+                                <img src="./images/common/img_sample_contents_gallery.png" alt="샘플 이미지">
+                            </div>
+                        </div>
 
-                        <ul class="card-box">
-                            <li>
-                                <a href="#" type="button" class="btn-res" onclick="openModal(event)" data-modal-id="modal000">
-                                    <img src="./images/common/icon_res_01.webp" alt="개인예약 아이콘 이미지">
-                                    <div class="txt">
-                                        <strong>개인예약</strong>
-                                        <span class="disc">(예약인원 : 9명이하)</span>
-                                    </div>
-                                    <span class="bottom-badge">예약하기(click-팝업)</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="./03_예약하기_02_예약하기_01.html" class="btn-res">
-                                    <img src="./images/common/icon_res_02.webp" alt="단체예약 아이콘 이미지">
-                                    <div class="txt">
-                                        <strong>단체예약</strong>
-                                        <span class="disc">(예약인원 : 10~20명)</span>
-                                    </div>
-                                    <span class="bottom-badge type2">예약하기(click 다음step)</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn-res">
-                                    <img src="./images/common/icon_res_03.webp" alt="사회적 배려 대상자 아이콘 이미지">
-                                    <div class="txt">
-                                        <strong>사회적 배려 대상자</strong>
-                                        <span class="disc">(장애인 단체, 고령자 등)</span>
-                                    </div>
-                                    <span class="bottom-badge type3">문의 : 055-000-0000</span>
-                                </a>
-                            </li>
-                        </ul>
+                        <div class="btn-area">
+                            <a href="./04_커뮤니티_05_포토갤러리_01_목록.html" class="btn btn-cmn">목록</a>
+                        </div>
                     </div>
                 </div>
             </section>
         </main>
-
         <footer>
             <!-- 협력기관 배너 슬라이더 -->
             <div class="bd-line-grp">
@@ -337,56 +343,6 @@
             </div>
         </footer>
     </div>
-
-        <!-- modal -->
-
-    <!-- 접수신청 -->
-    <div class="cmp-modal" id="modal000"> 
-        <div class="dimmed"></div>
-        <div class="modal-container">
-            <div class="modal-body">
-                <h3 class="modal-title">체험 예약하기</h3>
-                <div class="img-frame res">
-                    <img src="./images/common/icon_ex_res.svg" alt="체험예약 아이콘 이미지">
-                </div>
-                <div class="txt-grp">
-                    <b class="txt26">예약하기 서비스는<br class="mo-only"> <span class="txt-blue">로그인</span> 후 이용해주세요.</b>
-                </div>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-normal" onclick="closeModal(event)"><i class="ico icon-modal-join"></i>회원가입</button>
-            <button type="button" class="btn btn-cmn"><i class="ico icon-modal-login"></i>로그인</button>
-            </div>
-
-            <!-- modal 우측 상단 닫기 아이콘 -->
-            <button type="button" class="btn-close close-modal" onclick="closeModal(event)">닫기 버튼</button>
-        </div>
-    </div>
-
-    <!-- 접수대기 -->
-    <div class="cmp-modal" id="modal001"> 
-        <div class="dimmed"></div>
-        <div class="modal-container">
-            <div class="modal-body">
-                <div class="img-frame write">
-                    <img src="./images/common/icon_wait.svg" alt="접수대기 아이콘 이미지">
-                </div>
-                <div class="txt-grp">
-                    <strong class="txt24">정밀안전진단 보수교육과정</strong>
-                    <b class="txt32">253기 건축반(성능신규) <span class="txt-blue">10번째 대기자</span>입니다.</b>
-                    <span class="txt18 fwr">접수대기를 신청하시겠어요?</span>
-                </div>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-normal close-modal" onclick="closeModal(event)"><i class="ico icon-reset"></i>취소</button>
-            <button type="button" class="btn btn-cmn"><i class="ico icon-pencil"></i>접수대기 신청하기</button>
-            </div>
-
-            <!-- modal 우측 상단 닫기 아이콘 -->
-            <button type="button" class="btn-close close-modal" onclick="closeModal(event)">닫기 버튼</button>
-        </div>
-    </div>
-
     <script src="./js/common.js"></script>
 </body>
 </html>
