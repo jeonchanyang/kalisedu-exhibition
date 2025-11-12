@@ -87,7 +87,7 @@
                             <ul class="gnb-depth2">
                                 <li class="tit">공지사항</li>
                                 <li>
-                                    <a href="#">전시체험관 후기</a>
+                                    <a href="#">안전체험관 후기</a>
                                 </li>
                                 <li>
                                     <a href="#">자주 묻는질문(FAQ)</a>
@@ -138,83 +138,216 @@
                     <li>
                         <div class="dropdown-wrap dropdown-link">
                             <button type="button" class="btn btn-dropdown">
-                                질의응답
+                                포토갤러리
                             </button>
                             <div class="dropdown-list is-up is-open">
-                                <a href="#" class="link" target="_blank">전시체험관 후기</a>
+                                <a href="#" class="link" target="_blank">안전체험관 후기</a>
                                 <a href="#" class="link" target="_blank">자주묻는질문(FAQ)</a>
                                 <a href="#" class="link" target="_blank">질의응답(Q&A)</a>
                                 <a href="#" class="link" target="_blank">포토갤러리</a>
-                                
                             </div>
                         </div>
                     </li>
                 </ol>
             </div>
-            <section class="inner-wrap max-width mt-type2">
-                <h2 class="h2-title">질의응답</h2>
-                <div class="inner">
-                    <div class="tb-layout bbs">
-                        <table>
-                            <caption>질의응답 작성표</caption>
-                            <colgroup>
-                                <col style="width:15rem;">
-                                <col>
-                            </colgroup>
-                            <tbody>
-                                <tr>
-                                    <th><label for="iptName">작성자</label></th>
-                                    <td>
-                                        <input type="text" name="usr" id="iptName" class="ipt w300" readonly value="이*영">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>공개여부</th>
-                                    <td>
-                                        <div class="radio-group">
-                                            <label for="rdo1" class="radio-item">
-                                                <input type="radio" id="rdo1" name="radio1" checked>
-                                                <span class="custom-radio"></span>
-                                                비공개
-                                            </label>
-                                            <label for="rdo2" class="radio-item">
-                                                <input type="radio" id="rdo2" name="radio1">
-                                                <span class="custom-radio"></span>
-                                                공개
-                                            </label>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th><label for="divisionSelect">구분</label></th>
-                                    <td>
-                                        <select class="ipt w300" name="selcet" id="divisionSelect">
-                                            <option value="0" hidden>구분선택</option>
-                                            <option value="1">교육운영</option>
-                                            <option value="2">교육비 및 계산서</option>
-                                            <option value="3">수료증</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th><label for="iptTitle">제목</label></th>
-                                    <td><input type="text" class="ipt w100p" id="iptTitle" placeholder="제목을 입력해주세요."></td>
-                                </tr>
-                                <tr>
-                                    <th><label for="inquiryArea">문의내용</label></th>
-                                    <td>
-                                        <div class="txtarea">
-                                            <textarea name="inquiry" id="inquiryArea" placeholder="내용을 입력해주세요."></textarea>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+            <section class="inner-wrap max-width review">
+                <h2 class="h2-title">포토갤러리</h2>
+
+                <div class="search-area tar">
+                    <select name="select2" id="select2" class="ipt" title="제목">
+                        <option value="0">제목</option>
+                        <option value="1">내용</option>
+                        <option value="2">제목+내용</option>
+                    </select>
+                    <input type="text" class="ipt search-ipt" title="검색어 입력" placeholder="검색어를 입력해주세요.">
+                    <button type="button" class="btn btn-cmn"><i class="ico icon-search"></i>검색</button>
+                </div>
+
+                <div class="review-wrap gallery">
+                    <ul class="re-gen-list">
+                        <li>
+                            <a href="./04_커뮤니티_05_포토갤러리_01_내용.html">
+                                <div class="frame">
+                                    <img src="./images/common/img_sample_gallery01.png" onerror="this.onerror=null; this.src='./images/common/img_noimg.webp';"  alt="갤러리 샘플 이미지1">
+                                </div>
+                                <div class="txt-grp">
+                                    <p class="tit">click!! 클릭시 내용화면으로 이동!!</p>
+                                    <div class="info">
+                                        <span class="date">2025.10.13</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="frame">
+                                    <img src="./images/common/img_sample_gallery02.png" onerror="this.onerror=null; this.src='./images/common/img_noimg.webp';"  alt="갤러리 샘플 이미지2">
+                                </div>
+                                <div class="txt-grp">
+                                    <p class="tit">체험관 방문 단체 사진</p>
+                                    <div class="info">
+                                        <span class="date">2025.10.01</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="frame">
+                                    <img src="./images/common/img_sample_gallery03.png" onerror="this.onerror=null; this.src='./images/common/img_noimg.webp';"  alt="갤러리 샘플 이미지2">
+                                </div>
+                                <div class="txt-grp">
+                                    <p class="tit">체험관 방문 단체 사진</p>
+                                    <div class="info">
+                                        <span class="date">2025.10.01</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="frame">
+                                    <img src="./images/common/img_sample_gallery04.png" onerror="this.onerror=null; this.src='./images/common/img_noimg.webp';"  alt="갤러리 샘플 이미지2">
+                                </div>
+                                <div class="txt-grp">
+                                    <p class="tit">체험관 방문 단체 사진</p>
+                                    <div class="info">
+                                        <span class="date">2025.10.01</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./04_커뮤니티_05_포토갤러리_01_내용.html">
+                                <div class="frame">
+                                    <img src="./images/common/img_sample_gallery01.png" onerror="this.onerror=null; this.src='./images/common/img_noimg.webp';"  alt="갤러리 샘플 이미지1">
+                                </div>
+                                <div class="txt-grp">
+                                    <p class="tit">click!! 클릭시 내용화면으로 이동!!</p>
+                                    <div class="info">
+                                        <span class="date">2025.10.13</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="frame">
+                                    <img src="./images/common/img_sample_gallery02.png" onerror="this.onerror=null; this.src='./images/common/img_noimg.webp';"  alt="갤러리 샘플 이미지2">
+                                </div>
+                                <div class="txt-grp">
+                                    <p class="tit">체험관 방문 단체 사진</p>
+                                    <div class="info">
+                                        <span class="date">2025.10.01</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="frame">
+                                    <img src="./images/common/img_sample_gallery03.png" onerror="this.onerror=null; this.src='./images/common/img_noimg.webp';"  alt="갤러리 샘플 이미지2">
+                                </div>
+                                <div class="txt-grp">
+                                    <p class="tit">체험관 방문 단체 사진</p>
+                                    <div class="info">
+                                        <span class="date">2025.10.01</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="frame">
+                                    <img src="./images/common/img_sample_gallery04.png" onerror="this.onerror=null; this.src='./images/common/img_noimg.webp';"  alt="갤러리 샘플 이미지2">
+                                </div>
+                                <div class="txt-grp">
+                                    <p class="tit">체험관 방문 단체 사진</p>
+                                    <div class="info">
+                                        <span class="date">2025.10.01</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./04_커뮤니티_05_포토갤러리_01_내용.html">
+                                <div class="frame">
+                                    <img src="./images/common/img_sample_gallery01.png" onerror="this.onerror=null; this.src='./images/common/img_noimg.webp';"  alt="갤러리 샘플 이미지1">
+                                </div>
+                                <div class="txt-grp">
+                                    <p class="tit">click!! 클릭시 내용화면으로 이동!!</p>
+                                    <div class="info">
+                                        <span class="date">2025.10.13</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="frame">
+                                    <img src="./images/common/img_sample_gallery02.png" onerror="this.onerror=null; this.src='./images/common/img_noimg.webp';"  alt="갤러리 샘플 이미지2">
+                                </div>
+                                <div class="txt-grp">
+                                    <p class="tit">체험관 방문 단체 사진</p>
+                                    <div class="info">
+                                        <span class="date">2025.10.01</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="frame">
+                                    <img src="./images/common/img_sample_gallery03.png" onerror="this.onerror=null; this.src='./images/common/img_noimg.webp';"  alt="갤러리 샘플 이미지2">
+                                </div>
+                                <div class="txt-grp">
+                                    <p class="tit">체험관 방문 단체 사진</p>
+                                    <div class="info">
+                                        <span class="date">2025.10.01</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="frame">
+                                    <img src="./images/common/img_sample_gallery04.png" onerror="this.onerror=null; this.src='./images/common/img_noimg.webp';"  alt="갤러리 샘플 이미지2">
+                                </div>
+                                <div class="txt-grp">
+                                    <p class="tit">체험관 방문 단체 사진</p>
+                                    <div class="info">
+                                        <span class="date">2025.10.01</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="page-list">
+                    <button type="button" class="btn-paging prev2 pc-only">처음으로</button>
+                    <button type="button" class="btn-paging prev2 mo-only" aria-hidden="true">처음으로</button>
+                    <button type="button" class="btn-paging prev pc-only">이전</button>
+                    <button type="button" class="btn-paging prev mo-only" aria-hidden="true">이전</button>
+                    <ol class="num-list pc-only">
+                        <li class="on"><button type="button">1</button></li>
+                        <li><button type="button">2</button></li>
+                        <li><button type="button">3</button></li>
+                        <li><button type="button">4</button></li>
+                        <li><button type="button">5</button></li>
+                        <li><button type="button">6</button></li>
+                        <li><button type="button">7</button></li>
+                        <li><button type="button">8</button></li>
+                        <li><button type="button">9</button></li>
+                        <li><button type="button">10</button></li>
+                    </ol>
+                    <div class="count-grp mo-only">
+                        <span class="current-count">1</span>/<span class="max-count">100</span>
                     </div>
-                    <div class="btn-area">
-                        <a href="./04_커뮤니티_04_질의응답_01_목록.html" class="btn btn-cmn gray2">취소</a>
-                        <a href="#" class="btn btn-cmn">등록</a>
-                    </div>
+                    <button type="button" class="btn-paging next pc-only">다음</button>
+                    <button type="button" class="btn-paging next mo-only" aria-hidden="true">다음</button>
+                    <button type="button" class="btn-paging next2 pc-only">마지막으로</button>
+                    <button type="button" class="btn-paging next2 mo-only" aria-hidden="true">마지막으로</button>
                 </div>
             </section>
         </main>

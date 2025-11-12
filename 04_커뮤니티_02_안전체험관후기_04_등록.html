@@ -138,7 +138,7 @@
                     <li>
                         <div class="dropdown-wrap dropdown-link">
                             <button type="button" class="btn btn-dropdown">
-                                질의응답
+                                안전체험관 후기
                             </button>
                             <div class="dropdown-list is-up is-open">
                                 <a href="#" class="link" target="_blank">전시체험관 후기</a>
@@ -152,11 +152,11 @@
                 </ol>
             </div>
             <section class="inner-wrap max-width mt-type2">
-                <h2 class="h2-title">질의응답</h2>
+                <h2 class="h2-title">안전체험관 후기</h2>
                 <div class="inner">
                     <div class="tb-layout bbs">
                         <table>
-                            <caption>질의응답 작성표</caption>
+                            <caption>안전체험관 후기 작성표</caption>
                             <colgroup>
                                 <col style="width:15rem;">
                                 <col>
@@ -186,22 +186,55 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th><label for="divisionSelect">구분</label></th>
-                                    <td>
-                                        <select class="ipt w300" name="selcet" id="divisionSelect">
-                                            <option value="0" hidden>구분선택</option>
-                                            <option value="1">교육운영</option>
-                                            <option value="2">교육비 및 계산서</option>
-                                            <option value="3">수료증</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
                                     <th><label for="iptTitle">제목</label></th>
                                     <td><input type="text" class="ipt w100p" id="iptTitle" placeholder="제목을 입력해주세요."></td>
                                 </tr>
                                 <tr>
-                                    <th><label for="inquiryArea">문의내용</label></th>
+                                    <th>만족도</th>
+                                    <td>
+                                        <div class="radio-group score">
+                                            <label for="rdo1-1" class="radio-item">
+                                                <input type="radio" id="rdo1-1" name="radio1-1" checked>
+                                                <span class="custom-radio"></span>
+                                                <i class="icon-star five"></i>5점
+                                            </label>
+                                            <label for="rdo1-2" class="radio-item">
+                                                <input type="radio" id="rdo1-2" name="radio1-1">
+                                                <span class="custom-radio"></span>
+                                                <i class="icon-star four"></i>4점
+                                            </label>
+                                            <label for="rdo1-3" class="radio-item">
+                                                <input type="radio" id="rdo1-3" name="radio1-1">
+                                                <span class="custom-radio"></span>
+                                                <i class="icon-star three"></i>3점
+                                            </label>
+                                            <label for="rdo1-4" class="radio-item">
+                                                <input type="radio" id="rdo1-4" name="radio1-1">
+                                                <span class="custom-radio"></span>
+                                                <i class="icon-star two"></i>2점
+                                            </label>
+                                            <label for="rdo1-5" class="radio-item">
+                                                <input type="radio" id="rdo1-5" name="radio1-1">
+                                                <span class="custom-radio"></span>
+                                                <i class="icon-star"></i>1점
+                                            </label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>사진첨부</th>
+                                    <td>
+                                        <div class="file-upload">
+                                            <label for="fileInput" class="file-label">파일찾기</label>
+                                            <input type="file" id="fileInput" class="file-input" hidden>
+                                            <div class="file-list">
+                                                <p class="desc">첨부파일 등록 허용 기준 : 이미지 사이즈 3M 이내, JPG, GIF, PNG 파일</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><label for="inquiryArea">내용</label></th>
                                     <td>
                                         <div class="txtarea">
                                             <textarea name="inquiry" id="inquiryArea" placeholder="내용을 입력해주세요."></textarea>
@@ -212,7 +245,7 @@
                         </table>
                     </div>
                     <div class="btn-area">
-                        <a href="./04_커뮤니티_04_질의응답_01_목록.html" class="btn btn-cmn gray2">취소</a>
+                        <a href="./04_커뮤니티_02_안전체험관후기_01_목록.html" class="btn btn-cmn gray2">목록</a>
                         <a href="#" class="btn btn-cmn">등록</a>
                     </div>
                 </div>
@@ -374,5 +407,40 @@
         </footer>
     </div>
     <script src="./js/common.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', ()=>{
+            const fileInput = document.getElementById('fileInput');
+            const fileList = document.querySelector('.file-list');
+
+            fileInput.addEventListener('change', () => {
+                fileList.innerHTML = ''; // 기존 파일 목록 초기화 (여러 개 허용하려면 이 줄 삭제)
+                
+                Array.from(fileInput.files).forEach((file, index) => {
+                    const item = document.createElement('div');
+                    item.classList.add('file-item');
+                    
+                    const name = document.createElement('span');
+                    name.classList.add('file-name');
+                    name.textContent = file.name;
+                    
+                    const remove = document.createElement('button');
+                    remove.classList.add('file-remove');
+                    remove.textContent = '파일제거버튼';
+                    
+                    remove.addEventListener('click', () => {
+                        // item.remove();
+                        item.innerHTML = `
+                            <p class="desc">첨부파일 등록 허용 기준 : 이미지 사이즈 3M 이내, JPG, GIF, PNG 파일</p>
+                        `;
+                        fileInput.value = ''; // 실제 input 초기화
+                    });
+                    
+                    item.appendChild(name);
+                    item.appendChild(remove);
+                    fileList.appendChild(item);
+                });
+            });
+        });
+    </script>
 </body>
 </html>

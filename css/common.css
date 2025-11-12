@@ -94,6 +94,7 @@ header .head-bottom{display:flex; flex-wrap:wrap; justify-content:space-between;
 .btn-normal{color:var(--font-color-black); background-color:var(--normal-color); border:.1rem solid var(--font-color-gray);}
 .btn-normal.wh{background:#fff; border-color:#A6A8AB;}
 .btn-cmn.gray{background-color:var(--font-color-gray);}
+.btn-cmn.gray2{background-color:#6C6C6C;}
 .btn-cmn.sec{background-color:#1D76BC;}
 .btn-cmn.green{background-color:#8AC650;}
 .btn-cmn.dark-blue{background-color:#3B4963;}
