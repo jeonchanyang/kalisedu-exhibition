@@ -32,6 +32,8 @@
 .noti-grp .noti-gen .swiper.noti{width:100%; height:100%;}
 .noti-grp .noti-gen ul li{font-weight:400; font-size:2rem;}
 .noti-grp .noti-gen .swiper-slide{display:flex; align-items:center;}
+.noti-grp .noti-gen .swiper-slide a{display:inline-flex; align-items:center; width:100%; height:100%;}
+
 .noti-grp .btn-grp button{display:block; width:2rem; height:1.1rem; padding:1rem; background-position:center center; background-size:2rem 1.1rem; background-repeat:no-repeat; box-sizing:content-box;}
 .noti-grp .btn-grp button.btn-up{background-image:url(../images/common/icon_noti_arrow_up.svg);}
 .noti-grp .btn-grp button.btn-down{background-image:url(../images/common/icon_noti_arrow_down.svg);}
