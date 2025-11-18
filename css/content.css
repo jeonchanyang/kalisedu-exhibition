@@ -422,6 +422,7 @@
 .bbs-view .attach-grp dl{display:flex; gap:3rem;}
 .bbs-view .attach-grp dt{font-size:var(--font-size-18);}
 .bbs-view .attach-grp .btn-attach{display:flex; align-items:center; gap:1rem; font-weight:500; font-size:var(--font-size-18);}
+.bbs-view .attach-grp .btn-attach:hover{text-decoration:underline; text-underline-offset:.3rem;}
 .bbs-view .attach-grp .btn-attach .ico{width:1.5rem; height:1.6rem;}
 .bbs-view .attach-grp .btn-attach + .btn-attach{margin-top:1rem;}
 
@@ -447,6 +448,7 @@
 .bbs-view .prev-next-grp li span.date{min-width:9.5rem;}
 .bbs-view .prev-next-grp li > a .txt{display:inline-flex; gap:1rem; align-items:flex-start; width:calc(100% - 26.5rem); font-weight:500;}
 .bbs-view .prev-next-grp li > a .txt p{display:inline-block; overflow:hidden; max-width:100%; white-space:nowrap; text-overflow:ellipsis;}
+.bbs-view .prev-next-grp li:hover > a:not(.empty) .txt p{text-decoration:underline; text-underline-offset:.3rem;}
 .bbs-view .prev-next-grp li > a .txt .ico{flex:0 0 auto; width:1.6rem; height:1.6rem; margin-top:.3rem;}
 .bbs-view .prev-next-grp + .btn-area{margin-top:5rem; text-align:center;}
 .bbs-view .btn-area .btn{width:16rem; height:6rem; font-size:var(--font-size-20);}
