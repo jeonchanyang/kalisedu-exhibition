@@ -40,7 +40,7 @@ header{display:flex; flex-direction:column; background:#fff; z-index:999;}
 .top-noti .btn-close{display:flex; align-items:center; gap:1rem; position:absolute; bottom:0; right:17rem; color:#fff; font-weight:500; font-size:var(--font-size-14);}
 .top-noti .btn-close:after{content:''; display:inline-block; width:3rem; height:3rem; background:url(../images/common/icon_top_bn_close.svg);}
 header .head-top{display:flex; justify-content:space-between; align-items:center; height:10rem; padding:var(--pd-0-17);}
-header .head-top .logo a{display:inline-flex; width:23.9rem; height:5.8rem; text-indent:-9999px; background:url(../images/common/icon_main_logo.svg) center center /  100% no-repeat;}
+header .head-top .logo a{display:inline-flex; width:19.6rem; height:5.8rem; text-indent:-9999px; background:url(../images/common/icon_main_logo.svg) center center /  100% no-repeat;}
 header .head-top .sch-area{flex-basis:50%; position:relative;}
 header .head-top .sch-area input{width:100%; height:5.4rem; padding:1.8rem 5rem 1.8rem 4rem; font-size:var(--font-size-16); border-radius:2.7rem; border:none;}
 header .head-top .btn-sch{display:inline-flex; position:absolute; top:50%; right:1.6rem; width:2rem; height:2rem; padding:2rem; transform:translateY(-50%); background:url(../images/common/icon_serch.svg) center center / 2rem 2rem no-repeat;}
