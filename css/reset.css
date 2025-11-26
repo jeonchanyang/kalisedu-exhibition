@@ -147,6 +147,39 @@
         /* Safari, Android, iOS */
 }
 
+/* GmarketSans */
+@font-face {
+    font-family: "GmarketSans";
+    font-style: normal;
+    font-weight: 300;
+    src: local("GmarketSans-Light"),
+        url("../fonts/gmarketsans/GmarketSans-Light.woff") format("woff"),
+        /* Modern Browsers */
+        url("../fonts/gmarketsans/GmarketSans-Light.ttf") format("truetype");
+        /* Safari, Android, iOS */
+}
+
+@font-face {
+    font-family: "GmarketSans";
+    font-style: normal;
+    font-weight: 500;
+    src: local("GmarketSans-Medium"),
+        url("../fonts/gmarketsans/GmarketSans-Medium.woff") format("woff"),
+        /* Modern Browsers */
+        url("../fonts/gmarketsans/GmarketSans-Medium.ttf") format("truetype");
+        /* Safari, Android, iOS */
+}
+
+@font-face {
+    font-family: "GmarketSans";
+    font-style: normal;
+    font-weight: 700;
+    src: local("GmarketSans-Bold"),
+        url("../fonts/gmarketsans/GmarketSans-Bold.woff") format("woff"),
+        /* Modern Browsers */
+        url("../fonts/gmarketsans/GmarketSans-Bold.ttf") format("truetype");
+        /* Safari, Android, iOS */
+}
 
 
 
@@ -383,9 +416,10 @@ input::placeholder{color:#6C6C6C;}
     --font-color-blue:#0080C5;
     --pd-0-17: 0 17rem;
     --layout-max-width: 192rem;
-    --primary-color: #034EA1;
+    --primary-color: #1464FF;
     --normal-color:#f5f5f5;
     --bg-gray:#f2f4f6;
     --ff-nsr:"NanumSquareRound";
     --ff-default:"Pretendard";
+    --ff-gmarket:"GmarketSans";
 }

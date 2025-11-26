@@ -74,6 +74,7 @@ header .head-bottom{display:flex; flex-wrap:wrap; justify-content:space-between;
 .mnu-info{display:flex; gap:2rem; align-items:center; color:var(--font-color-gray);; font-size:var(--font-size-16);}
 .mnu-info > div{display:flex; gap:2rem;}
 .mnu-info *{color:inherit; font-size:inherit;}
+.mnu-info > *:not(.after, .before){position:absolute;}
 .mnu-info b{color:var(--font-color-black);}
 .mnu-info [class*='btn-']{position:relative; padding-left:2.4rem;}
 .mnu-info [class*='btn-']::before{content:''; display:inline-flex; position:absolute; top:0; left:0; width:2rem; height:2rem; background-repeat:no-repeat; background-size:2rem 2rem; background-position: center center;}
