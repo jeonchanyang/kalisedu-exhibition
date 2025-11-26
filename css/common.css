@@ -128,6 +128,7 @@ header .head-bottom{display:flex; flex-wrap:wrap; justify-content:space-between;
 .btn-cmn.sec{background-color:#1D76BC;}
 .btn-cmn.green{background-color:#8AC650;}
 .btn-cmn.dark-blue{background-color:#3B4963;}
+.btn-cmn.blue{background-color:#1464FF;}
 
 /* tb-layout */
 .tb-layout table{table-layout:fixed; width:100%;}
