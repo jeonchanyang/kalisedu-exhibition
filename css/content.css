@@ -620,9 +620,47 @@
 .transport-list li .list dt + dd{margin-top:1rem;}
 .transport-list li .list dd{font-weight:300; font-size:1.8rem;}
 
+/* res-guide */
+.guide-box{display:flex; gap:2rem;}
+.guide-box li{width:100%; padding:4.4rem 2.5rem; text-align:center; background:#fff; border-radius:1rem;}
+.guide-box li:nth-of-type(even){background:rgba(223, 227, 235, 0.8);}
+.guide-box li .frame img{display:block; height:6rem; margin:0 auto;}
+.guide-box li .tit{display:block; margin-top:3rem; font-weight:700; line-height:2.4rem; font-size:2.6rem;}
+.guide-box li .tit + .desc{margin-top:2rem;}
+.guide-box li .desc{display:inline-block; font-weight:400; line-height:2.4rem; font-size:1.8rem;}
+.guide-box li .desc .txt-point{color:#EB728E;}
 
+.res-guide .info-box li{display:flex; gap:6rem;}
+.res-guide .info-box li + li{position:relative; padding-top:12rem;}
+.res-guide .info-box li + li::before{content:''; display:block; position:absolute; top:6rem; left:0; width:100%; height:.1rem; border-bottom:.1rem dashed #BFC0C4;}
+.res-guide .info-box li .img-grp{overflow:hidden; min-width:60rem; border-radius:1rem;}
+.res-guide .info-box li .img-grp img{display:block; width:100%; aspect-ratio:600 / 350;}
+.res-guide .info-box li .img-grp .title{display:block; width:100%; padding:1.8rem 0; color:#034EA1; font-weight:700; line-height:2.6rem; font-size:2.4rem; text-align:center; background:#DFE3EB; border-radius:0 0 1rem 1rem;}
+.res-guide .info-box li .cont-grp dl{display:flex; flex-wrap:wrap; gap:1rem 2rem; line-height:2.6rem; font-size:1.8rem;}
+.res-guide .info-box li .cont-grp dl dt.has-time{margin-top:.3rem;}
+.res-guide .info-box li .cont-grp dl dt{min-width:13.5rem; font-weight:600;}
+.res-guide .info-box li .cont-grp dl dd{flex-grow:1; width:calc(100% - 20rem);}
+.res-guide .info-box li .cont-grp dl dd.full{width:100%;}
+.res-guide .info-box li .cont-grp dl dd.full .time-grp{gap:1rem; padding-left:1.5rem;}
+.res-guide .info-box li .cont-grp dl dd.full .time-grp + .time-grp{margin-top:.5rem;}
+.res-guide .info-box li .cont-grp .time-grp{display:flex; flex-wrap:wrap; gap:1rem; align-items:center;}
+.res-guide .info-box li .cont-grp .time-grp .inner{display:inline-flex; flex-wrap:wrap; gap:1rem;}
+.res-guide .info-box li .cont-grp .time-grp .tit{min-width:11.5rem;}
+.res-guide .info-box li .cont-grp .time-grp .tit + .time{margin-left:1.5rem;}
+.res-guide .info-box li .cont-grp .time-grp .time{display:inline-block; min-width:7.8rem; padding:.3rem; font-weight:500; line-height:2.4rem; font-size:1.8rem; text-align:center; border:.1rem solid #BFC0C4; border-radius:.5rem;}
+.res-guide .info-box li .cont-grp dl + .btn-area{margin-top:4rem;}
+.res-guide .info-box li .cont-grp .btn-area{justify-content:flex-start;}
 
-
+.inner.res-step .inner-cont + .inner-cont{margin-top:4rem;}
+.inner.res-step .inner-cont .title{display:block; color:#0080C5; font-weight:700; line-height:2.6rem; font-size:2.4rem;}
+.inner.res-step .inner-cont .title .desc{display:inline-block; color:#121212; font-weight:400; font-size:1.8rem;}
+.inner.res-step .inner-cont .title + .step-box{margin-top:2rem;}
+.inner.res-step .inner-cont .step-box{display:flex; gap:2rem;}
+.inner.res-step .inner-cont .step-box li{width:100%; padding:3.2rem 1rem; font-weight:700; line-height:2.2rem; font-size:2rem; text-align:center; background:#fff; border-radius:1rem;}
+.inner.res-step .inner-cont .step-box li .step-badge{display:inline-block; width:10rem; padding:.8rem 1rem; font-weight:600; font-size:1.6rem; background:#D3E2F4; border-radius:5rem;}
+.inner.res-step .inner-cont .step-box li .step-badge + img{margin-top:2rem;}
+.inner.res-step .inner-cont .step-box li img{display:block; margin:0 auto 2rem;}
+.inner.res-step .inner-cont .step-box li .desc{font-weight:400; font-size:1.8rem;}
 
 /* title */
 .h2-title{padding:8.3rem 0 6rem; font-weight:500; font-size:6rem; text-align:center;}
@@ -766,14 +804,16 @@
     .tab-container.full.res-type > .tab-head > li > button .img-grp{width:24rem;}
     .tab-container.full.res-type > .tab-head > li > button .img-grp img{width:24rem;}
     .tab-container.full.res-type > .tab-head > li > button .txt-grp .tit{font-size:2.8rem;}
-}   
+
+    .res-guide .info-box li{gap:3rem;}
+}
 
 
 
 @media(max-width:1024px){
     .inner-wrap{padding:0 2rem;}
     .h2-title{padding:4rem 0 2.4rem; font-size:3.6rem;}
-    .h3-title{margin-bottom:1rem; font-size:2.4rem;}
+    .h3-title{margin-bottom:2rem; font-size:2.4rem;}
     .h3-title img{align-self:flex-start; margin-top:.5rem;}
 
     .res-grp{gap:2.8rem;}
@@ -1146,6 +1186,36 @@
     .transport-list li .list dt{line-height:2.6rem; font-size:1.8rem;}
     .transport-list li .list dt + dd{margin:0;}
     .transport-list li .list dd{line-height:2.6rem; font-size:1.6rem;}
+
+
+    .guide-box{flex-wrap:wrap;}
+    .guide-box li{display:flex; gap:2rem; align-items:center; width:100%; padding:2rem; text-align:left;}
+    .guide-box li .frame{display:block; width:6.2rem;}
+    .guide-box li .frame img{max-width:100%; height:5rem;}
+    .guide-box li .txt-grp{text-align:left;}
+    .guide-box li .tit{margin-top:0;}
+    .guide-box li .tit + .desc{margin-top:1rem;}
+    .res-guide .info-box li{flex-wrap:wrap;}
+    .res-guide .info-box li + li{padding-top:8rem;}
+    .res-guide .info-box li + li::before{top:4rem;}
+    .res-guide .info-box li .img-grp{min-width:unset; width:100%;}
+    .res-guide .info-box li .img-grp .title{padding:1.5rem 0; font-size:2.2rem;}
+    .res-guide .info-box li .cont-grp dl{gap:1rem; font-size:1.6rem;}
+    .res-guide .info-box li .cont-grp dl dt{min-width:10rem;}
+    .res-guide .info-box li .cont-grp .time-grp .time{min-width:6.4rem; font-size:1.6rem;}
+    .res-guide .info-box li .cont-grp dl dd.full .time-grp{gap:.5rem;}
+    .res-guide .info-box li .cont-grp dl dd.full .time-grp + .time-grp{margin-top:1rem;}
+    .res-guide .info-box li .cont-grp dl dd.mo-full{width:100%; padding-left:1.6rem;}
+    .res-guide .info-box li .cont-grp dl + .btn-area{margin-top:2rem;}
+
+    .inner.res-step .inner-cont .title{font-size:2rem;}
+    .inner.res-step .inner-cont .title .desc{font-size:1.6rem;}
+    .inner.res-step .inner-cont .step-box{flex-wrap:wrap;}
+    .inner.res-step .inner-cont .step-box li{width:100%; padding:3rem 1rem;}
+    .inner.res-step + .inner{margin-top:6rem;}
+    .inner.res-step + .inner ul li + li{margin-top:.3rem;}
+
+
 
 }
 
