@@ -597,6 +597,19 @@
 .greetings-wrap .user{display:flex; gap:1rem; align-items:center; margin-top:8rem;}
 .greetings-wrap .user > b{margin-left:1rem; font-size:3rem;}
 
+.greetings-wrap.type02 .txt-grp{flex-wrap:wrap; gap:0;}
+.greetings-wrap.type02 .txt-grp .top{width:100%;}
+.greetings-wrap.type02 .txt-grp .top p{line-height:4.6rem; font-size:3rem; text-align:center;}
+.greetings-wrap.type02 .txt-grp .top + .bottom{margin-top:6rem;}
+.greetings-wrap.type02 .txt-grp .bottom{width:100%;}
+.greetings-wrap.type02 .txt-grp .bottom ul{display:flex; gap:4rem;}
+.greetings-wrap.type02 .txt-grp .bottom ul li{width:100%; padding:5rem 1rem; text-align:center; background:#fff; border-radius:1rem;}
+.greetings-wrap.type02 .txt-grp .bottom ul li > img{display:block; width:12rem; height:12rem; margin:0 auto 4rem;}
+.greetings-wrap.type02 .txt-grp .bottom ul li .tit{display:block; font-weight:700; line-height:2.4rem; font-size:2.6rem;}
+.greetings-wrap.type02 .txt-grp .bottom ul li .tit + .txt{margin-top:2rem;}
+.greetings-wrap.type02 .txt-grp .bottom ul li .txt{display:block; font-size:1.8rem; line-height:2.4rem;}
+
+
 /* map */
 .map-wrap2 .map{width:100%; height:53rem;}
 .map-wrap2 .map > *{display:block; width:100%; height:100%;}
@@ -663,8 +676,9 @@
 .inner.res-step .inner-cont .step-box li img{display:block; margin:0 auto 2rem;}
 .inner.res-step .inner-cont .step-box li .desc{font-weight:400; font-size:1.8rem;}
 
+
 /* title */
-.h2-title{padding:8.3rem 0 6rem; font-weight:500; font-size:6rem; text-align:center;}
+.h2-title{padding:8.3rem 0 5rem; font-weight:500; font-size:6rem; text-align:center;}
 .h3-title{display:flex; gap:1rem; align-items:center; margin-bottom:2rem; font-weight:700; font-size:3.2rem;}
 .sub-disc{margin-top:2rem; font-weight:500; line-height:2.6rem; font-size:2rem;}
 .sub-disc02{font-size:1.6rem; line-height:2.4rem;}
@@ -1118,16 +1132,16 @@
     .experience .img-wrap.numbering li .txt-list::before{font-size:1.8rem;}
     .experience .scroll-wrap .img-wrap li .txt-list p{font-size:1.6rem;}
 
-    .rating-list .top-grp dt, .rating-list .top-grp dd{font-weight:500; font-size:var(--font-size-18); line-height:2.6rem;}
-    .rating-list .top-grp{flex-wrap:wrap; row-gap:.6rem; padding:2rem;}
+    .rating-list .top-grp dt, .rating-list .top-grp dd{font-weight:500; font-size:1.6rem; line-height:2.4rem;}
+    .rating-list .top-grp{flex-wrap:wrap; row-gap:0; padding:.9rem .9rem .9rem 11rem;}
     .rating-list .top-grp dd{width:calc(100% - 15rem); flex-grow:1;}
     .rating-list .top-grp dd + dt{margin:0;}
     .rating-list .rating-choice{padding:2rem;}
-    .rating-list .choice-item{flex-direction:column; row-gap:1rem;}
+    .rating-list .choice-item{flex-direction:column; row-gap:1.5rem;}
     .rating-list .choice-item .btn-cmn{width:100%;}
     .rating-choice .has-icon.txt18{font-weight:500; font-size:var(--font-size-18);}
     .rating-choice .has-icon .ico{flex:0 0 auto; align-self:flex-start; margin-top:.4rem;} 
-    .rating-list > img{display:none;}
+    .rating-list > img{top:-.4rem; width:9.2rem;}
 
     .max-width-inner.info{padding:0 2rem;}
     .inner-wrap.info .swiper .swiper-slide{width:100%;}
@@ -1168,6 +1182,14 @@
     .greetings-wrap > .txt-grp .left p{line-height:2.6rem; font-size:2.2rem;}
     .greetings-wrap > .txt-grp .right{line-height:2.6rem; font-size:1.7rem;}
     .greetings-wrap .user{display:flex; flex-wrap:wrap; font-size:1.7rem;}
+
+    /* greetings-wrap type02 */
+    .inner-wrap.ex .h2-title{padding-bottom:2.6rem;}
+    .greetings-wrap.type02 > .img-grp{position:relative; left:-2rem; width:calc(100% + 4rem);}
+    .greetings-wrap.type02 > .img-grp + .txt-grp{margin-top:6rem;}
+    .greetings-wrap.type02 .txt-grp .top p{line-height:3.4rem; font-size:2.4rem;}
+    .greetings-wrap.type02 .txt-grp .bottom ul{flex-wrap:wrap; gap:3rem;}
+
 
     /* map */
     .map-wrap2{border:none;}
