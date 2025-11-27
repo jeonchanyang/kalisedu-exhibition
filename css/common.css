@@ -149,7 +149,7 @@ select.ipt02{background:url(../images/common/icon_select_down.svg) right top .6r
 
 /* footer */
 .footer{background:#fff;}
-.max-width-inner{max-width:152rem; margin:0 auto;}
+.max-width-inner{max-width:158rem; margin:0 auto;}
 .bd-line-grp{border-top:.1rem solid #DFE3EB; border-bottom:.1rem solid #DFE3EB;}
 .footer-banner-slider{position:relative; padding:1.6rem 0;}
 .footer-banner-slider .swiper{max-width:131.2rem;}
