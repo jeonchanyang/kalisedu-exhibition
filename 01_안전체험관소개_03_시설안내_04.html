@@ -204,16 +204,23 @@
                                 <div class="go-to-wrap">
                                     <ul>
                                         <li>
-                                            <img src="./images/common/icon_goto_thumb01.svg" alt="VR 체험 이미지">
-                                            <p><span class="cnt">ZONE 1</span>위험을빼다 [VR 체험]</p>
+                                            <img src="./images/common/icon_goto_thumb04.svg" alt="출입문 이미지">
+                                            <p>
+                                                <span class="cnt">인도 출입문 개방 시간</span>
+                                                평일 09:00 ~ 17:00<br>
+                                                토요일 09:00 ~ 17:00<br>
+                                                <span class="desc">(공휴일/휴관일 폐쇄)</span>
+
+                                            </p>
                                         </li>
                                         <li>
-                                            <img src="./images/common/icon_goto_thumb02.svg" alt="생활안전, 시설안전 이미지">
-                                            <p><span class="cnt">ZONE 2</span>안전을 더하다 [생활안전, 시설안전]</p>
-                                        </li>
-                                        <li>
-                                            <img src="./images/common/icon_goto_thumb03.svg" alt="경험나누기 이미지">
-                                            <p><span class="cnt">ZONE 3</span>경험을 나누다</p>
+                                            <img src="./images/common/icon_goto_thumb05.svg" alt="차량 이미지">
+                                            <p>
+                                                <span class="cnt">차량 출입문 개방 시간</span>
+                                                평일 09:00 ~ 18:00<br>
+                                                토요일 09:00 ~ 18:00<br>
+                                                <span class="desc">(공휴일/휴관일 폐쇄)</span>
+                                            </p>
                                         </li>
                                     </ul>
                                     <a href="#" class="btn-goto" aria-label="이용안내 페이지로 이동">이용안내 바로가기 <img src="./images/common/icon_goto_arrow.svg" alt="이용안내 화살표 아이콘"></a>
@@ -441,23 +448,47 @@
     </div>
     <script src="./js/common.js"></script>
     <script>
-        const swiperF2 = new Swiper(".swiper.floor-2", {
-            slidesPerView: "auto", // 한번에 보여지는 슬라이드 숫자
-            slidesPerGroup: 1, // 한번에 이동되는 슬라이드 숫자
-            loop: false,
-            breakpoints: {
-                0: {
-                    spaceBetween: 14,
+    document.addEventListener("DOMContentLoaded", function () {
+        const swiperList = document.querySelectorAll('.info .swiper');
+
+        swiperList.forEach((swiperEl) => {
+            
+            // 좌/우 버튼
+            const nextBtn = swiperEl.querySelector('.btn-next');
+            const prevBtn = swiperEl.querySelector('.btn-prev');
+
+            new Swiper(swiperEl, {
+                slidesPerView: "auto", // 한번에 보여지는 슬라이드 숫자
+                slidesPerGroup: 1, // 한번에 이동되는 슬라이드 숫자
+                loop: false,
+                breakpoints: {
+                    0: {
+                        spaceBetween: 14,
+                    },
+                    1024: {
+                        spaceBetween: 28
+                    }
                 },
-                1024: {
-                    spaceBetween: 28
-                }
-            },
-            navigation: {
-                prevEl: ".swiper.floor-2 .btn-prev",
-                nextEl: ".swiper.floor-2 .btn-next",
-            },
+                navigation: {
+                    nextEl: nextBtn,
+                    prevEl: prevBtn
+                },
+            });
         });
+
+        // 탭 클릭 시 swiper 갱신
+        const tabButtons = document.querySelectorAll('.info .tab-container .tab-menu');
+        tabButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                setTimeout(() => {
+                    swiperList.forEach(sw => {
+                        if (sw.swiper) sw.swiper.update(); 
+                    });
+                }, 100);
+            });
+        });
+
+    });
     </script>
 </body>
 </html>
