@@ -141,10 +141,26 @@ const gnbOpen = () => {
 
 // 상단 설문 종료버튼
 const topClose = () => {
-    const targetLayer = document.querySelector(".top-noti");
-    const closeBtn = targetLayer.querySelector(".btn-close");
-    targetLayer.remove();
-}
+    const wrap = document.querySelector('.noti-wrap');
+    const btn = document.querySelector('.btn-noti-close');
+
+    if (!wrap.classList.contains('open')) {
+        // 열기
+        wrap.style.height = wrap.scrollHeight + 'px';
+        wrap.classList.add('open');
+        btn.textContent = '팝업닫기';
+        btn.classList.add('close');
+    } else {
+        // 닫기
+        wrap.style.height = wrap.scrollHeight + 'px';
+        requestAnimationFrame(() => {
+            wrap.style.height = '0';
+        });
+        wrap.classList.remove('open');
+        btn.textContent = '팝업열기';
+        btn.classList.remove('close');
+    }
+};
 
 // 메인배너 우측 Accordion list 토글
 const bnToggle = () => {
@@ -404,6 +420,70 @@ function initMoDropdown() {
     });
 }
 
+// mobile - 상단 검색버튼
+function moBtnSchFn(){
+    const btn = document.querySelector('.mo-btn-grp .mo-btn-search');
+    const target = document.querySelector('.head-top .sch-area');
+
+    if(!btn || !target) return
+
+    btn.addEventListener('click', (e)=>{
+        e.currentTarget.classList.toggle('close');
+
+        if(e.currentTarget.classList.contains('close')){
+            e.currentTarget.textContent = "닫기버튼";
+            target.classList.add('active');
+        }else{
+            e.currentTarget.textContent = "검색버튼";
+            target.classList.remove('active');
+        }
+    });
+}
+
+// mobile - 상단 전체메뉴
+function allMnuFn(){
+    const header = document.querySelector('header');
+    const btn = document.querySelector('.mo-btn-grp .mo-btn-mnu');
+    const btnSch = document.querySelector('.mo-btn-grp .mo-btn-search');
+    const target = document.querySelector('header .head-bottom');
+    
+    if (!header || !btn || !btnSch || !target) return;
+    
+    const gnbBtn = target.querySelectorAll('.gnb > li');
+    
+    btn.addEventListener('click', (e)=>{
+        target.classList.toggle('mo-open');
+        if(target.classList.contains('mo-open')){
+            header.classList.add('bg');
+        }else{
+            header.classList.remove('bg');
+        }
+        e.currentTarget.classList.toggle('close');
+
+        if(e.currentTarget.classList.contains('close')){
+            e.currentTarget.textContent = "메뉴닫기";
+            btnSch.style.display = 'none';
+        }else{
+            e.currentTarget.textContent = "메뉴열기";
+            btnSch.style.display = 'block';
+        }
+    });
+
+    gnbBtn.forEach((el)=>{
+        el.addEventListener('click', (e)=>{
+            const isActive = e.currentTarget.classList.contains('active');
+
+            // 모든 li의 active 제거
+            gnbBtn.forEach(li => li.classList.remove('active'));
+
+            // active 추가
+            if (!isActive) {
+                e.currentTarget.classList.add('active');
+            }
+        });
+    });
+}
+
 // scrollbar custom
 function scrollControlFn(){
     const scrollInner = document.querySelector('.scroll');
@@ -571,6 +651,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if (window.innerWidth < 1024) {
         initMoDropdown();
+        moBtnSchFn();
+        allMnuFn();
     }
 });
 
