@@ -8,7 +8,7 @@
 
 /* main contents */
 .content-wrap.main{padding-bottom:0;}
-.inner-wrap.contents{max-width:158rem; margin:6rem auto 0;}
+.inner-wrap.contents{max-width:158rem; margin:4rem auto 0;}
 .inner-wrap.main-bn{position:relative; height:68rem; color:#fff; background:url(../images/common/img_main_bg_1.webp) center center / cover no-repeat;}
 .inner-wrap.main-bn > *{max-width:158rem; margin-left:auto; margin-right:auto;}
 .inner-wrap.main-bn > *:not(.img-tory){position:relative; z-index:1;}
