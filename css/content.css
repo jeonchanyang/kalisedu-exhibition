@@ -1188,9 +1188,9 @@
     .card-wrap li{width:100%;}
     .card-wrap li .card-inner{padding:4rem 2rem 3rem;}
     
-    .card-wrap li .card-inner strong{font-size:4.8rem;}
-    .card-wrap li .card-inner strong .tit{margin-left:2rem; line-height:2.5rem; font-size:3.2rem;}
-    .card-wrap li .card-inner strong .sm{line-height:1rem;}
+    .card-wrap li .card-inner strong{flex-wrap:wrap; gap:1rem 2rem; font-size:4.8rem;}
+    .card-wrap li .card-inner strong .tit{margin-left:0; line-height:2.5rem; font-size:3.2rem;}
+    .card-wrap li .card-inner strong .sm{margin-left:-1.5rem; line-height:1rem;}
     .card-wrap li .card-inner > img{aspect-ratio:332 / 200;}
     .card-wrap li .badge-list li > *{flex:0 0 auto;}
     .card-wrap .btn-res{height:6.4rem;}
