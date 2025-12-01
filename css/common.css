@@ -342,7 +342,7 @@ body.modal-open{height:100vh; overflow:hidden;}
     .noti-wrap .swiper-slide{min-height:9.3rem; height:auto;}
     .noti-wrap .swiper-slide > a p,
     .noti-wrap .swiper-slide > a p.date{font-size:var(--font-size-18);}
-    .noti-wrap .swiper-slide > a{padding:2rem 2rem 3rem;}
+    .noti-wrap .swiper-slide > a{padding:2rem 2rem 3.5rem;}
     
 
     .footer-cont{position:relative; padding-bottom:14rem;}
