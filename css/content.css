@@ -615,7 +615,7 @@
 .wrap.integrated header{flex-direction:row; gap:3rem; align-items:flex-end; width:100%; padding:2rem 1rem 0; background:transparent;}
 .wrap.integrated header .logo{display:inline-flex; width:23.9rem; height:5.8rem; text-indent:-9999px; background:url(/images/common/icon_main_logo2.svg) center center /  100% no-repeat;}
 .wrap.integrated header .logo a{display:inline-block; width:100%; height:100%;}
-.wrap.integrated header .disc{display:inline-block; margin-bottom:.3rem; color:#fff; font-weight:500; font-size:var(--font-size-24); text-indent:0;}
+.wrap.integrated header .disc{display:inline-block; color:#fff; font-weight:500; font-size:var(--font-size-24); text-indent:0;}
 .wrap.integrated header .logo + .disc{position:relative;}
 .wrap.integrated header .logo + .disc::before{content:''; display:inline-block; position:absolute; top:50%; left:-1.5rem; width:.1rem; height:2rem; background:#fff; transform:translateY(-50%);}
 .wrap.integrated .h2-title{padding:8rem 0 6.2rem; color:#fff;}
@@ -1276,7 +1276,7 @@
     .wrap.integrated{background-image:url(/images/mo/mo_img_integrated_bg.webp); background-size:100% 17.7rem;}
     .wrap.integrated header{gap:2rem;}
     .wrap.integrated header .logo{width:16.1rem; height:3.9rem;}
-    .wrap.integrated header .disc{margin-bottom:.2rem; font-size:1.6rem;}
+    .wrap.integrated header .disc{font-size:1.6rem;}
     .wrap.integrated header .logo + .disc::before{left:-1rem; height:1.4rem;}
     .wrap.integrated .h2-title{padding:4rem 0 3.6rem;}
     .wrap.integrated .int-wrap{background:transparent;}
