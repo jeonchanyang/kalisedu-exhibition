@@ -250,6 +250,7 @@ body.modal-open{height:100vh; overflow:hidden;}
     .footer-cont{flex-direction:column; gap:1rem;}
     .footer-cont .link-area{height:auto;}
 
+    .btn-noti-close{right:2rem;}
 }
 
 
@@ -336,6 +337,9 @@ body.modal-open{height:100vh; overflow:hidden;}
 
     .ipt, .btn-cmn{min-width:unset;}
     .ipt02{font-size:1.8rem;}
+
+    header .head-top .mo-btn-grp{top:.8rem;}
+    .btn-noti-close{right:2rem; height:2.4rem; font-size:1.3rem;}
 }
 
 @media screen and (max-width:768px){
