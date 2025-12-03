@@ -121,23 +121,109 @@ const closeModal = (event, openButton) => {
 };
 window.closeModal = closeModal;
 
-/* gnb */
-const gnbOpen = () => {
+
+/* gnb (s) */
+let currentMode = null; // "pc" 또는 "mobile"
+
+function initGnbState() {
     const gnbList = document.querySelector(".gnb");
-    const listItem = gnbList.querySelectorAll(".gnb > li > a");
+    if (!gnbList) return;
 
-    listItem.forEach((el)=>{
-        el.addEventListener("mouseenter", (e)=>{
-            if(!gnbList.classList.contains('active')){
-                gnbList.classList.add('active');
-            }
-        });
-    });
+    // 모든 active 제거
+    gnbList.classList.remove("active");
+    gnbList.querySelectorAll(":scope > li.active")
+        .forEach(li => li.classList.remove("active"));
+}
 
-    gnbList.addEventListener("mouseleave", ()=>{
-        gnbList.classList.remove('active');
+function bindMobileEvents() {
+    const gnbList = document.querySelector(".gnb");
+    const anchors = gnbList.querySelectorAll(":scope > li > a");
+
+    anchors.forEach(a => {
+        a._mobileHandler = function(e) {
+            if (currentMode !== "mobile") return;
+
+            e.preventDefault();
+            e.stopPropagation();
+
+            const li = a.closest('li');
+            if (!li) return;
+
+            const alreadyActive = li.classList.contains("active");
+
+            // 다른 active 제거
+            gnbList.querySelectorAll(":scope > li.active")
+                .forEach(act => act.classList.remove("active"));
+
+            // toggle
+            if (!alreadyActive) li.classList.add("active");
+        };
+
+        a.addEventListener("click", a._mobileHandler);
     });
 }
+
+function unbindMobileEvents() {
+    const gnbList = document.querySelector(".gnb");
+    const anchors = gnbList.querySelectorAll(":scope > li > a");
+
+    anchors.forEach(a => {
+        if (a._mobileHandler) {
+            a.removeEventListener("click", a._mobileHandler);
+            delete a._mobileHandler;
+        }
+    });
+}
+
+function bindPcEvents() {
+    const gnbList = document.querySelector(".gnb");
+
+    gnbList._pcEnter = function() {
+        if (currentMode === "pc") gnbList.classList.add("active");
+    };
+    gnbList._pcLeave = function() {
+        if (currentMode === "pc") gnbList.classList.remove("active");
+    };
+
+    gnbList.addEventListener("mouseenter", gnbList._pcEnter);
+    gnbList.addEventListener("mouseleave", gnbList._pcLeave);
+}
+
+function unbindPcEvents() {
+    const gnbList = document.querySelector(".gnb");
+
+    if (gnbList._pcEnter) {
+        gnbList.removeEventListener("mouseenter", gnbList._pcEnter);
+        delete gnbList._pcEnter;
+    }
+    if (gnbList._pcLeave) {
+        gnbList.removeEventListener("mouseleave", gnbList._pcLeave);
+        delete gnbList._pcLeave;
+    }
+}
+
+function gnbOpen() {
+    const isMobile = window.innerWidth < 1024;
+    const newMode = isMobile ? "mobile" : "pc";
+
+    if (currentMode === newMode) return; // 모드가 같으면 아무 것도 안 함 (중복 이벤트 방지)
+
+    // 모드 변경
+    currentMode = newMode;
+
+    // 이벤트 초기화 + 상태 초기화
+    unbindMobileEvents();
+    unbindPcEvents();
+    initGnbState();
+
+    // 모드별 이벤트 재등록
+    if (newMode === "mobile") {
+        bindMobileEvents();
+    } else {
+        bindPcEvents();
+    }
+}
+/* enb(e) */
 
 // 상단 설문 종료버튼
 const topClose = () => {
@@ -161,72 +247,6 @@ const topClose = () => {
         btn.classList.remove('close');
     }
 };
-
-// 메인배너 우측 Accordion list 토글
-const bnToggle = () => {
-    const setLiHeight = (li) => {
-        li.style.height = li.scrollHeight / 10 + 'rem';
-    };
-
-    const activeList = document.querySelector(".acco-wrap li.active");
-    if(activeList){
-        setTimeout(()=>{
-            setLiHeight(activeList);
-        }, 200);
-    }
-    
-    const accoBtn = document.querySelectorAll(".acco-wrap li.item > button");
-    accoBtn.forEach((el)=>{
-        el.addEventListener("click", (e)=>{
-            e.preventDefault();
-            e.stopPropagation();
-            const li = el.parentElement;
-            const isActive = li.classList.contains('active');
-
-            if(isActive){
-                return
-            }else{
-                document.querySelectorAll(".acco-wrap li").forEach((el)=>{
-                    el.classList.remove('active');
-                    el.style.height = 11 + 'rem';
-                });
-                li.classList.add('active');
-                setLiHeight(li);
-            }
-        });
-    });
-}
-
-const accoSch = () => {
-    const setItemHeight = (item) => {
-        item.style.height = item.scrollHeight / 10 + 0.1 + 'rem';
-    };
-
-    const activeList = document.querySelector(".acco-wrap.search .item.active");
-    if(activeList){
-        setTimeout(()=>{
-            setItemHeight(activeList);
-        }, 200);
-    }
-
-    const accoBtn = document.querySelectorAll(".acco-wrap.search .item .icon-acco");
-    accoBtn.forEach((el)=>{
-        el.addEventListener("click", (e)=>{
-            e.preventDefault();
-            e.stopPropagation();
-            const targetItem = el.closest(".item");
-            const isActive = targetItem.classList.contains('active');
-
-            if(isActive){
-                targetItem.classList.remove('active');
-                targetItem.style.height = 6.5 + 'rem';
-            }else{
-                targetItem.classList.add('active');
-                setItemHeight(targetItem);
-            }
-        });
-    });
-}
 
 
 // dropdown
@@ -283,6 +303,13 @@ function DropdownMenus() {
     });
 }
 
+let tabEventRegistry = [];
+let moDropdownRegistry = [];
+let mobileMenuHandler = null;
+let parentTabRegistry = [];
+let keepTabRegistry = []; //type02 (모바일에서도 탭 유지)
+let subTabRegistry = [];
+
 // tab
 const initTabs = (containerSelector) => {
     const containers = safeQuerySelectorAll(containerSelector);
@@ -337,6 +364,13 @@ const initTabs = (containerSelector) => {
     });
 };
 
+function destroyParentTabs() {
+    parentTabRegistry.forEach(entry => {
+        entry.element.removeEventListener('click', entry.handler);
+    });
+    parentTabRegistry = [];
+}
+
 // mobile 라디오, 탭 드롭다운 공통처리
 function initMoDropdown() {
     const dropdowns = document.querySelectorAll('.mo-drop');
@@ -346,78 +380,73 @@ function initMoDropdown() {
         const dropdownList = dropdown.querySelector('.mo-dropdown-list');
         const items = dropdownList.querySelectorAll('.tab-menu, .radio-item');
 
-        // 드롭다운 토글 버튼 클릭 시 열고 닫기
-        toggleButton.addEventListener('click', function (e) {
-            e.stopPropagation(); // 이벤트가 상위 요소로 전파되지 않게 처리
-
-            // 탭 클릭 시 드롭다운을 닫기 위해서 다른 드롭다운이 열려 있으면 닫기
-            document.querySelectorAll('.mo-drop.is-open').forEach(openDropdown => {
-                if (openDropdown !== dropdown) {
-                    openDropdown.classList.remove('is-open');
-                }
+        // toggle handler
+        const toggleHandler = (e) => {
+            e.stopPropagation();
+            document.querySelectorAll('.mo-drop.is-open').forEach(d => {
+                if(d !== dropdown) removeClass(d, 'is-open');
             });
+            toggleClass(dropdown, 'is-open');
+        };
+        toggleButton.addEventListener('click', toggleHandler);
+        moDropdownRegistry.push({ element: toggleButton, handler: toggleHandler });
 
-            dropdown.classList.toggle('is-open');
-        });
-
-        // 드롭다운 항목 클릭 시
+        // item click handler
         items.forEach(item => {
-            item.addEventListener('click', function (e) {
-                e.stopPropagation(); // 다른 요소로 이벤트 전파 차단
-
+            const itemHandler = (e) => {
+                e.stopPropagation();
                 let labelText = '';
-                // tabmenu
-                if (item.classList.contains('tab-menu')) {
-                    const tabId = item.getAttribute('data-tab');
-                    const container = dropdown.closest('.tab-container'); 
-                    // 각 드롭다운에 해당하는 탭만 찾기
-                    if (container) {
-                        const tabMenus = container.querySelectorAll('.mo-dropdown-list .tab-menu');
-                        const tabContents = container.querySelectorAll('.mo-drop + .tab-content-wrap > .tab-content')
 
-                        // 해당 컨테이너 내에서만 'is-active' 클래스를 관리
-                        tabMenus.forEach(menu => menu.classList.remove('is-active'));
-                        item.classList.add('is-active');
+                if(item.classList.contains('tab-menu')) {
+                    const tabId = item.getAttribute('data-tab');
+                    const container = dropdown.closest('.tab-container');
+                    if(container){
+                        const tabMenus = container.querySelectorAll('.mo-dropdown-list .tab-menu');
+                        const tabContents = container.querySelectorAll('.mo-drop + .tab-content-wrap > .tab-content');
+
+                        tabMenus.forEach(menu => removeClass(menu,'is-active'));
+                        addClass(item,'is-active');
 
                         tabContents.forEach(content => {
-                            content.classList.remove('is-active');
-                            if (content.id === tabId) {
-                                content.classList.add('is-active');
-                            }
+                            removeClass(content,'is-active');
+                            if(content.id === tabId) addClass(content,'is-active');
                         });
                     }
                     labelText = item.textContent;
                 }
 
-                // radio
-                if (item.classList.contains('radio-item')) {
+                if(item.classList.contains('radio-item')) {
                     const input = item.querySelector('input[type="radio"]');
-                    if (input) {
+                    if(input){
                         input.checked = true;
-
                         const name = input.getAttribute('name');
-                        const allRadios = document.querySelectorAll(`input[name="${name}"]`);
-                        allRadios.forEach(radio => {
-                            radio.closest('.radio-item').classList.remove('is-active');
+                        document.querySelectorAll(`input[name="${name}"]`).forEach(r => {
+                            removeClass(r.closest('.radio-item'),'is-active');
                         });
-                        item.classList.add('is-active');
-
+                        addClass(item,'is-active');
                         labelText = item.textContent.trim();
                     }
                 }
 
-                if (labelText) toggleButton.textContent = labelText;
-                dropdown.classList.remove('is-open');
-            });
+                if(labelText) toggleButton.textContent = labelText;
+                removeClass(dropdown, 'is-open');
+            };
+            item.addEventListener('click', itemHandler);
+            moDropdownRegistry.push({ element: item, handler: itemHandler });
         });
     });
 
-    // 외부 클릭 시 드롭다운 닫기
-    document.addEventListener('click', function () {
-        document.querySelectorAll('.mo-drop.is-open').forEach(open => {
-            open.classList.remove('is-open');
-        });
-    });
+    document.addEventListener('click', closeAllMoDropdowns);
+}
+
+function closeAllMoDropdowns() {
+    document.querySelectorAll('.mo-drop.is-open').forEach(open => removeClass(open,'is-open'));
+}
+
+function destroyMoDropdown() {
+    moDropdownRegistry.forEach(entry => entry.element.removeEventListener('click', entry.handler));
+    moDropdownRegistry = [];
+    document.removeEventListener('click', closeAllMoDropdowns);
 }
 
 // mobile - 상단 검색버튼
@@ -440,48 +469,53 @@ function moBtnSchFn(){
     });
 }
 
-// mobile - 상단 전체메뉴
-function allMnuFn(){
+// mobile - 상단 전체메뉴   
+function allMnuFn() {
     const header = document.querySelector('header');
     const btn = document.querySelector('.mo-btn-grp .mo-btn-mnu');
     const btnSch = document.querySelector('.mo-btn-grp .mo-btn-search');
     const target = document.querySelector('header .head-bottom');
-    
-    if (!header || !btn || !btnSch || !target) return;
-    
+    if(!header || !btn || !btnSch || !target) return;
     const gnbBtn = target.querySelectorAll('.gnb > li');
-    
-    btn.addEventListener('click', (e)=>{
-        target.classList.toggle('mo-open');
-        if(target.classList.contains('mo-open')){
-            header.classList.add('bg');
-        }else{
-            header.classList.remove('bg');
-        }
-        e.currentTarget.classList.toggle('close');
 
+    // 기존 핸들러 제거
+    if(mobileMenuHandler) btn.removeEventListener('click', mobileMenuHandler);
+
+    mobileMenuHandler = (e) => {
+        target.classList.toggle('mo-open');
+        toggleClass(header,'bg');
+        e.currentTarget.classList.toggle('close');
         if(e.currentTarget.classList.contains('close')){
             e.currentTarget.textContent = "메뉴닫기";
             btnSch.style.display = 'none';
-        }else{
+        } else {
             e.currentTarget.textContent = "메뉴열기";
             btnSch.style.display = 'block';
         }
-    });
+    };
+
+    btn.addEventListener('click', mobileMenuHandler);
 
     gnbBtn.forEach((el)=>{
-        el.addEventListener('click', (e)=>{
-            const isActive = e.currentTarget.classList.contains('active');
+        el.addEventListener('click',(e)=>{
+            e.stopPropagation();
+            const li = e.target.closest('li'); // 클릭 대상의 li
+            if(!li) return;
 
-            // 모든 li의 active 제거
-            gnbBtn.forEach(li => li.classList.remove('active'));
+            const isActive = li.classList.contains('active');
+            gnbBtn.forEach(l => removeClass(l,'active'));
 
-            // active 추가
-            if (!isActive) {
-                e.currentTarget.classList.add('active');
-            }
+            if(!isActive) addClass(li,'active');
         });
     });
+}
+
+function destroyAllMnuFn(){
+    const btn = document.querySelector('.mo-btn-grp .mo-btn-mnu');
+    if(btn && mobileMenuHandler){
+        btn.removeEventListener('click', mobileMenuHandler);
+        mobileMenuHandler = null;
+    }
 }
 
 // scrollbar custom
@@ -634,29 +668,99 @@ function bbsAccoFn() {
     });
 }
 
+// Top버튼 공통
+function btnTopFn(){
+    const btnTop = document.querySelector("#btnTop");;
+
+    if(!btnTop) return;
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+            btnTop.classList.add("show");
+        } else {
+            btnTop.classList.remove("show");
+        }
+    });
+
+    btnTop.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+}
+
+// 개인정보처리방침
+function accoOpenByAnchor() {
+    const anchorLinks = document.querySelectorAll('a[href^="#cont"]');
+
+    if(!anchorLinks) return;
+
+    anchorLinks.forEach(a => {
+        a.addEventListener("click", (e) => {
+            const targetId = a.getAttribute("href"); // #cont1
+            const targetLi = document.querySelector(targetId);
+
+            if (!targetLi) return;
+
+            // 기본 앵커 스크롤 작동 전에 아코디언 열어주기
+            setTimeout(() => {
+                // 동일 리스트 내의 모든 .on 제거
+                const parentList = targetLi.parentElement.querySelectorAll("li");
+                parentList.forEach(li => li.classList.remove("on"));
+
+                // 해당 li만 ON
+                targetLi.classList.add("on");
+
+                // 아코디언 열리고 난 뒤 정확한 위치로 스크롤 재조정
+                targetLi.scrollIntoView({ behavior: "smooth", block: "start" });
+            }, 50);
+        });
+    });
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     DropdownMenus();
-    bnToggle();
     initTabs('.tab-container.full');
     initTabs('.tab-container.sub');
-    initTabs('.tab-container.sub.res-type');
     initTabs('.tab-container.notice-wrap');
-    accoSch();
     resAddFn();
     bbsAccoFn();
-     //mobile
-    if (window.innerWidth > 1024) {
-        gnbOpen();
-    }
-    if (window.innerWidth < 1024) {
-        initMoDropdown();
-        moBtnSchFn();
-        allMnuFn();
-    }
+    btnTopFn();
+    gnbOpen();
+    initByMode();
 });
 
-window.addEventListener('resize', () => {
-    DropdownMenus();
-    accoSch();
+let isMobileMode = window.innerWidth < 1024;
+function initByMode() {
+
+    if (isMobileMode) {
+        // 이전 이벤트 제거
+        destroyParentTabs();
+        destroyMoDropdown();
+
+        // 이벤트 등록
+        initMoDropdown();
+        allMnuFn();
+        moBtnSchFn();
+    } else {
+        // 모바일 이벤트 제거
+        destroyMoDropdown();
+        destroyAllMnuFn();
+
+        // PC 이벤트 등록
+        initTabs('.tab-container.full');
+        initTabs('.tab-container.sub');
+        initTabs('.tab-container.notice-wrap');
+    }
+}
+
+// 리사이징 대응
+window.addEventListener('resize',()=>{
+    const nowMobile = window.innerWidth < 1024;
+    if(nowMobile !== isMobileMode){
+        isMobileMode = nowMobile;
+        initByMode();
+        gnbOpen();
+    }
 });

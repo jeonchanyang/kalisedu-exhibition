@@ -246,7 +246,7 @@
 
 /* tab origin */
 .tab-container.full.origin .tab-content-wrap{padding-top:6rem;}
-.tab-container.full.origin > .tab-head li button.is-active, .tab-container.full.origin .mo-dropdown-list .tab-head li button.is-active{background:#8AC650;}
+.tab-container.full.origin > .tab-head li button.is-active, .tab-container.full.origin .mo-dropdown-list .tab-head li button.is-active{background:#1464FF;}
 .tab-container.full.origin .tab-head li:first-child button{border-radius:1rem 0 0 0;}
 .tab-container.full.origin .tab-head li:last-child button{border-radius:0 1rem 0 0;}
 
