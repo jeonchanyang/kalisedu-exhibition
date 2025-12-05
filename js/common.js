@@ -545,10 +545,19 @@ function scrollControlFn(){
 
     //버튼 클릭
     btnLeft.addEventListener('click', () => {
-        scrollInner.scrollBy({ left: -200, behavior: 'smooth' });
+        if(window.innerWidth < 1025){
+            scrollInner.scrollBy({ left: -181, behavior: 'smooth' });
+        }else{
+            scrollInner.scrollBy({ left: -266, behavior: 'smooth' });
+        }
     });
     btnRight.addEventListener('click', () => {
-        scrollInner.scrollBy({ left: 200, behavior: 'smooth' });
+        
+        if(window.innerWidth < 1025){
+            scrollInner.scrollBy({ left: 181, behavior: 'smooth' });
+        }else{
+            scrollInner.scrollBy({ left: 266, behavior: 'smooth' });
+        }
     });
 
 
