@@ -327,7 +327,7 @@ const initTabs = (containerSelector) => {
         const scrollActiveTabIntoView = () => {
             if (isMobile) return;
             const activeTab = tabMenuWrap.querySelector('.tab-menu.is-active');
-            if (activeTab) {
+            if (activeTab && !activeTab.closest('.swiper.res-type')) {
                 activeTab.scrollIntoView({
                     behavior: 'smooth',
                     block: 'nearest',

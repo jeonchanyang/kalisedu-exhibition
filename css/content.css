@@ -224,7 +224,9 @@
 
 
 /* tab */
+.ov-hidden{overflow:hidden;}
 .tab-content{display:none;}
+.tab-content .tab-container:focus-visible{outline:none;}
 .tab-content.is-active{display:block;}
 .tab-container.full .tab-head{display:flex;}
 .tab-container.full .tab-head li{flex-grow:1; width:100%;}
@@ -253,9 +255,23 @@
 .tab-container.full.origin .tab-head li:last-child button{border-radius:0 1rem 0 0;}
 
 
-/* tab res-type full */
+/* tab res-type swiper  */
+.inner-wrap.res-step.pd{padding:0 2.25rem;}
+.inner-wrap.res-step.pd .content-wrap{overflow:hidden;}
+.res-type.swiper{overflow:unset; width:calc(100% + 4.5rem / 2); padding-left:calc(4.5rem / 2); left:calc(-4.5rem / 2);}
+.res-type.swiper .tab-head .swiper-slide{width:calc(100% / 3 - 1rem * 2 / 3); height:auto;}
+.tab-container.res-type.sub > .tab-head > .swiper-slide button{border-radius:1rem;}
+.tab-container.res-type.sub.swiper > .tab-head{overflow:unset;}
+.res-type.swiper .control button{position:absolute; top:50%; width:4.5rem; height:4.5rem; text-indent:-9999px; transform:translateY(-50%); background-position:center center; background-size:100%; background-repeat:no-repeat; z-index:10;}
+.res-type.swiper .control .btn-prev{left:0; background-image:url(../images/common/icon_res_prev.svg);}
+.res-type.swiper .control .btn-next{right:-2.25rem; background-image:url(../images/common/icon_res_next.svg);}
+.res-type.swiper .control button.btn-next.swiper-button-disabled{background-image:url(../images/common/icon_res_next_disabled.svg); cursor:default;}
+.res-type.swiper .control button.btn-prev.swiper-button-disabled{background-image:url(../images/common/icon_res_prev_disabled.svg); cursor:default;}
+
+
+
+
 .tab-container.res-type .tab-head > li + li button{position:relative;}
-.tab-container.res-type .tab-head > li + li button:not(.is-active)::before{content:''; display:inline-block; position:absolute; top:2rem; left:-.1rem; width:.1rem; height:calc(100% - 4rem); background:#62708A;}
 .tab-container.sub.res-type .tab-head > li + li button:not(.is-active)::before{left:0;}
 .res-grp + .res-type{margin-top:6.3rem;}
 .tab-container.full.res-type > .tab-head{border-radius:1rem; box-shadow:.5rem .5rem 2rem 0 rgba(0, 0, 0, 0.15)}
@@ -278,11 +294,12 @@
 .tab-container.full.res-type > .tab-head > li > button.is-active .txt-grp{color:#fff;}
 
 /* tab res-type sub */
-.tab-container.res-type.sub > .tab-head{display:flex; overflow:hidden; background:#0F2A43; border-radius:1rem;}
+.tab-container.res-type.sub > .tab-head{display:flex; overflow:hidden; border-radius:1rem;}
 .tab-container.res-type.sub > .tab-head > li button{display:flex; gap:0 3rem; align-items:center; height:100%; padding:3rem 4rem; color:#fff; border-radius:0;}
-.tab-container.res-type.sub > .tab-head > li button .course{flex:0 0 auto; font-weight:700; font-size:2rem;}
+.tab-container.res-type.sub > .tab-head > li button .course{flex:0 0 auto; min-width:10rem; font-weight:700; font-size:2rem; text-align:left;}
 .tab-container.res-type.sub > .tab-head > li button .course b{margin-right:.5rem; font-size:4.8rem;}
-.tab-container.res-type.sub > .tab-head > li button .tit-grp{display:flex; justify-content:space-between;}
+.tab-container.res-type.sub > .tab-head > li button .course b.all{font-size:3.4rem;}
+.tab-container.res-type.sub > .tab-head > li button .tit-grp{flex-grow:1; display:flex; justify-content:space-between;}
 .tab-container.res-type.sub > .tab-head > li button .tit-grp .txt{display:inline-flex; flex-wrap:wrap; gap:1rem .3rem; align-items:center;}
 .tab-container.res-type.sub > .tab-head > li button .tit-grp .txt strong{width:100%; font-size:2.4rem; line-height:3rem; text-align:left;}
 .tab-container.res-type.sub > .tab-head > li button .tit-grp .txt .zone-grp{display:inline-flex; gap:.7rem; align-items:center; font-size:1.6rem;}
@@ -833,7 +850,8 @@
 .w500{width:50rem;}
 
 /* calendar-header */
-.cal-wrap{position:relative; margin-top:4rem;}
+.res-type + .cal-wrap{margin-top:10rem;}
+.cal-wrap{position:relative;}
 .calendar-header{display:flex; justify-content:space-between; align-items:center; position:absolute; top:1rem; right:0; width:auto; height:3.2rem;}
 .badge-grp{display:flex; gap:2rem;}
 .badge-grp .badge{display:inline-flex; gap:.8rem; align-items:center; font-size:var(--font-size-16);}
@@ -1063,14 +1081,12 @@
     .tab-container.full.res-type > .tab-head > li > button.is-active .txt-grp .tit + ul{padding-right:15rem;}
     .tab-container.full.res-type > .tab-head > li > button.is-active::after{bottom:-5.5rem; border-top:2.8rem solid #0F2A43; border-right:1.4rem solid transparent; border-bottom:2.8rem solid transparent; border-left:1.4rem solid transparent; visibility:hidden;}
     
-    .tab-container.res-type.sub > .tab-head > li button{padding:3rem 1rem 3rem 3rem; border-top:.1rem solid #62708A;}
+    .tab-container.res-type.sub > .tab-head > li button{gap:2rem; padding:3rem 1rem 3rem 3rem; border-top:.1rem solid #62708A;}
     .tab-container.res-type.sub > .tab-head > li button.is-active{border:none;}
     .tab-container.res-type.sub > .tab-head > li button .course b{line-height:3rem;}
-    .tab-container.res-type.sub > .tab-head > li button .tit-grp{margin-top:2rem;}
     .tab-container.res-type.sub > .tab-head > li button .tit-grp .img-timer{align-self:flex-end;}
     .tab-container.res-type.sub > .tab-head > li button .tit-grp .txt .zone-grp{font-weight:400;}
 
-    .tab-container.res-type .tab-head > li + li button:not(.is-active)::before{display:none;}
     .tab-container.full.res-type > .tab-head > li:has(.sub.res-type > ul > li:first-child .tab-menu.is-active) > button.is-active::after{z-index:1; visibility:visible;}
 
     .search-area{flex-wrap:wrap; margin-bottom:4rem;}
@@ -1186,7 +1202,7 @@
     .tb-layout.bbs table .radio-item{height:auto;}
 
     /* fullcalendar custom */
-    .cal-wrap{margin-top:6rem;}
+    .res-type + .cal-wrap{margin-top:6rem;}
     .cal-wrap .calendar-header{top:4rem; right:unset;}
     .cal-wrap .full-calendar .vertical-month-header .vm-nav{display:flex; gap:1.5rem; justify-content:center; align-items:center;}
     .cal-wrap .full-calendar .vertical-month-header .vm-nav .vm-title{font-weight:700; font-size:2.4rem;}

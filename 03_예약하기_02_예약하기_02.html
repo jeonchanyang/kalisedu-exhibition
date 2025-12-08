@@ -119,7 +119,7 @@
                 </div>
             </div>
         </header>
-        <main class="content-wrap" id="content">
+        <main class="content-wrap ov-hidden" id="content">
             <div class="location"> 
                 <ol>
                     <li>
@@ -152,7 +152,7 @@
                     </li>
                 </ol>
             </div>
-            <section class="inner-wrap max-width res-step">
+            <section class="inner-wrap max-width res-step pd">
                 <h2 class="h2-title">예약하기</h2>
                 <div class="inner">
                     <ul class="res-grp">
@@ -266,6 +266,26 @@
                                     <ul class="tab-head">
                                         <li>
                                             <button type="button" class="tab-menu is-active" data-tab="mo-tab2-sub1">
+                                                <span class="course"><b class="all">전체</b>코스</span>
+                                                <div class="tit-grp">
+                                                    <div class="txt">
+                                                        <strong>플러스안전체험관</strong>
+                                                        <span class="zone-grp">
+                                                            <span class="badge">A코스</span>
+                                                        </span>
+                                                        <span class="zone-grp">
+                                                            <span class="badge">B코스</span>
+                                                        </span>
+                                                        <span class="zone-grp">
+                                                            <span class="badge">C코스</span>
+                                                        </span>
+                                                    </div>
+                                                    <img class="img-timer" src="./images/common/icon_res_timer_180.svg" alt="타이머 알림 아이콘 이미지">
+                                                </div>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button type="button" class="tab-menu" data-tab="mo-tab2-sub2">
                                                 <span class="course"><b>A</b>코스</span>
                                                 <div class="tit-grp">
                                                     <div class="txt">
@@ -284,7 +304,7 @@
                                             </button>
                                         </li>
                                         <li>
-                                            <button type="button" class="tab-menu" data-tab="mo-tab2-sub2">
+                                            <button type="button" class="tab-menu" data-tab="mo-tab2-sub3">
                                                 <span class="course"><b>B</b>코스</span>
                                                 <div class="tit-grp">
                                                     <div class="txt">
@@ -303,7 +323,7 @@
                                             </button>
                                         </li>
                                         <li>
-                                            <button type="button" class="tab-menu" data-tab="mo-tab2-sub3">
+                                            <button type="button" class="tab-menu" data-tab="mo-tab2-sub4">
                                                 <span class="course"><b>C</b>코스</span>
                                                 <div class="tit-grp">
                                                     <div class="txt">
@@ -339,6 +359,26 @@
                                     <ul class="tab-head">
                                         <li>
                                             <button type="button" class="tab-menu is-active" data-tab="mo-tab3-sub1">
+                                                <span class="course"><b class="all">전체</b>코스</span>
+                                                <div class="tit-grp">
+                                                    <div class="txt">
+                                                        <strong>플러스안전체험관</strong>
+                                                        <span class="zone-grp">
+                                                            <span class="badge">A코스</span>
+                                                        </span>
+                                                        <span class="zone-grp">
+                                                            <span class="badge">B코스</span>
+                                                        </span>
+                                                        <span class="zone-grp">
+                                                            <span class="badge">C코스</span>
+                                                        </span>
+                                                    </div>
+                                                    <img class="img-timer" src="./images/common/icon_res_timer_180.svg" alt="타이머 알림 아이콘 이미지">
+                                                </div>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button type="button" class="tab-menu" data-tab="mo-tab3-sub2">
                                                 <span class="course"><b>A</b>코스</span>
                                                 <div class="tit-grp">
                                                     <div class="txt">
@@ -357,7 +397,7 @@
                                             </button>
                                         </li>
                                         <li>
-                                            <button type="button" class="tab-menu" data-tab="mo-tab3-sub2">
+                                            <button type="button" class="tab-menu" data-tab="mo-tab3-sub3">
                                                 <span class="course"><b>B</b>코스</span>
                                                 <div class="tit-grp">
                                                     <div class="txt">
@@ -376,7 +416,7 @@
                                             </button>
                                         </li>
                                         <li>
-                                            <button type="button" class="tab-menu" data-tab="mo-tab3-sub3">
+                                            <button type="button" class="tab-menu" data-tab="mo-tab3-sub4">
                                                 <span class="course"><b>C</b>코스</span>
                                                 <div class="tit-grp">
                                                     <div class="txt">
@@ -401,73 +441,97 @@
 
                         <div class="tab-content-wrap pc-only">
                             <div class="tab-content is-active" id="tab1-con1">
-                                <div class="tab-container sub res-type">
-                                    <ul class="tab-head">
-                                        <li>
-                                            <button type="button" class="tab-menu is-active" data-tab="tab1-sub1">
-                                                <span class="course"><b>A</b>코스</span>
-                                                <div class="tit-grp">
-                                                    <div class="txt">
-                                                        <strong>생활안전체험</strong>
-                                                        <span class="zone-grp">
-                                                            <span class="badge">1존</span>
-                                                            VR체험
-                                                        </span>
-                                                        <span class="zone-grp">
-                                                            <span class="badge">2존</span>
-                                                            생활안전
-                                                        </span>
+                                    <div class="tab-container sub res-type swiper">
+                                        <ul class="tab-head swiper-wrapper">
+                                            <li class="swiper-slide">
+                                                <button type="button" class="tab-menu is-active" data-tab="tab1-sub1">
+                                                    <span class="course"><b>A</b>코스</span>
+                                                    <div class="tit-grp">
+                                                        <div class="txt">
+                                                            <strong>생활안전체험</strong>
+                                                            <span class="zone-grp">
+                                                                <span class="badge">1존</span>
+                                                                VR체험
+                                                            </span>
+                                                            <span class="zone-grp">
+                                                                <span class="badge">2존</span>
+                                                                생활안전
+                                                            </span>
+                                                        </div>
+                                                        <img class="img-timer" src="./images/common/icon_res_timer.svg" alt="타이머 알림 아이콘 이미지">
                                                     </div>
-                                                    <img class="img-timer" src="./images/common/icon_res_timer.svg" alt="타이머 알림 아이콘 이미지">
-                                                </div>
-                                            </button>
-                                        </li>
-                                        <li>
-                                            <button type="button" class="tab-menu" data-tab="tab1-sub2">
-                                                <span class="course"><b>B</b>코스</span>
-                                                <div class="tit-grp">
-                                                    <div class="txt">
-                                                        <strong>시설안전체험</strong>
-                                                        <span class="zone-grp">
-                                                            <span class="badge">3존</span>
-                                                            시설안전
-                                                        </span>
-                                                        <span class="zone-grp">
-                                                            <span class="badge">1존</span>
-                                                            VR체험
-                                                        </span>
+                                                </button>
+                                            </li>
+                                            <li class="swiper-slide">
+                                                <button type="button" class="tab-menu" data-tab="tab1-sub2">
+                                                    <span class="course"><b>B</b>코스</span>
+                                                    <div class="tit-grp">
+                                                        <div class="txt">
+                                                            <strong>시설안전체험</strong>
+                                                            <span class="zone-grp">
+                                                                <span class="badge">3존</span>
+                                                                시설안전
+                                                            </span>
+                                                            <span class="zone-grp">
+                                                                <span class="badge">1존</span>
+                                                                VR체험
+                                                            </span>
+                                                        </div>
+                                                        <img class="img-timer" src="./images/common/icon_res_timer.svg" alt="타이머 알림 아이콘 이미지">
                                                     </div>
-                                                    <img class="img-timer" src="./images/common/icon_res_timer.svg" alt="타이머 알림 아이콘 이미지">
-                                                </div>
-                                            </button>
-                                        </li>
-                                        <li>
-                                            <button type="button" class="tab-menu" data-tab="tab1-sub3">
-                                                <span class="course"><b>C</b>코스</span>
-                                                <div class="tit-grp">
-                                                    <div class="txt">
-                                                        <strong>응급처치체험</strong>
-                                                        <span class="zone-grp">
-                                                            <span class="badge">1존</span>
-                                                            VR체험
-                                                        </span>
-                                                        <span class="zone-grp">
-                                                            <span class="badge">1존</span>
-                                                            CPR코너
-                                                        </span>
+                                                </button>
+                                            </li>
+                                            <li class="swiper-slide">
+                                                <button type="button" class="tab-menu" data-tab="tab1-sub3">
+                                                    <span class="course"><b>C</b>코스</span>
+                                                    <div class="tit-grp">
+                                                        <div class="txt">
+                                                            <strong>응급처치체험</strong>
+                                                            <span class="zone-grp">
+                                                                <span class="badge">1존</span>
+                                                                VR체험
+                                                            </span>
+                                                            <span class="zone-grp">
+                                                                <span class="badge">1존</span>
+                                                                CPR코너
+                                                            </span>
+                                                        </div>
+                                                        <img class="img-timer" src="./images/common/icon_res_timer.svg" alt="타이머 알림 아이콘 이미지">
                                                     </div>
-                                                    <img class="img-timer" src="./images/common/icon_res_timer.svg" alt="타이머 알림 아이콘 이미지">
-                                                </div>
-                                            </button>
-                                        </li>
-                                    </ul>
-                                </div>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                        <div class="control">
+                                            <button type="button" class="btn-prev">이전슬라이드</button>
+                                            <button type="button" class="btn-next">다음슬라이드</button>
+                                        </div>
+                                    </div>
                             </div>
                             <div class="tab-content" id="tab1-con2">
-                                <div class="tab-container sub res-type">
-                                    <ul class="tab-head">
-                                        <li>
+                                <div class="tab-container sub res-type swiper">
+                                    <ul class="tab-head swiper-wrapper">
+                                        <li class="swiper-slide">
                                             <button type="button" class="tab-menu is-active" data-tab="tab2-sub1">
+                                                <span class="course"><b class="all">전체</b>코스</span>
+                                                <div class="tit-grp">
+                                                    <div class="txt">
+                                                        <strong>플러스안전체험관</strong>
+                                                        <span class="zone-grp">
+                                                            <span class="badge">A코스</span>
+                                                        </span>
+                                                        <span class="zone-grp">
+                                                            <span class="badge">B코스</span>
+                                                        </span>
+                                                        <span class="zone-grp">
+                                                            <span class="badge">C코스</span>
+                                                        </span>
+                                                    </div>
+                                                    <img class="img-timer" src="./images/common/icon_res_timer_180.svg" alt="타이머 알림 아이콘 이미지">
+                                                </div>
+                                            </button>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <button type="button" class="tab-menu" data-tab="tab2-sub2">
                                                 <span class="course"><b>A</b>코스</span>
                                                 <div class="tit-grp">
                                                     <div class="txt">
@@ -485,8 +549,8 @@
                                                 </div>
                                             </button>
                                         </li>
-                                        <li>
-                                            <button type="button" class="tab-menu" data-tab="tab2-sub2">
+                                        <li class="swiper-slide">
+                                            <button type="button" class="tab-menu" data-tab="tab2-sub3">
                                                 <span class="course"><b>B</b>코스</span>
                                                 <div class="tit-grp">
                                                     <div class="txt">
@@ -504,8 +568,8 @@
                                                 </div>
                                             </button>
                                         </li>
-                                        <li>
-                                            <button type="button" class="tab-menu" data-tab="tab2-sub3">
+                                        <li class="swiper-slide">
+                                            <button type="button" class="tab-menu" data-tab="tab2-sub4">
                                                 <span class="course"><b>C</b>코스</span>
                                                 <div class="tit-grp">
                                                     <div class="txt">
@@ -524,13 +588,37 @@
                                             </button>
                                         </li>
                                     </ul>
+                                    <div class="control">
+                                        <button type="button" class="btn-prev">이전슬라이드</button>
+                                        <button type="button" class="btn-next">다음슬라이드</button>
+                                    </div>
                                 </div>
                             </div>
                             <div class="tab-content" id="tab1-con3">
-                                <div class="tab-container sub res-type">
-                                    <ul class="tab-head">
-                                        <li>
+                                <div class="tab-container sub res-type swiper">
+                                    <ul class="tab-head swiper-wrapper">
+                                        <li class="swiper-slide">
                                             <button type="button" class="tab-menu is-active" data-tab="tab3-sub1">
+                                                <span class="course"><b class="all">전체</b>코스</span>
+                                                <div class="tit-grp">
+                                                    <div class="txt">
+                                                        <strong>스마트안전체험관</strong>
+                                                        <span class="zone-grp">
+                                                            <span class="badge">A코스</span>
+                                                        </span>
+                                                        <span class="zone-grp">
+                                                            <span class="badge">B코스</span>
+                                                        </span>
+                                                        <span class="zone-grp">
+                                                            <span class="badge">C코스</span>
+                                                        </span>
+                                                    </div>
+                                                    <img class="img-timer" src="./images/common/icon_res_timer_180.svg" alt="타이머 알림 아이콘 이미지">
+                                                </div>
+                                            </button>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <button type="button" class="tab-menu" data-tab="tab3-sub2">
                                                 <span class="course"><b>A</b>코스</span>
                                                 <div class="tit-grp">
                                                     <div class="txt">
@@ -548,8 +636,8 @@
                                                 </div>
                                             </button>
                                         </li>
-                                        <li>
-                                            <button type="button" class="tab-menu" data-tab="tab3-sub2">
+                                        <li class="swiper-slide">
+                                            <button type="button" class="tab-menu" data-tab="tab3-sub3">
                                                 <span class="course"><b>B</b>코스</span>
                                                 <div class="tit-grp">
                                                     <div class="txt">
@@ -567,8 +655,8 @@
                                                 </div>
                                             </button>
                                         </li>
-                                        <li>
-                                            <button type="button" class="tab-menu" data-tab="tab3-sub3">
+                                        <li class="swiper-slide">
+                                            <button type="button" class="tab-menu" data-tab="tab3-sub4">
                                                 <span class="course"><b>C</b>코스</span>
                                                 <div class="tit-grp">
                                                     <div class="txt">
@@ -587,6 +675,10 @@
                                             </button>
                                         </li>
                                     </ul>
+                                    <div class="control">
+                                        <button type="button" class="btn-prev">이전슬라이드</button>
+                                        <button type="button" class="btn-next">다음슬라이드</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -934,5 +1026,49 @@
         </footer>
     </div>
     <script src="./js/common.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const swiperList = document.querySelectorAll('.res-type.swiper');
+
+        swiperList.forEach((swiperEl) => {
+            
+            // 좌/우 버튼
+            const nextBtn = swiperEl.querySelector('.btn-next');
+            const prevBtn = swiperEl.querySelector('.btn-prev');
+
+            new Swiper(swiperEl, {
+                slidesPerView: "auto", // 한번에 보여지는 슬라이드 숫자
+                slidesPerGroup: 1, // 한번에 이동되는 슬라이드 숫자
+                loop: false,
+                // slideToClickedSlide: true,
+                breakpoints: {
+                    0: {
+
+                    },
+                    1024: {
+                        spaceBetween: 10
+                    }
+                },
+                navigation: {
+                    nextEl: nextBtn,
+                    prevEl: prevBtn
+                },
+            });
+        });
+
+        // 탭 클릭 시 swiper 갱신
+        const tabButtons = document.querySelectorAll('.res-type.swiper .swiper-slide .tab-menu');
+        tabButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                setTimeout(() => {
+                    swiperList.forEach(sw => {
+                        if (sw.swiper) sw.swiper.update(); 
+                    });
+                }, 100);
+            });
+        });
+
+    });
+    </script>
 </body>
 </html>
