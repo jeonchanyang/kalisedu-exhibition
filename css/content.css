@@ -602,8 +602,8 @@
 .rating-list .rating-choice{padding:4rem 5rem; background:#fff; border-bottom:.1rem solid #D9D9D9;}
 .rating-list .rating-choice p + .choice-item{margin-top:1rem;}
 .rating-list .choice-item{display:flex; justify-content:space-between;}
-.rating-list .choice-item .radio-group{height:100%;}
-.rating-list .choice-item .radio-group label{min-width:14rem;}
+.rating-list .choice-item .radio-group{gap:0; min-height:4.4rem; height:100%;}
+.rating-list .choice-item .radio-group label{min-width:14rem; height:4.4rem;}
 
 /* greetings-wrap */
 .greetings-wrap > .tit-grp{display:block; width:100%; padding:0 0 4rem; color:#034EA1; font-weight:700; line-height:4.2rem; font-size:3.6rem; font-family:var(--ff-gmarket);}
@@ -1270,7 +1270,8 @@
     .card-wrap li .card-inner strong{flex-wrap:wrap; gap:2rem; font-size:4.8rem;}
     .card-wrap li .card-inner strong .tit{margin-left:0; line-height:2.5rem; font-size:3.2rem;}
     .card-wrap li .card-inner strong .sm{margin-left:-1.5rem; line-height:1rem;}
-    .card-wrap li .card-inner > img{aspect-ratio:332 / 200;}
+    .card-wrap li .card-inner > img,
+    .card-wrap.all li .card-inner > img{aspect-ratio:332 / 200;}
     .card-wrap li .badge-list li > *{flex:0 0 auto;}
     .card-wrap .btn-res{height:6.4rem;}
     .tab-container.full .tab-menu .cnt{font-size:1.6rem;}
@@ -1303,6 +1304,9 @@
     .rating-choice .has-icon.txt18{font-weight:500; font-size:var(--font-size-18);}
     .rating-choice .has-icon .ico{flex:0 0 auto; align-self:flex-start; margin-top:.4rem;} 
     .rating-list > img{top:-.4rem; width:9.2rem;}
+    .rating-list .choice-item .radio-group label{width:100%;}
+
+
 
     .max-width-inner.info{padding:0 2rem;}
     .inner-wrap.info .swiper .swiper-slide{width:100%;}
@@ -1447,5 +1451,6 @@
 
 
 @media(max-width:374px){
-    
+    .rating-list .top-grp{padding-left:1.6rem;}
+    .rating-list > img{display:none;}
 }
