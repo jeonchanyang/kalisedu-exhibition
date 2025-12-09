@@ -258,6 +258,8 @@
 /* tab res-type swiper  */
 .inner-wrap.res-step.pd{padding:0 2.25rem;}
 .inner-wrap.res-step.pd .content-wrap{overflow:hidden;}
+.tab-container.full.res-type .tab-content-wrap{width:100%;}
+.tab-container.full.res-type .tab-content-wrap .tab-content{width:100%;}
 .res-type.swiper{overflow:unset; width:calc(100% + 4.5rem / 2); padding-left:calc(4.5rem / 2); left:calc(-4.5rem / 2);}
 .res-type.swiper .tab-head .swiper-slide{width:calc(100% / 3 - 1rem * 2 / 3); height:auto;}
 .tab-container.res-type.sub > .tab-head > .swiper-slide button{border-radius:1rem;}

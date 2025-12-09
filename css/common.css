@@ -279,7 +279,7 @@ body.modal-open{height:100vh; overflow:hidden;}
     header .head-top .mo-btn-grp .mo-btn-mnu.close{background-image:url(../images/common/icon_gnb_close.svg); background-size:1.4rem 1.4rem;}
 
     header .head-bottom{display:none;}
-    header .head-bottom.mo-open{display:flex; position:absolute; top:7rem; width:100%; height:calc(100% - 7rem); padding:0; background:#fff; border-top:none; z-index:10;}
+    header .head-bottom.mo-open{display:flex; overflow-y:auto; position:absolute; top:7rem; width:100%; height:calc(100% - 7rem); padding:0; background:#fff; border-top:none; z-index:10;}
     header .head-bottom.mo-open nav{display:block; width:100%;}
     header .head-bottom.mo-open .gnb{flex-wrap:wrap;}
     header .head-bottom.mo-open .gnb li{width:100%;}
