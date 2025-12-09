@@ -449,6 +449,7 @@
 .bbs-view .attach-grp{padding:2rem 4rem; background:rgba(223, 227, 235, 0.3); border-bottom:.1rem solid #D9D9D9;}
 .bbs-view .attach-grp dl{display:flex; gap:3rem;}
 .bbs-view .attach-grp dt{font-size:var(--font-size-18);}
+.bbs-view .attach-grp dd > p + p{margin-top:1rem;}
 .bbs-view .attach-grp .btn-attach{display:flex; align-items:center; gap:1rem; font-weight:500; font-size:var(--font-size-18);}
 .bbs-view .attach-grp .btn-attach:hover{text-decoration:underline; text-underline-offset:.3rem;}
 .bbs-view .attach-grp .btn-attach .ico{width:1.5rem; height:1.6rem;}
@@ -1133,6 +1134,7 @@
     .bbs-view .attach-grp dl{gap:1rem; flex-wrap:wrap;}
     .bbs-view .attach-grp dl dt{width:100%;}
     .bbs-view .attach-grp dl dt, .bbs-view .attach-grp .btn-attach{font-size:var(--font-size-16);}
+    .bbs-view .attach-grp dd > p + p{margin-top:.5rem;}
     .bbs-view .attach-grp .btn-attach{align-items:flex-start; line-height:2.4rem;}
     .bbs-view .attach-grp .btn-attach + .btn-attach{margin-top:.5rem;}
     .bbs-view .attach-grp .btn-attach .ico{flex:0 0 auto; width:1.6rem; height:1.6rem; margin-top:.3rem;}
