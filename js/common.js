@@ -518,94 +518,144 @@ function destroyAllMnuFn(){
     }
 }
 
-// scrollbar custom
-function scrollControlFn(){
-    const scrollInner = document.querySelector('.scroll');
-    const progress = document.querySelector('.scroll-controller .scroll-progress');
-    const thumb = document.querySelector('.scroll-controller .scroll-thumb');
-    const btnLeft = document.querySelector('.scroll-controller .btn-left');
-    const btnRight = document.querySelector('.scroll-controller .btn-right');
-    
-    
-    function updateThumb(){
-        const ratio = scrollInner.clientWidth / scrollInner.scrollWidth;
-        const thumbWidth = ratio * progress.clientWidth;
-        const maxScroll = scrollInner.scrollWidth - scrollInner.clientWidth;
-        const scrollRatio = scrollInner.scrollLeft / maxScroll;
-        const trackWidth = progress.clientWidth - thumbWidth;
+// scrollController
+function scrollControlFn() {
+    const wraps = document.querySelectorAll('.scroll-wrap');
 
-        thumb.style.width = `${thumbWidth}px`;
-        thumb.style.left = `${scrollRatio * trackWidth}px`;
-    }
+    wraps.forEach(wrap => {
+        if (wrap.__scrollInit) return;
+        wrap.__scrollInit = true;
 
-    updateThumb();
+        const scrollInner = wrap.querySelector('.scroll');
+        const progress = wrap.querySelector('.scroll-controller .scroll-progress');
+        const thumb = wrap.querySelector('.scroll-controller .scroll-thumb');
+        const btnLeft = wrap.querySelector('.scroll-controller .btn-left');
+        const btnRight = wrap.querySelector('.scroll-controller .btn-right');
 
-    scrollInner.addEventListener('scroll', updateThumb);
-    window.addEventListener('resize', updateThumb);
+        if (!scrollInner || !progress || !thumb) return;
 
-    //버튼 클릭
-    btnLeft.addEventListener('click', () => {
-        if(window.innerWidth < 1025){
-            scrollInner.scrollBy({ left: -181, behavior: 'smooth' });
-        }else{
-            scrollInner.scrollBy({ left: -266, behavior: 'smooth' });
+        // update
+        const updateThumb = () => {
+            if (scrollInner.offsetParent === null) return;
+
+            const ratio = scrollInner.clientWidth / Math.max(1, scrollInner.scrollWidth);
+            const thumbWidth = Math.max(16, ratio * progress.clientWidth); //최소width
+            const maxScroll = scrollInner.scrollWidth - scrollInner.clientWidth;
+            const scrollRatio = maxScroll > 0 ? (scrollInner.scrollLeft / maxScroll) : 0;
+            const trackWidth = Math.max(0, progress.clientWidth - thumbWidth);
+
+            thumb.style.width = `${thumbWidth}px`;
+            thumb.style.left = `${scrollRatio * trackWidth}px`;
+
+            // controller
+            const controller = wrap.querySelector('.scroll-controller');
+            if (controller) {
+                if (scrollInner.scrollWidth <= scrollInner.clientWidth + 1) {
+                    controller.style.display = 'none';
+                } else {
+                    controller.style.display = '';
+                }
+            }
+        };
+
+        setTimeout(updateThumb, 50);
+
+        // 바인딩
+        scrollInner.addEventListener('scroll', updateThumb);
+        window.addEventListener('resize', updateThumb);
+
+        // 버튼 클릭
+        if (btnLeft) btnLeft.addEventListener('click', () => {
+            const amount = window.innerWidth < 1025 ? 181 : 266;
+            scrollInner.scrollBy({ left: -amount, behavior: 'smooth' });
+        });
+        if (btnRight) btnRight.addEventListener('click', () => {
+            const amount = window.innerWidth < 1025 ? 181 : 266;
+            scrollInner.scrollBy({ left: amount, behavior: 'smooth' });
+        });
+
+        // thumb 드래그
+        let isDragging = false;
+        let startX = 0;
+        let startLeft = 0;
+
+        const onPointerDown = (e) => {
+            isDragging = true;
+            startX = (e.clientX !== undefined) ? e.clientX : e.touches?.[0]?.clientX;
+            startLeft = parseFloat(getComputedStyle(thumb).left) || 0;
+            document.body.style.userSelect = 'none';
+            thumb.setPointerCapture && thumb.setPointerCapture(e.pointerId);
+        };
+
+        const onPointerMove = (e) => {
+            if (!isDragging) return;
+            const clientX = (e.clientX !== undefined) ? e.clientX : e.touches?.[0]?.clientX;
+            const delta = clientX - startX;
+            const trackWidth = Math.max(0, progress.clientWidth - thumb.clientWidth);
+            let newLeft = Math.max(0, Math.min(trackWidth, startLeft + delta));
+
+            // thumb 위치 적용
+            thumb.style.left = `${newLeft}px`;
+
+            // 스크롤 대응
+            const maxScroll = scrollInner.scrollWidth - scrollInner.clientWidth;
+            const scrollRatio = trackWidth > 0 ? (newLeft / trackWidth) : 0;
+            scrollInner.scrollLeft = scrollRatio * maxScroll;
+        };
+
+        const onPointerUp = (e) => {
+            if (!isDragging) return;
+            isDragging = false;
+            document.body.style.userSelect = '';
+            thumb.releasePointerCapture && thumb.releasePointerCapture(e.pointerId);
+        };
+
+        if (window.PointerEvent) {
+            thumb.addEventListener('pointerdown', onPointerDown);
+            window.addEventListener('pointermove', onPointerMove);
+            window.addEventListener('pointerup', onPointerUp);
+        } else {
+            thumb.addEventListener('mousedown', onPointerDown);
+            window.addEventListener('mousemove', onPointerMove);
+            window.addEventListener('mouseup', onPointerUp);
+
+            // touch
+            thumb.addEventListener('touchstart', onPointerDown, { passive: true });
+            window.addEventListener('touchmove', onPointerMove, { passive: false });
+            window.addEventListener('touchend', onPointerUp);
         }
-    });
-    btnRight.addEventListener('click', () => {
-        
-        if(window.innerWidth < 1025){
-            scrollInner.scrollBy({ left: 181, behavior: 'smooth' });
-        }else{
-            scrollInner.scrollBy({ left: 266, behavior: 'smooth' });
-        }
-    });
 
+        // track click
+        progress.addEventListener('click', (e) => {
+            if (e.target === thumb) return;
+            const rect = progress.getBoundingClientRect();
+            const clickX = e.clientX - rect.left;
+            const thumbWidth = thumb.clientWidth;
+            const trackWidth = Math.max(0, progress.clientWidth - thumbWidth);
 
-    let isDragging = false;
-    let startX;
+            const newLeft = Math.max(0, Math.min(trackWidth, clickX - thumbWidth / 2));
+            const maxScroll = scrollInner.scrollWidth - scrollInner.clientWidth;
+            const scrollRatio = trackWidth > 0 ? (newLeft / trackWidth) : 0;
+            const targetScroll = scrollRatio * maxScroll;
 
-    thumb.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        startX = e.clientX - thumb.offsetLeft;
-        document.body.style.userSelect = 'none';
-    });
+            scrollInner.scrollTo({ left: targetScroll, behavior: 'auto'});
 
-    document.addEventListener('mouseup', () => {
-        isDragging = false;
-        document.body.style.userSelect = '';
-    });
+            // 업데이트
+            requestAnimationFrame(updateThumb);
+        });
 
-    document.addEventListener('mousemove', (e) => {
-        if (!isDragging) return;
-        const trackWidth = progress.clientWidth - thumb.clientWidth;
-        let newLeft = e.clientX - startX;
-        newLeft = Math.max(0, Math.min(trackWidth, newLeft));
-        thumb.style.left = `${newLeft} / 10 + rem`;
-
-        const maxScroll = scrollInner.scrollWidth - scrollInner.clientWidth;
-        const scrollRatio = newLeft / trackWidth;
-        scrollInner.scrollLeft = scrollRatio * maxScroll;
+        // tab 등으로 보이기 상태가 변경됐을 때 재계산 필요하면 외부에서 호출하도록 메서드 노출
+        wrap.updateScrollThumb = updateThumb;
     });
 
-    // 트랙 클릭
-    progress.addEventListener('click', (e) => {
-    // thumb 클릭시엔 무시
-        if (e.target === thumb) return;
-
-        const rect = progress.getBoundingClientRect();
-        const clickX = e.clientX - rect.left;
-        const thumbWidth = thumb.clientWidth;
-        const trackWidth = progress.clientWidth - thumbWidth;
-
-        // 클릭 위치 기준으로 스크롤 계산
-        const newLeft = Math.max(0, Math.min(trackWidth, clickX - thumbWidth / 2));
-        const maxScroll = scrollInner.scrollWidth - scrollInner.clientWidth;
-        const scrollRatio = newLeft / trackWidth;
-        const targetScroll = scrollRatio * maxScroll;
-
-        scrollInner.scrollTo({ left: targetScroll, behavior: 'auto'});
-    });
+    // 전역으로 재계산 빠르게 호출할 유틸
+    window.updateAllScrollThumbs = function() {
+        document.querySelectorAll('.scroll-wrap').forEach(w => {
+            if (w.updateScrollThumb) w.updateScrollThumb();
+        });
+    };
 }
+
 
 //예약하기 인원추가
 function resAddFn(){
