@@ -144,8 +144,8 @@ select.ipt02{background:url(../images/common/icon_select_down.svg) right top .6r
 .footer-banner-slider .swiper .swiper-slide{width:auto;}
 .footer-banner-slider .swiper-button-next:after, 
 .footer-banner-slider .swiper-button-prev:after{display:none;}
-.footer-banner-slider .swiper .swiper-slide > a{display:inline-block; width:24rem; height:5rem;}
-.footer-banner-slider .swiper .swiper-slide > a img{display:block; width:100%;}
+.footer-banner-slider .swiper .swiper-slide > a{display:inline-block; height:5rem;}
+.footer-banner-slider .swiper .swiper-slide > a img{display:block; height:100%;}
 
 .footer-cont{display:flex; gap:3.8rem; padding:3.2rem 0 4.4rem; font-size:var(--font-size-16);}
 .footer-cont .address-grp{flex-grow:1; max-width:96rem;}
@@ -163,7 +163,7 @@ select.ipt02{background:url(../images/common/icon_select_down.svg) right top .6r
 .footer-cont .txt-list li dl dt{min-width:5.5rem; font-weight:700;}
 .footer-cont .txt-list li dl dd{flex-basis:calc(100% - 12rem); flex-grow:1;}
 .footer-cont address{margin-top:2.6rem; color:var(--font-color-gray);}
-.footer-cont .family-grp .dropdown-wrap{margin-top:.8rem;}
+.footer-cont .family-grp .dropdown-wrap{width:24rem; margin-top:.8rem;}
 
 /* dropdown */
 .dropdown-wrap{width:24rem;}
@@ -315,8 +315,8 @@ body.modal-open{height:100vh; overflow:hidden;}
 
     .footer-banner-slider{padding:2rem;}
     .footer-banner-slider .swiper{width:100%;}
-    .footer-banner-slider .swiper .swiper-slide > a{display:block; width:18rem; height:3.8rem;}
-    .footer-banner-slider .swiper .swiper-slide > a img{width:100%;}
+    .footer-banner-slider .swiper .swiper-slide > a{display:block; height:3.8rem;}
+    .footer-banner-slider .swiper .swiper-slide > a img{height:100%;}
     .footer-banner-slider .swiper-button{display:none;}
     .footer-cont .txt-list li dl{flex-direction:column; row-gap:.7rem;}
     .footer-cont .txt-list li dd + dt{margin-top:.9rem;}
@@ -359,7 +359,7 @@ body.modal-open{height:100vh; overflow:hidden;}
     
 
     .footer-cont{position:relative; padding-bottom:14rem;}
-    .footer-cont .txt-list{flex-direction:column;}
+    .footer-cont .txt-list{flex-direction:column; margin-top:1.2rem;}
     .footer-cont .family-grp .dropdown-wrap{width:100%; margin-top:2.5rem;}
     .address-grp address{position:absolute; bottom:6.5rem;}
     .footer-cont .link-area{position:absolute; top:2.7rem; padding-right:2rem;}

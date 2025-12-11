@@ -12,7 +12,7 @@
 .inner-wrap.main-bn{position:relative; height:68rem; color:#fff; background:url(../images/common/img_main_bg_1.webp) center center / cover no-repeat;}
 .inner-wrap.main-bn > *{max-width:158rem; margin-left:auto; margin-right:auto;}
 .inner-wrap.main-bn > *:not(.img-tory){position:relative; z-index:1;}
-.inner-wrap.main-bn .h2-title{padding:10rem 0 0; font-size:5.4rem; text-align:left;}
+.inner-wrap.main-bn .h2-title{padding:10rem 0 0; font-weight:700; font-size:5.4rem; text-align:left;}
 .inner-wrap.main-bn .h2-title .sub-tit{display:block; margin-top:1rem; font-weight:500; line-height:normal; font-size:2rem;}
 .inner-wrap.main-bn .bn-grp{display:flex; gap:2.8rem; margin-top:11rem;}
 .inner-wrap.main-bn .bn-grp .btn-bn{display:inline-block; max-width:50.8rem; width:100%; height:auto; text-indent:-9999px; background-position:center center; background-size:100%; background-repeat:no-repeat; aspect-ratio:508 / 300;}
@@ -56,14 +56,14 @@
 
 /* inner-wrap story */
 .inner-wrap.story{position:relative; width:100%; height:auto; margin:4rem auto 0; background:url(../images/common/img_story_bg.svg) center center / cover no-repeat;}
-.inner-wrap.story .bg-img{position:absolute; bottom:0; z-index:0;}
+.inner-wrap.story .bg-img{position:absolute; bottom:0; left:-65rem; z-index:-1;}
 .inner-wrap.story > *:not(.bg-img){position:relative; z-index:1;}
 .inner-wrap.story .tit{color:#fff; font-weight:800; font-size:4.8rem; font-family:var(--ff-nsr);}
 .inner-wrap.story .tit .sub-tit{display:block; margin-top:1.4rem; font-weight:400; font-size:2rem; font-family:var(--ff-default);}
-.inner-wrap.story .stroy-cont{width:63%; max-width:121rem; margin-left:auto; padding-top:7.5rem;}
+.inner-wrap.story .stroy-cont{width:100%; max-width:calc(100vw - 74rem); margin-left:70rem; padding-top:7.5rem;}
 .inner-wrap.story .img-wrap{display:flex; gap:2.8rem;}
 .inner-wrap.story .img-wrap li{flex:0 0 auto;}
-.inner-wrap.story .img-wrap li a{display:inline-flex; flex-direction:column; justify-content:flex-end; align-items:center; width:23.8rem; height:21rem; padding-bottom:4rem; font-weight:500; line-height:2.4rem; font-size:1.8rem; background:#fff; border-radius:2rem;}
+.inner-wrap.story .img-wrap li a{display:inline-flex; flex-direction:column; justify-content:flex-end; align-items:center; width:23.8rem; height:21rem; padding-bottom:4rem; font-weight:500; line-height:2.4rem; font-size:1.8rem; background:rgba(255, 255, 255, .9); border-radius:2rem;}
 .inner-wrap.story .img-wrap li a img{display:block; margin-bottom:2.5rem;}
 .inner-wrap.story .tit + .scroll-wrap{margin-top:3.5rem;}
 
@@ -637,10 +637,11 @@
 .greetings-wrap.type02 .txt-grp .bottom ul li .txt{display:block; font-size:1.8rem; line-height:2.4rem;}
 
 /* 통합검색 - integrated */
-.wrap.integrated{background:#f2f4f6 url(/images/common/img_integrated_bg.webp) center top / 100vw 42.4rem no-repeat;}
+.wrap.integrated{position:relative; background:#f2f4f6; z-index:0;}
+.wrap.integrated::before{content:''; display:block; position:absolute; top:0; width:100%; height:42.4rem; background:url(/images/common/img_integrated_bg.webp) top / 100%; z-index:-1;}
 .wrap.integrated .content-wrap{background:transparent;}
 .wrap.integrated header{flex-direction:row; gap:3rem; align-items:flex-end; width:100%; padding:2rem 1rem 0; background:transparent;}
-.wrap.integrated header .logo{display:inline-flex; width:23.9rem; height:5.8rem; text-indent:-9999px; background:url(/images/common/icon_main_logo2.svg) center center /  100% no-repeat;}
+.wrap.integrated header .logo{display:inline-flex; width:19.7rem; height:5.9rem; text-indent:-9999px; background:url(/images/common/icon_main_logo2.svg) center center /  100% no-repeat;}
 .wrap.integrated header .logo a{display:inline-block; width:100%; height:100%;}
 .wrap.integrated header .disc{display:inline-block; color:#fff; font-weight:500; font-size:var(--font-size-24); text-indent:0;}
 .wrap.integrated header .logo + .disc{position:relative;}
@@ -928,6 +929,8 @@
     .int-wrap .popular-wrap > .inner h3{flex:0 0 auto;}
     .int-wrap .popular-wrap > .inner .list{flex-wrap:wrap; row-gap:1.5rem;}
     
+    /* .inner-wrap.story .bg-img{left:-80rem;} */
+    .inner-wrap.story .stroy-cont{max-width:calc(100vw - 54rem); margin-left:50rem;}
 }
 
 @media(max-width:1240px){
@@ -982,7 +985,7 @@
     .map-wrap .img-grp img{aspect-ratio:372 / 290;}
 
     .inner-wrap.story{overflow:hidden; margin-top:6.4rem; padding:0; background-image:url(../images/mo/mo_img_story_bg.webp);}
-    .inner-wrap.story .stroy-cont{width:calc(100% - 2rem); margin-left:2rem; padding-top:5rem;}
+    .inner-wrap.story .stroy-cont{max-width:unset; width:calc(100% - 2rem); margin-left:2rem; padding-top:5rem;}
     .inner-wrap.story .tit{font-size:4rem;}
     .inner-wrap.story .tit .sub-tit{margin-top:1rem;}
     .inner-wrap.story .bg-img{right:unset; bottom:50%; left:18rem; max-width:25.1rem; width:100%; margin-bottom:-3.1rem;}
@@ -1085,7 +1088,7 @@
     .tab-container.full.res-type > .tab-head > li > button .txt-grp ul li{font-weight:500;}
     .tab-container.full.res-type > .tab-head > li > button .txt-grp ul li + li{margin-top:.5rem;}
     
-    .tab-container.full.res-type > .tab-head > li > button.is-active{padding:2rem 3rem 3rem; background-position:right .7rem bottom -.1rem; background-size:17rem 13rem;}
+    .tab-container.full.res-type > .tab-head > li > button.is-active{padding:2rem 3rem 3rem; background-image:url(../images/mo/mo_icon_res_tab_thumb.svg); background-position:right .7rem bottom -.1rem; background-size:17rem 13rem;}
     .tab-container.full.res-type > .tab-head > li > button.is-active .txt-grp .tit + ul{padding-right:15rem;}
     .tab-container.full.res-type > .tab-head > li > button.is-active::after{bottom:-5.5rem; border-top:2.8rem solid #0F2A43; border-right:1.4rem solid transparent; border-bottom:2.8rem solid transparent; border-left:1.4rem solid transparent; visibility:hidden;}
     
@@ -1461,4 +1464,9 @@
 @media(max-width:374px){
     .rating-list .top-grp{padding-left:1.6rem;}
     .rating-list > img{display:none;}
+
+    .inner-wrap.main-bn .h2-title{font-size:4.2rem;}
+    .inner-wrap.main-bn .h2-title .sub-tit{font-size:1.8rem;}
+
+    .inner-wrap.story .bg-img{left:15rem;}
 }
