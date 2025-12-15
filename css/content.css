@@ -1239,8 +1239,8 @@
     .cal-wrap .full-calendar .vertical-month-header .vm-nav button.vm-next{background-image:url(../images/common/icon_fc_arrow_next.svg);}
     .cal-wrap .full-calendar .vertical-month .vm-day + .vm-day{margin-top:.2rem;}
     .cal-wrap .full-calendar .vertical-month-header + .vertical-month{margin-top:5.7rem;}
-    .cal-wrap .full-calendar .vertical-month .vm-day{display:flex; gap:3rem; padding:1.4rem 4rem; background:#fff;}
-    .cal-wrap .full-calendar .vertical-month .vm-day .vm-date{width:4.6rem;}
+    .cal-wrap .full-calendar .vertical-month .vm-day{display:flex; gap:2rem; padding:1.4rem 3rem; background:#fff;}
+    .cal-wrap .full-calendar .vertical-month .vm-day .vm-date{flex:0 0 auto; width:4.6rem;}
     .cal-wrap .full-calendar .vertical-month .vm-day .vm-date span{display:inline-block; width:100%; font-weight:700; font-size:1.4rem; text-align:center;}
     .cal-wrap .full-calendar .vertical-month .vm-day.sat .vm-date span{color:#0080C5;}
     .cal-wrap .full-calendar .vertical-month .vm-day.sun .vm-date span,
