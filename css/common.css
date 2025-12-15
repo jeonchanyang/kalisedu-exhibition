@@ -84,7 +84,7 @@ header .head-bottom{display:flex; flex-wrap:wrap; justify-content:space-between;
 .location .dropdown-wrap{position:relative;}
 .location .dropdown-wrap .dropdown-list{position:absolute; width:100%; margin:0;}
 .location .dropdown-wrap.is-open .dropdown-list{z-index:100; background:#f2f4f6; border:none; border-radius:0; outline:.1rem solid #A6A8AB;}
-.location .dropdown-wrap .btn-dropdown{height:5rem; font-weight:300; background:transparent; border:none;}
+.location .dropdown-wrap .btn-dropdown{gap:3rem; height:5rem; font-weight:300; background:transparent; border:none;}
 .location .dropdown-wrap.dropdown-link .btn-dropdown{color:#034EA1;  font-weight:500;}
 
 /* radio-group & checkbox-group */
@@ -166,9 +166,9 @@ select.ipt02{background:url(../images/common/icon_select_down.svg) right top .6r
 .footer-cont .family-grp .dropdown-wrap{width:24rem; margin-top:.8rem;}
 
 /* dropdown */
-.dropdown-wrap{width:24rem;}
+.dropdown-wrap{min-width:24rem;}
 .dropdown-wrap .btn-dropdown{display:inline-flex; justify-content:space-between; align-items:center; width:100%; height:4.5rem; padding:1.3rem 2rem; font-size:var(--font-size-16); text-align:left; background:#fff; border:.1rem solid #A6A8AB; border-radius:.4rem;}
-.dropdown-wrap .btn-dropdown::after{content:''; display:inline-block; width:1.2rem; height:8rem; background:url(../images/common/icon_drop_arrow_down.svg) center center / 100% 100% no-repeat;}
+.dropdown-wrap .btn-dropdown::after{content:''; display:inline-block; width:1.2rem; height:.8rem; background:url(../images/common/icon_drop_arrow_down.svg) center center / 100% 100% no-repeat;}
 .dropdown-wrap .dropdown-list{display:flex; flex-wrap:wrap; overflow:auto; max-height:0; margin-top:.5rem; border:none; transition: max-height 0.3s ease; border-radius:.4rem;}
 .dropdown-wrap .dropdown-list .footer-link{display:inline-flex; width:100%; height:4.5rem; padding:1.3rem 2rem;}
 .dropdown-wrap .btn-family:hover, .dropdown-wrap .dropdown-list .footer-link:hover{background:#f2f4f6;}
@@ -237,6 +237,7 @@ body.modal-open{height:100vh; overflow:hidden;}
 }
 
 @media screen and (max-width:1440px) {
+    .gnb > li a{padding:1rem;}
     .noti-wrap .swiper-slide > a,
     header .head-top,
     header .head-bottom{padding:0 2rem;}

@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>국토안전교육원 - KALIS</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/content.css">
+    <link rel="stylesheet" href="/css/swiper-bundle.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
+    <script src="/js/swiper-bundle.min.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <ul class="skip">
+            <li><a href="#content">본문내용 바로가기</a></li>
+            <li><a href="#gnb">주내용 바로가기</a></li>
+        </ul>
+        <header>
+            <div class="head-top">
+                <h1 class="logo"><a href="/index.html">국토안전관리원 국토안전교육원 로고</a></h1>
+                <div class="sch-area">
+                    <label for="searchInput" class="sr-only">검색어 입력</label>
+                    <input type="text" placeholder="검색어를 입력하세요" id="searchInput">
+                    <button type="button" class="btn-sch"></button>
+                </div>
+                <div class="mo-only mo-btn-grp">
+                    <button class="mo-btn-search btn-sch">검색버튼</button>
+                    <button class="mo-btn-mnu">메뉴열기</button>
+                </div>
+                <button class="btn-noti-close close" onclick="topClose();">팝업닫기</button>
+            </div>
+
+            <div class="head-bottom">
+                <nav id="gnb">
+                    <ul class="gnb">
+                        <li>
+                            <a href="#">법정교육</a>
+                            <ul class="gnb-depth2">
+                                <li class="tit">법정교육</li>
+                                <li>
+                                    <a href="/국토안전교육원_01법정교육_01법정교육소개.html">법정교육 소개</a>
+                                </li>
+                                <li>
+                                    <a href="#">교육안내 · 일정 · 신청</a>
+                                </li>
+                                <li>
+                                    <ul class="gnb-depth3">
+                                        <li><a href="/국토안전교육원_02교육안내일정신청_01시설물안전법.html">시설물안전법</a></li>
+                                        <li><a href="#">지하안전법</a></li>
+                                        <li><a href="#">건축물 관리법</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">대국민안전교육</a>
+                            <ul class="gnb-depth2">
+                                <li class="tit">대국민안전교육</li>
+                                <li>
+                                    <a href="/국토안전교육원_02대국민안전교육_01대국민안전교육소개.html">대국민안전교육 소개</a>    
+                                </li>
+                                <li>
+                                    <a href="#">교육안내 · 일정 · 신청</a>
+                                </li>
+                                <li>
+                                    <ul class="gnb-depth3">
+                                        <li><a href="/국토안전교육원_02대국민안전교육_02교육안내일정신청_01청소년안전교육.html">청소년 안전교육</a></li>
+                                        <li><a href="/국토안전교육원_02대국민안전교육_02교육안내일정신청_02KALIS맞춤형지역인재양성과정.html">지역인재양성과정</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">수강안내</a>
+                            <ul class="gnb-depth2">
+                                <li class="tit">수강안내</li>
+                                <li>
+                                    <a href="/국토안전교육원_03수강안내_01신청및입교안내_탭01접수및학사관리기준안내.html">신청 및 입교안내</a>
+                                </li>
+                                <li>
+                                    <a href="/국토안전교육원_03수강안내_02교육비안내.html">교육비 안내</a>
+                                </li>
+                                <li>
+                                    <a href="/국토안전교육원_03수강안내_03고용보험환급안내.html">고용보험환급 안내</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">정보마당</a>
+                            <ul class="gnb-depth2">
+                                <li class="tit">정보마당</li>
+                                <li>
+                                    <a href="/국토안전교육원_04정보마당_01공지사항.html">공지사항</a>    
+                                </li>    
+                                <li>
+                                    <a href="/국토안전교육원_04정보마당_02자주묻는질문.html">자주 묻는 질문</a>
+                                </li>
+                                <li>
+                                    <a href="/국토안전교육원_04정보마당_03자료실.html">자료실</a>
+                                </li>
+                                <li>
+                                    <a href="/국토안전교육원_04정보마당_04질의응답.html">질의응답</a>
+                                </li>
+                                <li>
+                                    <a href="/국토안전교육원_04정보마당_05설문조사.html">설문조사</a>
+                                </li>
+                                <li>
+                                    <a href="#">강사채널</a>
+                                </li>
+                                <li>
+                                    <a href="/국토안전교육원_04정보마당_Kalissue소식.html">Kalissue소식</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">국토안전교육원 소개</a>
+                            <ul class="gnb-depth2">
+                                <li class="tit">국토안전교육원 소개</li>
+                                <li>
+                                    <a href="/국토안전교육원_05국토안전교육원소개_01교육원장인사말.html">교육원장 인사말</a>   
+                                </li>
+                                <li>
+                                    <a href="/국토안전교육원_05국토안전교육원소개_02연혁.html">연혁</a>
+                                </li>
+                                <li>
+                                    <a href="/국토안전교육원_05국토안전교육원소개_03미션및비전.html">미션 및 비전</a>
+                                </li>
+                                <li>
+                                    <a href="/국토안전교육원_05국토안전교육원소개_04조직도.html">조직도</a>
+                                </li>
+                                <li>
+                                    <a href="/국토안전교육원_05국토안전교육원소개_05찾아오시는길.html">찾아오시는 길</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="mnu-info">
+                    <!-- 기존 html에서 div로 묶어서 변수명.style.display="none", "flex"로 활용 -->
+                    <div class="before" style="display:none;">
+                        <p><b>홍길동</b>님 안녕하세요</p>
+                        <a href="#" class="btn-mypage">마이페이지</a>
+                        <button type="button" class="btn-logout">로그아웃</button>
+                    </div>
+                    <div class="after" style="display:flex;">
+                        <a href="/회원가입.html" class="btn-mypage access">회원가입</a>
+                        <a href="/아이디_로그인.html" class="btn-logout login">로그인</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="content-wrap" id="content">
+            <div class="location"> 
+                <ol>
+                    <li>
+                        <a href="/index.html" aria-label="메인화면으로 이동"><i class="ico icon-home"></i></a>
+                    </li>
+                    <li>
+                        <div class="dropdown-wrap dropdown-link">
+                            <button type="button" class="btn btn-dropdown">
+                                고정형 영상정보처리기기 운영관리방침
+                            </button>
+                            <div class="dropdown-list is-up is-open">
+                                <a href="/저작권정책.html" class="link" target="_blank">고정형 영상정보처리기기 운영관리방침</a>      
+                            </div>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <section class="inner-wrap max-width fix">
+                <h2 class="h2-title">고정형 영상정보처리기기 운영관리방침</h2>
+
+                <div class="inner">
+                    <div class="bg-gray-box">
+                        <p class="txt20 fwsb tac">
+                            본 국토안전관리원(이하 국토안전관리원이라 함)은 고정형 영상정보처리기기 운영·관리 방침을 통해<br class="pc-only">
+                            국토안전관리원에서 처리하는 영상정보가 어떠한 용도와 방식으로 이용·관리되고 있는지 알려드립니다.
+                        </p>
+                    </div>
+                    <p class="mt20 bullet txt18 fwm">국토안전관리원은 이동형 영상정보처리기기를 운영·관리하고 있지 않습니다.</p>
+
+                    <ul class="course-list">
+                        <li>
+                            <strong class="tit">제1조 - 고정형 영상정보처리기기의 설치 근거 및 설치 목적</strong>
+                            국토안전관리원은 개인정보보호법 제25조제1항에 따라 다음과 같은 목적으로 고정형 영상정보처리기기를 설치‧운영합니다.
+                            <ul>
+                                <li class="bullet type03 txt16">시설안전 및 화재 예방</li>
+                                <li class="bullet type03 txt16">범죄 예방방</li>
+                                <li class="bullet type03 txt16">
+                                    차량도난 및 파손방지(주차장 설치의 경우)
+                                    <span class="desc">※ 주차대수 30대를 초과하는 규모의 경우 「주차장법 시행규칙」 제6조제1항을 근거로 설치‧운영 가능</span>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="tit">제2조 - 설치 대수, 설치 위치 및 촬영범위</strong>
+                            <ul class="area-list">
+                                <li>
+                                    <b class="title">진주</b>
+                                    <div class="dl-grp">
+                                        <div class="dl-cont">
+                                            <p>구분 : <b>인재교육관 실·내외</b></p>
+                                            <p>설치 대수 : <b>35대</b></p>
+                                            <p>설치위치 및 촬영범위 : 주현관, 복도, 주차장</p>
+                                        </div>
+                                        <div class="dl-cont">
+                                            <p>구분 : <b>인재교육관 교육장</b></p>
+                                            <p>설치 대수 : <b>9대</b></p>
+                                            <p>설치위치 및 촬영범위 : 주현관, 복도, 교육훈련장</p>
+                                        </div>
+                                        <div class="dl-cont">
+                                            <p>구분 : <b>별관 내부</b></p>
+                                            <p>설치 대수 : <b>3대</b></p>
+                                            <p>설치위치 및 촬영범위 : 주현관, 복도</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <b class="title">수도권지역본부</b>
+                                    <div class="dl-grp">
+                                        <div class="dl-cont">
+                                            <p>구분 : <b>건물 실·내외</b></p>
+                                            <p>설치 대수 : <b>26대</b></p>
+                                            <p>설치위치 및 촬영범위 : 주현관, 복도, 주차장</p>
+                                        </div>
+                                        <div class="dl-cont">
+                                            <p>구분 : <b>통합전산실</b></p>
+                                            <p>설치 대수 : <b>8대</b></p>
+                                            <p>설치위치 및 촬영범위 : 주현관, 복도</p>
+                                        </div>
+                                        <div class="dl-cont">
+                                            <p>구분 : <b>하자민원실</b></p>
+                                            <p>설치 대수 : <b>3대</b></p>
+                                            <p>설치위치 및 촬영범위 : 주현관, 복도</p>
+                                        </div>
+                                        <div class="dl-cont">
+                                            <p>구분 : <b>교육장</b></p>
+                                            <p>설치 대수 : <b>10대</b></p>
+                                            <p>설치위치 및 촬영범위 : 주현관, 복도</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <b class="title">특수교 지역사무소</b>
+                                    <div class="dl-grp">
+                                        <div class="dl-cont">
+                                            <p>구분 : <b>여수, 고흥, 목포, 군산, 진도, 신안</b></p>
+                                            <p>설치 대수 : <b>33대</b></p>
+                                            <p>설치위치 및 촬영범위 : 주현관, 복도, 주차장</p>
+                                        </div>
+                                        <div class="dl-cont">
+                                            <p>구분 : <b>노량</b></p>
+                                            <p>설치 대수 : <b>3대</b></p>
+                                            <p>설치위치 및 촬영범위 : 주현관, 복도, 주차장</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="tit">
+                                제3조 - 관리책임자 및 접근권한자
+                                <span class="desc">국토안전관리원은 개인영상정보를 보호하고 이와 관련한 불만을 처리하기 위하여 아래와 같이 개인영상정보 관리책임자를 두고 있습니다.</span>
+                            </strong>
+                            <ul class="area-list">
+                                <li>
+                                    <b class="title">진주</b>
+                                    <div class="dl-grp">
+                                        <div class="dl-cont">
+                                            <p>구분 : <b>인재교육관 교육장</b></p>
+                                            <p>소속 : 인재교육실</p>
+                                            <p>관리책임자 : 김진우</p>
+                                            <p>연락처 : 055-771-1961</p>
+                                        </div>
+                                        <div class="dl-cont">
+                                            <p>구분 : <b>인재교육관 실·내외</b></p>
+                                            <p>소속 : 운영지원실</p>
+                                            <p>관리책임자 : 권경도</p>
+                                            <p>연락처 : 055-771-4705</p>
+                                        </div>
+                                        <div class="dl-cont">
+                                            <p>구분 : <b>별관 내부</b></p>
+                                            <p>소속 : 운영지원실</p>
+                                            <p>관리책임자 : 권경도</p>
+                                            <p>연락처 : 055-771-4705</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <b class="title">수도권지역본부</b>
+                                    <div class="dl-grp">
+                                        <div class="dl-cont">
+                                            <p>구분 : <b>건물 실·내외</b></p>
+                                            <p>소속 : 사업지원실</p>
+                                            <p>관리책임자 : 서형렬</p>
+                                            <p>연락처 : 031-910-4102</p>
+                                        </div>
+                                        <div class="dl-cont">
+                                            <p>구분 : <b>통합전산실</b></p>
+                                            <p>소속 : 디지털기획운영실</p>
+                                            <p>관리책임자 : 이용호</p>
+                                            <p>연락처 : 031-910-4028</p>
+                                        </div>
+                                        <div class="dl-cont">
+                                            <p>구분 : <b>하자민원실</b></p>
+                                            <p>소속 : 하자심사·건축분쟁조정위원회사무국</p>
+                                            <p>관리책임자 : 임경래</p>
+                                            <p>연락처 : 031-910-4261</p>
+                                        </div>
+                                        <div class="dl-cont">
+                                            <p>구분 : <b>교육장</b></p>
+                                            <p>소속 : 인재교육실</p>
+                                            <p>관리책임자 : 김진우</p>
+                                            <p>연락처 : 055-771-1961</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <b class="title">특수교 지역사무소</b>
+                                    <div class="dl-grp">
+                                        <div class="dl-cont">
+                                            <p>구분 : <b>여수, 고흥, 목포, 군산, 진도, 신안</b></p>
+                                            <p>소속 : 호남지역본부 특수교관리실</p>
+                                            <p>관리책임자 : 박용학</p>
+                                            <p>연락처 : 061-275-9970</p>
+                                        </div>
+                                        <div class="dl-cont">
+                                            <p>구분 : <b>노량</b></p>
+                                            <p>소속 : 호남지역본부 특수교관리실</p>
+                                            <p>관리책임자 : 오세준</p>
+                                            <p>연락처 : 055-884-6731</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="tit">제4조 - 영상정보의 촬영시간, 보관기간, 보관장소 및 처리방법</strong>
+                            <ul class="bg-wh-box division-type">
+                                <li>
+                                    <strong class="tit">촬영시간</strong>
+                                    <p class="txt"><b>24시간</b></p>
+                                </li>
+                                <li>
+                                    <strong class="tit">촬영시간</strong>
+                                    <p class="txt">촬영일로부터 30일</p>
+                                </li>
+                                <li>
+                                    <strong class="tit">보관장소</strong>
+                                    <p class="txt">고정형 영상정보처리기기 운영 방재실 및 통신실</p>
+                                </li>
+                            </ul>
+                            <p class="txt16">· 처리방법 : 개인영상정보의 목적외 이용, 제3자 제공, 파기, 열람 등 요구에 관한 사항을 기록·관리하고, 보관기간 만료 시 복원이 불가능한 방법으로 영구 삭제(출력물의 경우 파쇄 또는 소각)합니다.</p>
+                        </li>
+                        <li>
+                            <strong class="tit">제5조 - 개인영상정보의 확인 방법 및 장소에 관한 사항</strong>
+                            <p>
+                                (1) 확인방법 : 영상정보 관리책임자에게 미리 연락하고 국토안전관리원을 방문하시면 확인 가능합니다.<br>
+                                (2) 확인장소 : 경영본부 운영지원실, 인재교육실, 수도권지역본부 사업지원실, 호남지역본부 특수시설관리실
+                            </p>
+                        </li>
+                        <li>
+                            <strong class="tit">제6조 - 정보주체의 영상정보 열람 등 요구에 대한 조치</strong>
+                            <p>
+                                귀하는 개인영상정보에 관하여 열람 또는 존재확인·삭제를 원하는 경우 언제든지 고정형 영상정보처리기기 운영자에게 요구하실 수 있습니다. 단, 귀하가 촬영된 개인영상정보 및 명백히 정보주체의 급박한 생명, 신체, 재산의 이익을 위하여 필요한 개인영상정보에 한정됩니다. 
+                                국토안전관리원은 개인영상정보에 관하여 열람 또는 존재확인·삭제를 요구한 경우 지체없이 필요한 조치를 하겠습니다.
+                            </p>
+                        </li>
+                        <li>
+                            <strong class="tit">제7조 - 영상정보의 안전성 확보조치</strong>
+                            <p>
+                                국토안전관리원에서 처리하는 영상정보는 암호화 조치 등을 통하여 안전하게 관리되고 있습니다. 또한 본 사는 개인정보보호를 위한 관리적 대책으로서 개인정보에 대한 접근 권한을 차등부여하고 있고, 개인영상정보의 위·변조를 위하여 개인영상정보의 생성 일시, 열람 시 열람목적·열람자 열람 일시 등을 기록하여 관리하고 있습니다. 이 외에도 개인영상정보의 안전한 물리적 보관을 위하여 잠금장치를 설치하고 있습니다.
+                            </p>
+                        </li>
+                        <li>
+                            <strong class="tit">제8조 - 고정형 영상정보처리기기 운영방침 변경에 관한 사항</strong>
+                            <p>
+                                이 고정형 영상정보처리기기 운영·관리방침은 법령·정책 또는 보안기술의 변경에 따라 내용의 추가·삭제 및 수정이 있을 시에는 시행하기 최소 7일 전에 국토안전관리원 홈페이지를 통해 변경사유 및 내용 등을 공지하도록 하겠습니다.<br>
+                                · 공고일자 : 2024. 9. 24. / 시행일자 : 2024. 9. 24.
+                            </p>
+                        </li>
+                        <li>
+                            <strong class="tit">제9조 - 고정형 영상정보처리기기 운영·관리 방침</strong>
+                            <p class="bullet type03">2024. 9. 24. 이전 방침 보기 → <a class="btn-link" target="_blank" aria-label="해당 페이지로 이동" href="https://www.kalisedu.or.kr/user/VideoPolicy.do?videopolicy=20240924">보러가기</a></p>
+                            <p class="bullet type03">2024. 9. 11. 이전 방침 보기 → <a class="btn-link" target="_blank" aria-label="해당 페이지로 이동" href="https://www.kalisedu.or.kr/user/VideoPolicy.do?videopolicy=20240911">보러가기</a></p>
+                        </li>
+                    </ul>
+
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <!-- 협력기관 배너 슬라이더 -->
+            <div class="bd-line-grp">
+                <div class="footer-banner-slider max-width-inner">
+                    <div class="swiper mySwiper type02">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide">
+                                <a href="#" target="_blank">
+                                    <img src="/images/common/img_footer_bn01.svg" alt="국토안전관리원">
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#" target="_blank">
+                                    <img src="/images/common/img_footer_bn02.svg" alt="시설물통합정보관리시스템">
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#" target="_blank">
+                                    <img src="/images/common/img_footer_bn03.svg" alt="한국건설기술인협회">
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#" target="_blank">
+                                    <img src="/images/common/img_footer_bn01.svg" alt="국토안전관리원">
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#" target="_blank">
+                                    <img src="/images/common/img_footer_bn02.svg" alt="시설물통합정보관리시스템">
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#" target="_blank">
+                                    <img src="/images/common/img_footer_bn03.svg" alt="한국건설기술인협회">
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#" target="_blank">
+                                    <img src="/images/common/img_footer_bn01.svg" alt="국토안전관리원">
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#" target="_blank">
+                                    <img src="/images/common/img_footer_bn02.svg" alt="시설물통합정보관리시스템">
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#" target="_blank">
+                                    <img src="/images/common/img_footer_bn03.svg" alt="한국건설기술인협회">
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#" target="_blank">
+                                    <img src="/images/common/img_footer_bn01.svg" alt="국토안전관리원">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="swiper-button">
+                        <button type="button" class="swiper-button-next"><img src="/images/common/icon_footer_btn_next.svg" alt="다음버튼 아이콘"></button>
+                        <button type="button" class="swiper-button-prev"><img src="/images/common/icon_footer_btn_prev.svg" alt="이전버튼 아이콘"></button>
+                    </div>
+                    <script>
+                    const swiper2 = new Swiper(".mySwiper.type02", {
+                        slidesPerView: "auto", // 한번에 보여지는 슬라이드 숫자
+                        slidesPerGroup: 1, // 한번에 이동되는 슬라이드 숫자
+                        loop: true,
+                        breakpoints: {
+                            0: {
+                                spaceBetween: 14,
+                            },
+                            1024: {
+                                spaceBetween: 28
+                            }
+                        },
+                        navigation: {
+                            nextEl: ".footer-banner-slider .swiper-button-next",
+                            prevEl: ".footer-banner-slider .swiper-button-prev",
+                        },
+                    });
+                    /* 자동재생 추후 적용 여부 확인 후 추가해서 적용
+                    // 정지 버튼 
+                    document.querySelector(".mySwiper.type02 .swiper-autoplay-button .pause").addEventListener("click", function() {
+                        swiper2.autoplay.stop();
+                        this.style.display = "none";
+                        document.querySelector(".mySwiper.type02 .swiper-autoplay-button .play").style.display = "block";
+                    });
+    
+                    // 재생 버튼
+                    document.querySelector(".mySwiper.type02 .swiper-autoplay-button .play").addEventListener("click", function() {
+                        swiper2.autoplay.start();
+                        this.style.display = "none";
+                        document.querySelector(".mySwiper.type02 .swiper-autoplay-button .pause").style.display = "block";
+                    });
+                    */
+                    </script>
+                </div>
+            </div>
+            <!-- 약관/패밀리사이트 등 상단 정보 -->
+            <div class="footer-cont max-width-inner">
+                <div class="logo-grp">
+                    <h3><a href="/index.html" class="footer-logo"><img src="/images/common/icon_footer_logo.svg" alt="국토안전관리원"></a></h3>
+                </div>
+                <div class="address-grp">
+                    <div class="link-area">
+                        <a href="#">이용약관</a>
+                        <a href="#">개인정보처리방침</a>
+                        <a href="#">저작권정책</a>
+                        <a href="#">고정형 영상정보처리기기 운영관리방침</a>
+                        <a href="#">찾아오시는길</a>
+                    </div>
+                    <ul class="txt-list">
+                        <li>
+                            <p class="tit icon-location">교육원소재지</p>
+                            <dl>
+                                <dt>진주교육장</dt>
+                                <dd>(52852) 경상남도 진주시 사들로 131 인재교육관</dd>
+                                <dt>김천교육장</dt>
+                                <dd>(39660) 경상북도 김천시 혁신6로 12</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <p class="tit icon-counsel">교육 문의</p>
+                            <dl>
+                                <dt>대표전화</dt>
+                                <dd>1588-8788(6, 기술자 교육훈련)  |  055-771-1905</dd>
+                                <dt>팩스</dt>
+                                <dd>055-771-1915</dd>
+                            </dl>
+                        </li>
+                    </ul>
+                    <address>Copyrightⓒ2025 KALIS. All right Reserved.</address>
+                </div>
+                <div class="family-grp">
+                    <div class="dropdown-wrap">
+                        <button type="button" class="btn btn-dropdown">
+                            패밀리사이트
+                        </button>
+                        <div class="dropdown-list is-up is-open">
+                            <a href="#" class="footer-link" target="_blank">패밀리사이트1</a>
+                            <a href="#" class="footer-link" target="_blank">패밀리사이트2</a>
+                            <a href="#" class="footer-link" target="_blank">패밀리사이트3</a>
+                            <a href="#" class="footer-link" target="_blank">패밀리사이트4</a>
+                            <a href="#" class="footer-link" target="_blank">패밀리사이트5</a>
+                            <a href="#" class="footer-link" target="_blank">패밀리사이트6</a>
+                            <a href="#" class="footer-link" target="_blank">패밀리사이트7</a>
+                            <a href="#" class="footer-link" target="_blank">패밀리사이트8</a>
+                            <a href="#" class="footer-link" target="_blank">패밀리사이트9</a>
+                            <a href="#" class="footer-link" target="_blank">패밀리사이트10</a>           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/js/common.js"></script>
+</body>
+</html>
