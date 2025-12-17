@@ -23,7 +23,7 @@
                 <div class="sch-area">
                     <label for="searchInput" class="sr-only">검색어 입력</label>
                     <input type="text" placeholder="검색어를 입력하세요" id="searchInput">
-                    <button type="button" class="btn-sch"></button>
+                    <button type="button" class="btn-sch">검색버튼</button>
                 </div>
                 <div class="mo-only mo-btn-grp">
                     <button class="mo-btn-search btn-sch">검색버튼</button>
@@ -169,6 +169,7 @@
                                 <li><button type="button" class="tab-menu is-active" data-tab="tab1-con4">2층</button></li>
                                 <li><button type="button" class="tab-menu" data-tab="tab1-con5">3층</button></li>
                                 <li><button type="button" class="tab-menu" data-tab="tab1-con6">편의시설</button></li>
+                                <li><button type="button" class="tab-menu" data-tab="tab1-con7">실습동</button></li>
                             </ul>
                         </div>
                     </div>
@@ -176,115 +177,774 @@
                     <div class="tab-content-wrap">
                         <div class="tab-content" id="tab1-con1">
                             <div class="swiper door">
-                                <ul class="swiper-wrapper">
-                                    <li class="swiper-slide">
-                                        <img src="./images/common/img_door_info_01.png" alt="플러스안전체험관 이미지">
-                                        <span class="disc">정문</span>
-                                    </li>
-                                    <li class="swiper-slide">
-                                        <img src="./images/common/img_door_info_02.png" alt="의무실 이미지">
-                                        <span class="disc">후문1</span>
-                                    </li>
-                                    <li class="swiper-slide">
-                                        <img src="./images/common/img_door_info_03.png" alt="기념품점 이미지">
-                                        <span class="disc">후문2</span>
-                                    </li>
-                                </ul>
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <button type="button" data-cont="con1-data1">
+                                            <img src="./images/common/img_door_info_01.webp" alt="정문 이미지">
+                                            <span class="disc">정문</span>
+                                        </button>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <button type="button" data-cont="con1-data2">
+                                            <img src="./images/common/img_door_info_02.webp" alt="후문1 이미지">
+                                            <span class="disc">후문1</span>
+                                        </button>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <button type="button" data-cont="con1-data3">
+                                            <img src="./images/common/img_door_info_03.webp" alt="후문2 이미지">
+                                            <span class="disc">후문2</span>
+                                        </button>
+                                    </div>
+                                </div>
                                 <div class="control">
-                                    <button type="button" class="btn-prev"></button>
-                                    <button type="button" class="btn-next"></button>
+                                    <button type="button" class="btn-prev">이전버튼</button>
+                                    <button type="button" class="btn-next">다음버튼</button>
                                 </div>
                             </div>
-
-                            <div class="inner">
-                                <div class="tit-grp">
-                                    <h3 class="h3-title"><img src="./images/common/icon_h3_tit_logo.svg" alt="메뉴타이틀 로고">정문</h3>
-                                    <span class="sub-disc">위치 : 김천혁신도시 사거리 한국도로공사 건너편 </span>
+                            <div class="bg-contents">
+                                <div class="inner show" id="con1-data1">
+                                    <div class="tit-grp">
+                                        <h3 class="h3-title"><img src="./images/common/icon_h3_tit_logo.svg" alt="메뉴타이틀 로고">정문</h3>
+                                        <span class="sub-disc">위치 : 김천혁신도시 사거리 한국도로공사 건너편 </span>
+                                    </div>
+                                    <div class="go-to-wrap">
+                                        <ul>
+                                            <li>
+                                                <img src="./images/common/icon_goto_thumb04.svg" alt="출입문 이미지">
+                                                <p>
+                                                    <span class="cnt">인도 출입문 개방 시간</span>
+                                                    평일 09:00 ~ 17:00<br>
+                                                    토요일 09:00 ~ 17:00<br>
+                                                    <span class="desc">(공휴일/휴관일 폐쇄)</span>
+    
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <img src="./images/common/icon_goto_thumb05.svg" alt="차량 이미지">
+                                                <p>
+                                                    <span class="cnt">차량 출입문 개방 시간</span>
+                                                    평일 09:00 ~ 18:00<br>
+                                                    토요일 09:00 ~ 18:00<br>
+                                                    <span class="desc">(공휴일/휴관일 폐쇄)</span>
+                                                </p>
+                                            </li>
+                                        </ul>
+                                        <a href="#" class="btn-goto" aria-label="이용안내 페이지로 이동">이용안내 바로가기 <img src="./images/common/icon_goto_arrow.svg" alt="이용안내 화살표 아이콘"></a>
+                                    </div>
                                 </div>
-                                <div class="go-to-wrap">
-                                    <ul>
-                                        <li>
-                                            <img src="./images/common/icon_goto_thumb04.svg" alt="출입문 이미지">
-                                            <p>
-                                                <span class="cnt">인도 출입문 개방 시간</span>
-                                                평일 09:00 ~ 17:00<br>
-                                                토요일 09:00 ~ 17:00<br>
-                                                <span class="desc">(공휴일/휴관일 폐쇄)</span>
-
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <img src="./images/common/icon_goto_thumb05.svg" alt="차량 이미지">
-                                            <p>
-                                                <span class="cnt">차량 출입문 개방 시간</span>
-                                                평일 09:00 ~ 18:00<br>
-                                                토요일 09:00 ~ 18:00<br>
-                                                <span class="desc">(공휴일/휴관일 폐쇄)</span>
-                                            </p>
-                                        </li>
-                                    </ul>
-                                    <a href="#" class="btn-goto" aria-label="이용안내 페이지로 이동">이용안내 바로가기 <img src="./images/common/icon_goto_arrow.svg" alt="이용안내 화살표 아이콘"></a>
+    
+                                <div class="inner" id="con1-data2">
+                                    <div class="tit-grp">
+                                        <h3 class="h3-title"><img src="./images/common/icon_h3_tit_logo.svg" alt="메뉴타이틀 로고">후문</h3>
+                                        <span class="sub-disc">위치 : 김천혁신도시 사거리 한국도로공사 건너편 </span>
+                                    </div>
+                                    <div class="go-to-wrap">
+                                        <ul>
+                                            <li>
+                                                <img src="./images/common/icon_goto_thumb04.svg" alt="출입문 이미지">
+                                                <p>
+                                                    <span class="cnt">인도 출입문 개방 시간</span>
+                                                    평일 09:00 ~ 17:00<br>
+                                                    토요일 09:00 ~ 17:00<br>
+                                                    <span class="desc">(공휴일/휴관일 폐쇄)</span>
+    
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <img src="./images/common/icon_goto_thumb05.svg" alt="차량 이미지">
+                                                <p>
+                                                    <span class="cnt">차량 출입문 개방 시간</span>
+                                                    평일 09:00 ~ 18:00<br>
+                                                    토요일 09:00 ~ 18:00<br>
+                                                    <span class="desc">(공휴일/휴관일 폐쇄)</span>
+                                                </p>
+                                            </li>
+                                        </ul>
+                                        <a href="#" class="btn-goto" aria-label="이용안내 페이지로 이동">이용안내 바로가기 <img src="./images/common/icon_goto_arrow.svg" alt="이용안내 화살표 아이콘"></a>
+                                    </div>
+                                </div>
+    
+                                <div class="inner" id="con1-data3">
+                                    <div class="tit-grp">
+                                        <h3 class="h3-title"><img src="./images/common/icon_h3_tit_logo.svg" alt="메뉴타이틀 로고">정문</h3>
+                                        <span class="sub-disc">위치 : 김천혁신도시 사거리 한국도로공사 건너편 </span>
+                                    </div>
+                                    <div class="go-to-wrap">
+                                        <ul>
+                                            <li>
+                                                <img src="./images/common/icon_goto_thumb04.svg" alt="출입문 이미지">
+                                                <p>
+                                                    <span class="cnt">인도 출입문 개방 시간</span>
+                                                    평일 09:00 ~ 17:00<br>
+                                                    토요일 09:00 ~ 17:00<br>
+                                                    <span class="desc">(공휴일/휴관일 폐쇄)</span>
+    
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <img src="./images/common/icon_goto_thumb05.svg" alt="차량 이미지">
+                                                <p>
+                                                    <span class="cnt">차량 출입문 개방 시간</span>
+                                                    평일 09:00 ~ 18:00<br>
+                                                    토요일 09:00 ~ 18:00<br>
+                                                    <span class="desc">(공휴일/휴관일 폐쇄)</span>
+                                                </p>
+                                            </li>
+                                        </ul>
+                                        <a href="#" class="btn-goto" aria-label="이용안내 페이지로 이동">이용안내 바로가기 <img src="./images/common/icon_goto_arrow.svg" alt="이용안내 화살표 아이콘"></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="tab-content" id="tab1-con2">
-                            2
+                            <div class="swiper parking">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <button type="button" data-cont="con2-data1">
+                                            <img src="./images/common/img_parking_info_01.webp" alt="정문 이미지">
+                                            <span class="disc">주차장</span>
+                                        </button>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <button type="button" data-cont="con2-data2">
+                                            <img src="./images/common/img_parking_info_02.webp" alt="후문1 이미지">
+                                            <span class="disc">주차장1</span>
+                                        </button>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <button type="button" data-cont="con2-data3">
+                                            <img src="./images/common/img_parking_info_03.webp" alt="후문2 이미지">
+                                            <span class="disc">주차장2</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="control">
+                                    <button type="button" class="btn-prev">이전버튼</button>
+                                    <button type="button" class="btn-next">다음버튼</button>
+                                </div>
+                            </div>
+                            <div class="bg-contents">
+                                <div class="inner show" id="con2-data1">
+                                    <div class="tit-grp">
+                                        <h3 class="h3-title"><img src="./images/common/icon_h3_tit_logo.svg" alt="메뉴타이틀 로고">주차장</h3>
+                                    </div>
+                                    <div class="bg-wh-box parking">
+                                        <div class="inner">
+                                            <strong class="txt-blue txt24">주차정보</strong>
+                                            <ul>
+                                                <li class="bullet txt18 fwr">주차 문의 : 050-000-0000</li>
+                                                <li class="bullet txt18 fwr">주차 가능 차량 : SUV, 소형, 1톤 이하 트럭</li>
+                                                <li class="bullet txt18 fwr">운영 시간 : 평일 09:00 ~ 18:00, 토요일 09:00 ~ 18:00, 공휴일/휴관일 : 폐쇄</li>
+                                                <li class="bullet txt18 fwr">주차 요금 : 체험관 예약 시 기입하신 차량 번호에 한해서만 무료 이용 가능합니다. 일반 이용 시 1시간 무료이며, 초과 시 10분당 1,000원이 부과됩니다.</li>
+                                            </ul>
+                                        </div>
+    
+                                        <div class="inner">
+                                            <strong class="txt-blue txt24">할인 및 면제 대상</strong>
+                                            <dl class="sale-list">
+                                                <dt><span class="badge">80%할인</span></dt>
+                                                <dd>장애인, 국가유공자, 고업체후유증환자</dd>
+                                                <dt><span class="badge">50%할인</span></dt>
+                                                <dd>경형 승용차, 저공해차량, 다둥이 행복카드 소지자 차량 중 2자녀 이상</dd>
+                                                <dt><span class="badge">면제</span></dt>
+                                                <dd>공무수행 로고를 부착한 관용차량, 물품납품 등을 위한 화물차량</dd>
+                                            </dl>
+                                        </div>
+    
+                                        <div class="inner">
+                                            <strong class="txt-blue txt24">유의사항</strong>
+                                            <ul>
+                                                <li class="bullet txt18 fwr">요금할인은 감면율이 높은 하나만 적용되며, 운영 시간 내 출차 후 재입차하는 경우에도 요금은 추가로 징수 됩니다.</li>
+                                                <li class="bullet txt18 fwr">운영 시간 이외 미출차 차량은 익일 00:00부터 주차요금 산정 및 부과되오니, 이용 당일 출차하여 주시기 바랍니다.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="inner" id="con2-data2">
+                                    <div class="tit-grp">
+                                        <h3 class="h3-title"><img src="./images/common/icon_h3_tit_logo.svg" alt="메뉴타이틀 로고">주차장</h3>
+                                    </div>
+                                    <div class="bg-wh-box parking">
+                                        <div class="inner">
+                                            <strong class="txt-blue txt24">주차정보</strong>
+                                            <ul>
+                                                <li class="bullet txt18 fwr">주차 문의 : 050-000-0000</li>
+                                                <li class="bullet txt18 fwr">주차 가능 차량 : SUV, 소형, 1톤 이하 트럭</li>
+                                                <li class="bullet txt18 fwr">운영 시간 : 평일 09:00 ~ 18:00, 토요일 09:00 ~ 18:00, 공휴일/휴관일 : 폐쇄</li>
+                                                <li class="bullet txt18 fwr">주차 요금 : 체험관 예약 시 기입하신 차량 번호에 한해서만 무료 이용 가능합니다. 일반 이용 시 1시간 무료이며, 초과 시 10분당 1,000원이 부과됩니다.</li>
+                                            </ul>
+                                        </div>
+    
+                                        <div class="inner">
+                                            <strong class="txt-blue txt24">할인 및 면제 대상</strong>
+                                            <dl class="sale-list">
+                                                <dt><span class="badge">80%할인</span></dt>
+                                                <dd>장애인, 국가유공자, 고업체후유증환자</dd>
+                                                <dt><span class="badge">50%할인</span></dt>
+                                                <dd>경형 승용차, 저공해차량, 다둥이 행복카드 소지자 차량 중 2자녀 이상</dd>
+                                                <dt><span class="badge">면제</span></dt>
+                                                <dd>공무수행 로고를 부착한 관용차량, 물품납품 등을 위한 화물차량</dd>
+                                            </dl>
+                                        </div>
+    
+                                        <div class="inner">
+                                            <strong class="txt-blue txt24">유의사항</strong>
+                                            <ul>
+                                                <li class="bullet txt18 fwr">요금할인은 감면율이 높은 하나만 적용되며, 운영 시간 내 출차 후 재입차하는 경우에도 요금은 추가로 징수 됩니다.</li>
+                                                <li class="bullet txt18 fwr">운영 시간 이외 미출차 차량은 익일 00:00부터 주차요금 산정 및 부과되오니, 이용 당일 출차하여 주시기 바랍니다.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="inner" id="con2-data3">
+                                    <div class="tit-grp">
+                                        <h3 class="h3-title"><img src="./images/common/icon_h3_tit_logo.svg" alt="메뉴타이틀 로고">주차장</h3>
+                                    </div>
+                                    <div class="bg-wh-box parking">
+                                        <div class="inner">
+                                            <strong class="txt-blue txt24">주차정보</strong>
+                                            <ul>
+                                                <li class="bullet txt18 fwr">주차 문의 : 050-000-0000</li>
+                                                <li class="bullet txt18 fwr">주차 가능 차량 : SUV, 소형, 1톤 이하 트럭</li>
+                                                <li class="bullet txt18 fwr">운영 시간 : 평일 09:00 ~ 18:00, 토요일 09:00 ~ 18:00, 공휴일/휴관일 : 폐쇄</li>
+                                                <li class="bullet txt18 fwr">주차 요금 : 체험관 예약 시 기입하신 차량 번호에 한해서만 무료 이용 가능합니다. 일반 이용 시 1시간 무료이며, 초과 시 10분당 1,000원이 부과됩니다.</li>
+                                            </ul>
+                                        </div>
+    
+                                        <div class="inner">
+                                            <strong class="txt-blue txt24">할인 및 면제 대상</strong>
+                                            <dl class="sale-list">
+                                                <dt><span class="badge">80%할인</span></dt>
+                                                <dd>장애인, 국가유공자, 고업체후유증환자</dd>
+                                                <dt><span class="badge">50%할인</span></dt>
+                                                <dd>경형 승용차, 저공해차량, 다둥이 행복카드 소지자 차량 중 2자녀 이상</dd>
+                                                <dt><span class="badge">면제</span></dt>
+                                                <dd>공무수행 로고를 부착한 관용차량, 물품납품 등을 위한 화물차량</dd>
+                                            </dl>
+                                        </div>
+    
+                                        <div class="inner">
+                                            <strong class="txt-blue txt24">유의사항</strong>
+                                            <ul>
+                                                <li class="bullet txt18 fwr">요금할인은 감면율이 높은 하나만 적용되며, 운영 시간 내 출차 후 재입차하는 경우에도 요금은 추가로 징수 됩니다.</li>
+                                                <li class="bullet txt18 fwr">운영 시간 이외 미출차 차량은 익일 00:00부터 주차요금 산정 및 부과되오니, 이용 당일 출차하여 주시기 바랍니다.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="tab-content" id="tab1-con3">
-                            3
+                            <div class="swiper floor-1">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <button type="button" data-cont="con3-data1">
+                                            <img src="./images/common/img_1f_info_01.webp" alt="플러스안전체험관 이미지">
+                                            <span class="disc">국토안전동행관</span>
+                                        </button>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <button type="button" data-cont="con3-data2">
+                                            <img src="./images/common/img_1f_info_02.webp" alt="휴식공간 이미지">
+                                            <span class="disc">휴식공간</span>
+                                        </button>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <button type="button" data-cont="con3-data3">
+                                            <img src="./images/common/img_1f_info_03.webp" alt="안내데스크 이미지">
+                                            <span class="disc">안내데스크</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="control">
+                                    <button type="button" class="btn-prev">이전버튼</button>
+                                    <button type="button" class="btn-next">다음버튼</button>
+                                </div>
+                            </div>
+                            <div class="bg-contents">
+                                <div class="inner show" id="con3-data1">
+                                    <div class="tit-grp">
+                                        <h3 class="h3-title"><img src="./images/common/icon_h3_tit_logo.svg" alt="메뉴타이틀 로고">국토안전동행관</h3>
+                                        <span class="sub-disc">과거 → 현재 → 미래로 이어지는 국토안전관리원의 시간과 주요 역할을 만나볼 수 있는 공간입니다.</span>
+                                    </div>
+                                    <div class="go-to-wrap">
+                                        <strong>체험 공간</strong>
+                                        <ul>
+                                            <li>
+                                                <img src="./images/common/icon_goto_thumb01.svg" alt="VR 체험 이미지">
+                                                <p><span class="cnt">ZONE 1</span>바닥을 다지다</p>
+                                            </li>
+                                            <li>
+                                                <img src="./images/common/icon_goto_thumb02.svg" alt="생활안전, 시설안전 이미지">
+                                                <p><span class="cnt">ZONE 2</span>기둥을 세우다</p>
+                                            </li>
+                                            <li>
+                                                <img src="./images/common/icon_goto_thumb03.svg" alt="경험나누기 이미지">
+                                                <p><span class="cnt">ZONE 3</span>미래가 모이다</p>
+                                            </li>
+                                        </ul>
+                                        <a href="#" class="btn-goto" aria-label="이용안내 페이지로 이동">이용안내 바로가기 <img src="./images/common/icon_goto_arrow.svg" alt="이용안내 화살표 아이콘"></a>
+                                    </div>
+                                </div>
+    
+                                <div class="inner" id="con3-data2">
+                                    <div class="tit-grp">
+                                        <h3 class="h3-title"><img src="./images/common/icon_h3_tit_logo.svg" alt="메뉴타이틀 로고">국토안전동행관</h3>
+                                        <span class="sub-disc">과거 → 현재 → 미래로 이어지는 국토안전관리원의 시간과 주요 역할을 만나볼 수 있는 공간입니다.</span>
+                                    </div>
+                                    <div class="go-to-wrap">
+                                        <strong>체험 공간</strong>
+                                        <ul>
+                                            <li>
+                                                <img src="./images/common/icon_goto_thumb01.svg" alt="VR 체험 이미지">
+                                                <p><span class="cnt">ZONE 1</span>바닥을 다지다</p>
+                                            </li>
+                                            <li>
+                                                <img src="./images/common/icon_goto_thumb02.svg" alt="생활안전, 시설안전 이미지">
+                                                <p><span class="cnt">ZONE 2</span>기둥을 세우다</p>
+                                            </li>
+                                            <li>
+                                                <img src="./images/common/icon_goto_thumb03.svg" alt="경험나누기 이미지">
+                                                <p><span class="cnt">ZONE 3</span>미래가 모이다</p>
+                                            </li>
+                                        </ul>
+                                        <a href="#" class="btn-goto" aria-label="이용안내 페이지로 이동">이용안내 바로가기 <img src="./images/common/icon_goto_arrow.svg" alt="이용안내 화살표 아이콘"></a>
+                                    </div>
+                                </div>
+    
+                                <div class="inner" id="con3-data3">
+                                    <div class="tit-grp">
+                                        <h3 class="h3-title"><img src="./images/common/icon_h3_tit_logo.svg" alt="메뉴타이틀 로고">국토안전동행관</h3>
+                                        <span class="sub-disc">과거 → 현재 → 미래로 이어지는 국토안전관리원의 시간과 주요 역할을 만나볼 수 있는 공간입니다.</span>
+                                    </div>
+                                    <div class="go-to-wrap">
+                                        <strong>체험 공간</strong>
+                                        <ul>
+                                            <li>
+                                                <img src="./images/common/icon_goto_thumb01.svg" alt="VR 체험 이미지">
+                                                <p><span class="cnt">ZONE 1</span>바닥을 다지다</p>
+                                            </li>
+                                            <li>
+                                                <img src="./images/common/icon_goto_thumb02.svg" alt="생활안전, 시설안전 이미지">
+                                                <p><span class="cnt">ZONE 2</span>기둥을 세우다</p>
+                                            </li>
+                                            <li>
+                                                <img src="./images/common/icon_goto_thumb03.svg" alt="경험나누기 이미지">
+                                                <p><span class="cnt">ZONE 3</span>미래가 모이다</p>
+                                            </li>
+                                        </ul>
+                                        <a href="#" class="btn-goto" aria-label="이용안내 페이지로 이동">이용안내 바로가기 <img src="./images/common/icon_goto_arrow.svg" alt="이용안내 화살표 아이콘"></a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="tab-content is-active" id="tab1-con4">
                             <div class="swiper floor-2">
-                                <ul class="swiper-wrapper">
-                                    <li class="swiper-slide">
-                                        <img src="./images/common/img_facilities_info_01.png" alt="플러스안전체험관 이미지">
-                                        <span class="disc">플러스안전체험관</span>
-                                    </li>
-                                    <li class="swiper-slide">
-                                        <img src="./images/common/img_facilities_info_02.png" alt="의무실 이미지">
-                                        <span class="disc">의무실</span>
-                                    </li>
-                                    <li class="swiper-slide">
-                                        <img src="./images/common/img_facilities_info_03.png" alt="기념품점 이미지">
-                                        <span class="disc">기념품점</span>
-                                    </li>
-                                </ul>
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <button type="button" data-cont="con4-data1">
+                                            <img src="./images/common/img_2f_info_01.webp" alt="플러스안전체험관 이미지">
+                                            <span class="disc">플러스안전체험관</span>
+                                        </button>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <button type="button" data-cont="con4-data2">
+                                            <img src="./images/common/img_2f_info_02.webp" alt="의무실 이미지">
+                                            <span class="disc">의무실</span>
+                                        </button>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <button type="button" data-cont="con4-data3">
+                                            <img src="./images/common/img_2f_info_03.webp" alt="기념품점 이미지">
+                                            <span class="disc">기념품점</span>
+                                        </button>
+                                    </div>
+                                </div>
                                 <div class="control">
-                                    <button type="button" class="btn-prev"></button>
-                                    <button type="button" class="btn-next"></button>
+                                    <button type="button" class="btn-prev">이전버튼</button>
+                                    <button type="button" class="btn-next">다음버튼</button>
                                 </div>
                             </div>
 
-                            <div class="inner">
-                                <div class="tit-grp">
-                                    <h3 class="h3-title"><img src="./images/common/icon_h3_tit_logo.svg" alt="메뉴타이틀 로고">플러스안전체험관</h3>
-                                    <span class="sub-disc">VR 체험, CPR, AED 교육 등 실제와 같은 상황을 직접 경험하며 사고 유형별 예방과 대처 방법을 배우는 안전공간입니다.</span>
+                            <div class="bg-contents">
+                                <div class="inner show" id="con4-data1">
+                                    <div class="tit-grp">
+                                        <h3 class="h3-title"><img src="./images/common/icon_h3_tit_logo.svg" alt="메뉴타이틀 로고">플러스안전체험관</h3>
+                                        <span class="sub-disc">VR 체험, CPR, AED 교육 등 실제와 같은 상황을 직접 경험하며 사고 유형별 예방과 대처 방법을 배우는 안전공간입니다.</span>
+                                    </div>
+                                    <div class="go-to-wrap">
+                                        <strong>체험 공간</strong>
+                                        <ul>
+                                            <li>
+                                                <img src="./images/common/icon_goto_thumb01.svg" alt="VR 체험 이미지">
+                                                <p><span class="cnt">ZONE 1</span>위험을빼다 [VR 체험]</p>
+                                            </li>
+                                            <li>
+                                                <img src="./images/common/icon_goto_thumb02.svg" alt="생활안전, 시설안전 이미지">
+                                                <p><span class="cnt">ZONE 2</span>안전을 더하다 [생활안전, 시설안전]</p>
+                                            </li>
+                                            <li>
+                                                <img src="./images/common/icon_goto_thumb03.svg" alt="경험나누기 이미지">
+                                                <p><span class="cnt">ZONE 3</span>경험을 나누다</p>
+                                            </li>
+                                        </ul>
+                                        <a href="#" class="btn-goto" aria-label="이용안내 페이지로 이동">이용안내 바로가기 <img src="./images/common/icon_goto_arrow.svg" alt="이용안내 화살표 아이콘"></a>
+                                    </div>
                                 </div>
-                                <div class="go-to-wrap">
-                                    <strong>체험 공간</strong>
-                                    <ul>
-                                        <li>
-                                            <img src="./images/common/icon_goto_thumb01.svg" alt="VR 체험 이미지">
-                                            <p><span class="cnt">ZONE 1</span>위험을빼다 [VR 체험]</p>
-                                        </li>
-                                        <li>
-                                            <img src="./images/common/icon_goto_thumb02.svg" alt="생활안전, 시설안전 이미지">
-                                            <p><span class="cnt">ZONE 2</span>안전을 더하다 [생활안전, 시설안전]</p>
-                                        </li>
-                                        <li>
-                                            <img src="./images/common/icon_goto_thumb03.svg" alt="경험나누기 이미지">
-                                            <p><span class="cnt">ZONE 3</span>경험을 나누다</p>
-                                        </li>
-                                    </ul>
-                                    <a href="#" class="btn-goto" aria-label="이용안내 페이지로 이동">이용안내 바로가기 <img src="./images/common/icon_goto_arrow.svg" alt="이용안내 화살표 아이콘"></a>
+    
+                                <div class="inner" id="con4-data2">
+                                    <div class="tit-grp">
+                                        <h3 class="h3-title"><img src="./images/common/icon_h3_tit_logo.svg" alt="메뉴타이틀 로고">플러스안전체험관</h3>
+                                        <span class="sub-disc">VR 체험, CPR, AED 교육 등 실제와 같은 상황을 직접 경험하며 사고 유형별 예방과 대처 방법을 배우는 안전공간입니다.</span>
+                                    </div>
+                                    <div class="go-to-wrap">
+                                        <strong>체험 공간</strong>
+                                        <ul>
+                                            <li>
+                                                <img src="./images/common/icon_goto_thumb01.svg" alt="VR 체험 이미지">
+                                                <p><span class="cnt">ZONE 1</span>위험을빼다 [VR 체험]</p>
+                                            </li>
+                                            <li>
+                                                <img src="./images/common/icon_goto_thumb02.svg" alt="생활안전, 시설안전 이미지">
+                                                <p><span class="cnt">ZONE 2</span>안전을 더하다 [생활안전, 시설안전]</p>
+                                            </li>
+                                            <li>
+                                                <img src="./images/common/icon_goto_thumb03.svg" alt="경험나누기 이미지">
+                                                <p><span class="cnt">ZONE 3</span>경험을 나누다</p>
+                                            </li>
+                                        </ul>
+                                        <a href="#" class="btn-goto" aria-label="이용안내 페이지로 이동">이용안내 바로가기 <img src="./images/common/icon_goto_arrow.svg" alt="이용안내 화살표 아이콘"></a>
+                                    </div>
+                                </div>
+    
+                                <div class="inner" id="con4-data3">
+                                    <div class="tit-grp">
+                                        <h3 class="h3-title"><img src="./images/common/icon_h3_tit_logo.svg" alt="메뉴타이틀 로고">플러스안전체험관</h3>
+                                        <span class="sub-disc">VR 체험, CPR, AED 교육 등 실제와 같은 상황을 직접 경험하며 사고 유형별 예방과 대처 방법을 배우는 안전공간입니다.</span>
+                                    </div>
+                                    <div class="go-to-wrap">
+                                        <strong>체험 공간</strong>
+                                        <ul>
+                                            <li>
+                                                <img src="./images/common/icon_goto_thumb01.svg" alt="VR 체험 이미지">
+                                                <p><span class="cnt">ZONE 1</span>위험을빼다 [VR 체험]</p>
+                                            </li>
+                                            <li>
+                                                <img src="./images/common/icon_goto_thumb02.svg" alt="생활안전, 시설안전 이미지">
+                                                <p><span class="cnt">ZONE 2</span>안전을 더하다 [생활안전, 시설안전]</p>
+                                            </li>
+                                            <li>
+                                                <img src="./images/common/icon_goto_thumb03.svg" alt="경험나누기 이미지">
+                                                <p><span class="cnt">ZONE 3</span>경험을 나누다</p>
+                                            </li>
+                                        </ul>
+                                        <a href="#" class="btn-goto" aria-label="이용안내 페이지로 이동">이용안내 바로가기 <img src="./images/common/icon_goto_arrow.svg" alt="이용안내 화살표 아이콘"></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="tab-content" id="tab1-con5">
-                            5
+                            <div class="swiper floor-3">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <button type="button" data-cont="con5-data1">
+                                            <img src="./images/common/img_3f_info_01.webp" alt="스마트안전체험관 이미지">
+                                            <span class="disc">스마트안전체험관</span>
+                                        </button>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <button type="button" data-cont="con5-data2">
+                                            <img src="./images/common/img_3f_info_02.webp" alt="자료실 이미지">
+                                            <span class="disc">자료실</span>
+                                        </button>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <button type="button" data-cont="con5-data3">
+                                            <img src="./images/common/img_3f_info_03.webp" alt="테라스 이미지">
+                                            <span class="disc">테라스</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="control">
+                                    <button type="button" class="btn-prev">이전버튼</button>
+                                    <button type="button" class="btn-next">다음버튼</button>
+                                </div>
+                            </div>
+                            <div class="bg-contents">
+                                <div class="inner show" id="con5-data1">
+                                    <div class="tit-grp">
+                                        <h3 class="h3-title"><img src="./images/common/icon_h3_tit_logo.svg" alt="메뉴타이틀 로고">스마트안전체험관</h3>
+                                        <span class="sub-disc">건설안전기술자의 전문성 향상을 위해, 스마트 안전장비를 직접 체험하고 습득하는 공간입니다.</span>
+                                    </div>
+                                    <div class="go-to-wrap">
+                                        <strong>체험 공간</strong>
+                                        <ul>
+                                            <li>
+                                                <img src="./images/common/icon_goto_thumb01.svg" alt="VR 체험 이미지">
+                                                <p><span class="cnt">ZONE 1</span>안전을 더하다 [건설안전:기구체험]</p>
+                                            </li>
+                                            <li>
+                                                <img src="./images/common/icon_goto_thumb02.svg" alt="생활안전, 시설안전 이미지">
+                                                <p><span class="cnt">ZONE 2</span>안전을 더하다 [건설안전, VR체험]</p>
+                                            </li>
+                                            <li>
+                                                <img src="./images/common/icon_goto_thumb03.svg" alt="경험나누기 이미지">
+                                                <p><span class="cnt">ZONE 3</span>경험을 나누다</p>
+                                            </li>
+                                        </ul>
+                                        <a href="#" class="btn-goto" aria-label="이용안내 페이지로 이동">이용안내 바로가기 <img src="./images/common/icon_goto_arrow.svg" alt="이용안내 화살표 아이콘"></a>
+                                    </div>
+                                </div>
+    
+                                <div class="inner" id="con5-data2">
+                                    <div class="tit-grp">
+                                        <h3 class="h3-title"><img src="./images/common/icon_h3_tit_logo.svg" alt="메뉴타이틀 로고">스마트안전체험관</h3>
+                                        <span class="sub-disc">건설안전기술자의 전문성 향상을 위해, 스마트 안전장비를 직접 체험하고 습득하는 공간입니다.</span>
+                                    </div>
+                                    <div class="go-to-wrap">
+                                        <strong>체험 공간</strong>
+                                        <ul>
+                                            <li>
+                                                <img src="./images/common/icon_goto_thumb01.svg" alt="VR 체험 이미지">
+                                                <p><span class="cnt">ZONE 1</span>안전을 더하다 [건설안전:기구체험]</p>
+                                            </li>
+                                            <li>
+                                                <img src="./images/common/icon_goto_thumb02.svg" alt="생활안전, 시설안전 이미지">
+                                                <p><span class="cnt">ZONE 2</span>안전을 더하다 [건설안전, VR체험]</p>
+                                            </li>
+                                            <li>
+                                                <img src="./images/common/icon_goto_thumb03.svg" alt="경험나누기 이미지">
+                                                <p><span class="cnt">ZONE 3</span>경험을 나누다</p>
+                                            </li>
+                                        </ul>
+                                        <a href="#" class="btn-goto" aria-label="이용안내 페이지로 이동">이용안내 바로가기 <img src="./images/common/icon_goto_arrow.svg" alt="이용안내 화살표 아이콘"></a>
+                                    </div>
+                                </div>
+    
+                                <div class="inner" id="con5-data3">
+                                    <div class="tit-grp">
+                                        <h3 class="h3-title"><img src="./images/common/icon_h3_tit_logo.svg" alt="메뉴타이틀 로고">스마트안전체험관</h3>
+                                        <span class="sub-disc">건설안전기술자의 전문성 향상을 위해, 스마트 안전장비를 직접 체험하고 습득하는 공간입니다.</span>
+                                    </div>
+                                    <div class="go-to-wrap">
+                                        <strong>체험 공간</strong>
+                                        <ul>
+                                            <li>
+                                                <img src="./images/common/icon_goto_thumb01.svg" alt="VR 체험 이미지">
+                                                <p><span class="cnt">ZONE 1</span>안전을 더하다 [건설안전:기구체험]</p>
+                                            </li>
+                                            <li>
+                                                <img src="./images/common/icon_goto_thumb02.svg" alt="생활안전, 시설안전 이미지">
+                                                <p><span class="cnt">ZONE 2</span>안전을 더하다 [건설안전, VR체험]</p>
+                                            </li>
+                                            <li>
+                                                <img src="./images/common/icon_goto_thumb03.svg" alt="경험나누기 이미지">
+                                                <p><span class="cnt">ZONE 3</span>경험을 나누다</p>
+                                            </li>
+                                        </ul>
+                                        <a href="#" class="btn-goto" aria-label="이용안내 페이지로 이동">이용안내 바로가기 <img src="./images/common/icon_goto_arrow.svg" alt="이용안내 화살표 아이콘"></a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="tab-content" id="tab1-con6">
-                            6
+                            <div class="swiper conv">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <button type="button" data-cont="con6-data1">
+                                            <img src="./images/common/img_conv_info_01.webp" alt="휠체어 이미지">
+                                            <span class="disc">휠체어 대여</span>
+                                        </button>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <button type="button" data-cont="con6-data2">
+                                            <img src="./images/common/img_conv_info_02.webp" alt="물품보관소 이미지">
+                                            <span class="disc">물품보관소</span>
+                                        </button>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <button type="button" data-cont="con6-data3">
+                                            <img src="./images/common/img_conv_info_03.webp" alt="수유실 이미지">
+                                            <span class="disc">수유실 및 기저귀 교환실</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="control">
+                                    <button type="button" class="btn-prev">이전버튼</button>
+                                    <button type="button" class="btn-next">다음버튼</button>
+                                </div>
+                            </div>
+                            <div class="bg-contents">
+                                <div class="inner show" id="con6-data1">
+                                    <div class="tit-grp">
+                                        <h3 class="h3-title"><img src="./images/common/icon_h3_tit_logo.svg" alt="메뉴타이틀 로고">휠체어 대여</h3>
+                                        <span class="sub-disc">몸이 불편하신 고객을 위해 휠체어를 무료로 대여해드립니다. 신분증 보관이 필요하며, 도움이 필요한 경우 바로 앞에 도움벨을 눌러주세요.</span>
+                                    </div>
+                                    <div class="bg-wh-box parking">
+                                        <div class="inner">
+                                            <strong class="txt-blue txt24">위치</strong>
+                                            <ul>
+                                                <li class="bullet txt18 fwr">1층 출입구 옆</li>
+                                            </ul>
+                                        </div>
+    
+                                        <div class="inner">
+                                            <strong class="txt-blue txt24">운영시간</strong>
+                                            <ul>
+                                                <li class="bullet txt18 fwr">평일 09:00 ~ 18:00, 토요일 09:00 ~ 18 :00, 공휴일/휴관일 : 이용불가</li>
+                                                <li class="bullet txt18 fwr">이외에 설명을 입력해주세요..</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="inner" id="con6-data2">
+                                    <div class="tit-grp">
+                                        <h3 class="h3-title"><img src="./images/common/icon_h3_tit_logo.svg" alt="메뉴타이틀 로고">휠체어 대여</h3>
+                                        <span class="sub-disc">몸이 불편하신 고객을 위해 휠체어를 무료로 대여해드립니다. 신분증 보관이 필요하며, 도움이 필요한 경우 바로 앞에 도움벨을 눌러주세요.</span>
+                                    </div>
+                                    <div class="bg-wh-box parking">
+                                        <div class="inner">
+                                            <strong class="txt-blue txt24">위치</strong>
+                                            <ul>
+                                                <li class="bullet txt18 fwr">1층 출입구 옆</li>
+                                            </ul>
+                                        </div>
+    
+                                        <div class="inner">
+                                            <strong class="txt-blue txt24">운영시간</strong>
+                                            <ul>
+                                                <li class="bullet txt18 fwr">평일 09:00 ~ 18:00, 토요일 09:00 ~ 18 :00, 공휴일/휴관일 : 이용불가</li>
+                                                <li class="bullet txt18 fwr">이외에 설명을 입력해주세요..</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="inner" id="con6-data3">
+                                    <div class="tit-grp">
+                                        <h3 class="h3-title"><img src="./images/common/icon_h3_tit_logo.svg" alt="메뉴타이틀 로고">휠체어 대여</h3>
+                                        <span class="sub-disc">몸이 불편하신 고객을 위해 휠체어를 무료로 대여해드립니다. 신분증 보관이 필요하며, 도움이 필요한 경우 바로 앞에 도움벨을 눌러주세요.</span>
+                                    </div>
+                                    <div class="bg-wh-box parking">
+                                        <div class="inner">
+                                            <strong class="txt-blue txt24">위치</strong>
+                                            <ul>
+                                                <li class="bullet txt18 fwr">1층 출입구 옆</li>
+                                            </ul>
+                                        </div>
+    
+                                        <div class="inner">
+                                            <strong class="txt-blue txt24">운영시간</strong>
+                                            <ul>
+                                                <li class="bullet txt18 fwr">평일 09:00 ~ 18:00, 토요일 09:00 ~ 18 :00, 공휴일/휴관일 : 이용불가</li>
+                                                <li class="bullet txt18 fwr">이외에 설명을 입력해주세요..</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-content" id="tab1-con7">
+                            <div class="swiper conv">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <button type="button" data-cont="con7-data1">
+                                            <img src="./images/common/img_prac_info_01.webp" alt="휠체어 이미지">
+                                            <span class="disc">안전진단실습</span>
+                                        </button>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <button type="button" data-cont="con7-data2">
+                                            <img src="./images/common/img_prac_info_02.webp" alt="물품보관소 이미지">
+                                            <span class="disc">시설물안전실습</span>
+                                        </button>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <button type="button" data-cont="con7-data3">
+                                            <img src="./images/common/img_prac_info_03.webp" alt="수유실 이미지">
+                                            <span class="disc">건축물관리실습</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="control">
+                                    <button type="button" class="btn-prev">이전버튼</button>
+                                    <button type="button" class="btn-next">다음버튼</button>
+                                </div>
+                            </div>
+                            <div class="bg-contents">
+                                <div class="inner show" id="con7-data1">
+                                    <div class="tit-grp">
+                                        <h3 class="h3-title"><img src="./images/common/icon_h3_tit_logo.svg" alt="메뉴타이틀 로고">안전진단실습</h3>
+                                        <span class="sub-disc">안전진단을 실습해 볼 수 있는 공간입니다.</span>
+                                    </div>
+                                    <div class="bg-wh-box parking">
+                                        <div class="inner">
+                                            <strong class="txt-blue txt24">수용인원</strong>
+                                            <ul>
+                                                <li class="bullet txt18 fwr">00명</li>
+                                            </ul>
+                                        </div>
+    
+                                        <div class="inner">
+                                            <strong class="txt-blue txt24">운영시간</strong>
+                                            <ul>
+                                                <li class="bullet txt18 fwr">평일 09:00 ~ 18:00, 토요일 09:00 ~ 18 :00, 공휴일/휴관일 : 이용불가</li>
+                                                <li class="bullet txt18 fwr">이외에 설명을 입력해주세요..</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="inner" id="con7-data2">
+                                    <div class="tit-grp">
+                                        <h3 class="h3-title"><img src="./images/common/icon_h3_tit_logo.svg" alt="메뉴타이틀 로고">안전진단실습</h3>
+                                        <span class="sub-disc">안전진단을 실습해 볼 수 있는 공간입니다.</span>
+                                    </div>
+                                    <div class="bg-wh-box parking">
+                                        <div class="inner">
+                                            <strong class="txt-blue txt24">수용인원</strong>
+                                            <ul>
+                                                <li class="bullet txt18 fwr">00명</li>
+                                            </ul>
+                                        </div>
+    
+                                        <div class="inner">
+                                            <strong class="txt-blue txt24">운영시간</strong>
+                                            <ul>
+                                                <li class="bullet txt18 fwr">평일 09:00 ~ 18:00, 토요일 09:00 ~ 18 :00, 공휴일/휴관일 : 이용불가</li>
+                                                <li class="bullet txt18 fwr">이외에 설명을 입력해주세요..</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="inner" id="con7-data3">
+                                    <div class="tit-grp">
+                                        <h3 class="h3-title"><img src="./images/common/icon_h3_tit_logo.svg" alt="메뉴타이틀 로고">안전진단실습</h3>
+                                        <span class="sub-disc">안전진단을 실습해 볼 수 있는 공간입니다.</span>
+                                    </div>
+                                    <div class="bg-wh-box parking">
+                                        <div class="inner">
+                                            <strong class="txt-blue txt24">수용인원</strong>
+                                            <ul>
+                                                <li class="bullet txt18 fwr">00명</li>
+                                            </ul>
+                                        </div>
+    
+                                        <div class="inner">
+                                            <strong class="txt-blue txt24">운영시간</strong>
+                                            <ul>
+                                                <li class="bullet txt18 fwr">평일 09:00 ~ 18:00, 토요일 09:00 ~ 18 :00, 공휴일/휴관일 : 이용불가</li>
+                                                <li class="bullet txt18 fwr">이외에 설명을 입력해주세요..</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -497,14 +1157,12 @@
     <script>
     document.addEventListener("DOMContentLoaded", function () {
         const swiperList = document.querySelectorAll('.info .swiper');
-
         swiperList.forEach((swiperEl) => {
-            
             // 좌/우 버튼
             const nextBtn = swiperEl.querySelector('.btn-next');
             const prevBtn = swiperEl.querySelector('.btn-prev');
 
-            new Swiper(swiperEl, {
+            const swiper = new Swiper(swiperEl, {
                 slidesPerView: "auto", // 한번에 보여지는 슬라이드 숫자
                 slidesPerGroup: 1, // 한번에 이동되는 슬라이드 숫자
                 loop: false,
@@ -521,6 +1179,12 @@
                     prevEl: prevBtn
                 },
             });
+
+            // init시 첫번째 슬라이드 활성화
+            if (swiper.slides.length > 0) {
+                swiper.slides.forEach(s => s.classList.remove('is-active'));
+                swiper.slides[0].classList.add('is-active');
+            }
         });
 
         // 탭 클릭 시 swiper 갱신
@@ -530,11 +1194,64 @@
                 setTimeout(() => {
                     swiperList.forEach(sw => {
                         if (sw.swiper) sw.swiper.update(); 
+
+                        // 각 탭화면 슬라이드 갱신시 첫번째 탭들 활성화
+                        if (sw.swiper.slides.length > 0) {
+                            sw.swiper.slides.forEach(s => s.classList.remove('is-active'));
+                            sw.swiper.slides[0].classList.add('is-active');
+                        }
                     });
                 }, 100);
             });
         });
 
+        // 이벤틔 위임방식 슬라이드이미지 click
+        document.addEventListener('click', (e) => {
+            const btn = e.target.closest('button[data-cont]');
+            if (!btn) return;
+
+            const slide = btn.closest('.swiper-slide');
+            const swiperEl = btn.closest('.swiper');
+            if (!slide || !swiperEl || !swiperEl.swiper) return;
+
+            const swiper = swiperEl.swiper;
+            const slideIndex = swiper.slides.indexOf(slide);
+            swiper.slideTo(slideIndex);
+
+            swiper.slides.forEach(s => s.classList.remove('is-active'));
+            slide.classList.add('is-active');
+
+            const targetId = btn.dataset.cont;
+            const tabContent = btn.closest('.tab-content');
+            if (!tabContent) return;
+
+            // 버튼 안 span.disc 텍스트 (하단에 show처리되는 inner의 title변경)
+            const discText = btn.querySelector('.disc')?.textContent?.trim();
+            if (!discText) return;
+
+            // 기존 show 제거
+            tabContent.querySelectorAll('.inner.show').forEach(el => {
+                el.classList.remove('show');
+            });
+
+            // 대상 inner
+            const targetInner = tabContent.querySelector(`#${targetId}`);
+            if (!targetInner) return;
+
+            targetInner.classList.add('show');
+
+            // h3 타이틀 텍스트 교체
+            const h3 = targetInner.querySelector('.h3-title');
+            if (h3) {
+                // img는유지
+                const img = h3.querySelector('img');
+                h3.textContent = discText;
+
+                if (img) {
+                    h3.prepend(img);
+                }
+            }
+        });
     });
     </script>
 </body>

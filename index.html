@@ -19,8 +19,8 @@
         </ul>
         <div class="noti-wrap open">
             <div class="swiper top-noti-swiper">
-                <ul class="swiper-wrapper">
-                    <li class="swiper-slide">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
                         <a href="#">
                             <i class="img-noti"><img src="./images/common/icon_info_tory.webp" alt="공지 아이콘 이미지"></i>
                             <div class="inner">
@@ -28,8 +28,8 @@
                                 <p class="date">설문기간 : 2025년 9월 1일 ~ 9월 12일</p>
                             </div>
                         </a>
-                    </li>
-                    <li class="swiper-slide bg-type2">
+                    </div>
+                    <div class="swiper-slide bg-type2">
                         <a href="#">
                             <!-- <i class="img-noti"><img src="./images/common/icon_info_tory.webp" alt="공지 아이콘 이미지"></i> -->
                             <div class="inner">
@@ -37,8 +37,8 @@
                                 <p class="date">설문기간 : 2025년 7월 1일 ~ 10월 12일</p>
                             </div>
                         </a>
-                    </li>
-                    <li class="swiper-slide bg-type3">
+                    </div>
+                    <div class="swiper-slide bg-type3">
                         <a href="#">
                             <i class="img-noti"><img src="./images/common/icon_info_tory.webp" alt="공지 아이콘 이미지"></i>
                             <div class="inner">
@@ -46,8 +46,8 @@
                                 <p class="date">설문기간 : 2025년 3월 1일 ~ 11월 12일</p>
                             </div>
                         </a>
-                    </li>
-                    <li class="swiper-slide bg-type4">
+                    </div>
+                    <div class="swiper-slide bg-type4">
                         <a href="#">
                             <!-- <i class="img-noti"><img src="./images/common/icon_info_tory.webp" alt="공지 아이콘 이미지"></i> -->
                             <div class="inner">
@@ -55,8 +55,8 @@
                                 <p class="date">설문기간 : 2025년 5월 1일 ~ 12월 12일</p>
                             </div>
                         </a>
-                    </li>
-                    <li class="swiper-slide bg-type2">
+                    </div>
+                    <div class="swiper-slide bg-type2">
                         <a href="#">
                             <i class="img-noti"><img src="./images/common/icon_info_tory.webp" alt="공지 아이콘 이미지"></i>
                             <div class="inner">
@@ -64,8 +64,8 @@
                                 <p class="date">설문기간 : 2025년 1월 1일 ~ 12월 31일</p>
                             </div>
                         </a>
-                    </li>
-                </ul>
+                    </div>
+                </div>
             </div>
             <div class="control-wrap noti">
                 <div class="count">
@@ -103,14 +103,14 @@
             });
 
             document.querySelector(".control-wrap.noti .swiper-autoplay-button .pause").addEventListener("click", function() {
-                notiSwiper.autoplay.stop();
+                topNotiSwiper.autoplay.stop();
                 this.style.display = "none";
                 document.querySelector(".control-wrap.noti .swiper-autoplay-button .play").style.display = "block";
             });
 
             // 재생 버튼
             document.querySelector(".control-wrap.noti .swiper-autoplay-button .play").addEventListener("click", function() {
-                notiSwiper.autoplay.start();
+                topNotiSwiper.autoplay.start();
                 this.style.display = "none";
                 document.querySelector(".control-wrap.noti .swiper-autoplay-button .pause").style.display = "block";
             });
@@ -121,7 +121,7 @@
                 <div class="sch-area">
                     <label for="searchInput" class="sr-only">검색어 입력</label>
                     <input type="text" placeholder="검색어를 입력하세요" id="searchInput">
-                    <button type="button" class="btn-sch"></button>
+                    <button type="button" class="btn-sch">검색버튼</button>
                 </div>
                 <div class="mo-only mo-btn-grp">
                     <button class="mo-btn-search btn-sch">검색버튼</button>
@@ -244,23 +244,23 @@
                     <strong><img src="./images/common/icon_speaker.svg" alt="공지사항 아이콘 이미지" aria-hidden="true">공지사항</strong>
                     <div class="noti-gen">
                         <div class="swiper noti">
-                            <ul class="swiper-wrapper">
-                                <li class="swiper-slide">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
                                     <a href="#">[설문당첨안내] 교육서비스 및 현업 적응도 관련 설문조사</a>
-                                </li>
-                                <li class="swiper-slide">
+                                </div>
+                                <div class="swiper-slide">
                                     <a href="#">[안내] 공지공지 교육서비스 및 현업 적응도 관련 설문조사</a>
-                                </li>
-                                <li class="swiper-slide">
+                                </div>
+                                <div class="swiper-slide">
                                     <a href="#">[중요] 중요한 교육서비스 및 현업 적응도 관련 설문조사</a>
-                                </li>
-                                <li class="swiper-slide">
+                                </div>
+                                <div class="swiper-slide">
                                     <a href="#">[당첨안내] 1111교육서비스 및 현업 적응도 관련 설문조사</a>
-                                </li>
-                                <li class="swiper-slide">
+                                </div>
+                                <div class="swiper-slide">
                                     <a href="#">[설문안내] 설문 교육서비스 및 현업 적응도 관련 설문조사</a>
-                                </li>
-                            </ul>
+                                </div>
+                            </div>
                         </div>
                         <div class="btn-grp">
                             <button type="button" class="btn-up" aria-label="이전 공지사항 보기 버튼"></button>
@@ -383,58 +383,58 @@
             <div class="bd-line-grp">
                 <div class="footer-banner-slider max-width-inner">
                     <div class="swiper mySwiper type02">
-                        <ul class="swiper-wrapper">
-                            <li class="swiper-slide">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
                                 <a href="#" target="_blank">
                                     <img src="./images/common/img_footer_bn01.svg" alt="국토안전관리원">
                                 </a>
-                            </li>
-                            <li class="swiper-slide">
+                            </div>
+                            <div class="swiper-slide">
                                 <a href="#" target="_blank">
                                     <img src="./images/common/img_footer_bn02.svg" alt="시설물통합정보관리시스템">
                                 </a>
-                            </li>
-                            <li class="swiper-slide">
+                            </div>
+                            <div class="swiper-slide">
                                 <a href="#" target="_blank">
                                     <img src="./images/common/img_footer_bn03.svg" alt="한국건설기술인협회">
                                 </a>
-                            </li>
-                            <li class="swiper-slide">
+                            </div>
+                            <div class="swiper-slide">
                                 <a href="#" target="_blank">
                                     <img src="./images/common/img_footer_bn01.svg" alt="국토안전관리원">
                                 </a>
-                            </li>
-                            <li class="swiper-slide">
+                            </div>
+                            <div class="swiper-slide">
                                 <a href="#" target="_blank">
                                     <img src="./images/common/img_footer_bn02.svg" alt="시설물통합정보관리시스템">
                                 </a>
-                            </li>
-                            <li class="swiper-slide">
+                            </div>
+                            <div class="swiper-slide">
                                 <a href="#" target="_blank">
                                     <img src="./images/common/img_footer_bn03.svg" alt="한국건설기술인협회">
                                 </a>
-                            </li>
-                            <li class="swiper-slide">
+                            </div>
+                            <div class="swiper-slide">
                                 <a href="#" target="_blank">
                                     <img src="./images/common/img_footer_bn01.svg" alt="국토안전관리원">
                                 </a>
-                            </li>
-                            <li class="swiper-slide">
+                            </div>
+                            <div class="swiper-slide">
                                 <a href="#" target="_blank">
                                     <img src="./images/common/img_footer_bn02.svg" alt="시설물통합정보관리시스템">
                                 </a>
-                            </li>
-                            <li class="swiper-slide">
+                            </div>
+                            <div class="swiper-slide">
                                 <a href="#" target="_blank">
                                     <img src="./images/common/img_footer_bn03.svg" alt="한국건설기술인협회">
                                 </a>
-                            </li>
-                            <li class="swiper-slide">
+                            </div>
+                            <div class="swiper-slide">
                                 <a href="#" target="_blank">
                                     <img src="./images/common/img_footer_bn01.svg" alt="국토안전관리원">
                                 </a>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
                     </div>
                     <div class="swiper-button">
                         <button type="button" class="swiper-button-next"><img src="./images/common/icon_footer_btn_next.svg" alt="다음버튼 아이콘"></button>
