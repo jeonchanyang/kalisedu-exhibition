@@ -77,7 +77,7 @@
 .scroll-wrap .scroll::-webkit-scrollbar{display:none;} /* chrome, safari */
 .scroll-wrap .scroll-controller{display:flex; position:absolute; bottom:0; left:0; width:100%;}
 .scroll-wrap .scroll-progress{flex-grow:1; position:relative; left:-.1rem; background:#0F2A43; cursor:pointer;}
-.scroll-wrap .scroll-thumb{position:absolute; width:30%; height:100%; background:#8AC650; cursor:grab;}
+.scroll-wrap .scroll-thumb{position:absolute; width:30%; height:100%; background:#8AC650; cursor:grab; touch-action:none; will-change:left;}
 .scroll-wrap .scroll-btns{display:flex; background:#0F2A43;}
 .scroll-wrap .scroll-btns button{width:4.5rem; height:4rem; text-indent:-9999px; background-position:center center; background-size:1.2rem 2rem; background-repeat:no-repeat;}
 .scroll-wrap .scroll-btns button.btn-left{background-image:url(../images/common/icon_scroll_arrow_left.svg);}
@@ -210,6 +210,7 @@
 
 
 .res-grp + .res-info{margin-top:6.3rem;}
+.res-info .tit-grp.sub-beyween > .sub-disc02{align-self:flex-end;}
 .form-info{display:flex; flex-wrap:wrap; gap:1.6rem; align-items:center; padding:1.6rem 0; border-top:.3rem solid #000; border-bottom:.1rem solid #000;}
 .form-info dt{min-width:10.6rem; font-weight:700; font-size:1.8rem;}
 .form-info dd{width:calc(100% - 15rem); flex-grow:1;}
@@ -829,7 +830,7 @@
 .wrap.integrated header{flex-direction:row; gap:3rem; align-items:flex-end; width:100%; padding:2rem 1rem 0; background:transparent;}
 .wrap.integrated header .logo{display:inline-flex; width:19.7rem; height:5.9rem; text-indent:-9999px; background:url(/images/common/icon_main_logo2.svg) center center /  100% no-repeat;}
 .wrap.integrated header .logo a{display:inline-block; width:100%; height:100%;}
-.wrap.integrated header .disc{display:inline-block; color:#fff; font-weight:500; font-size:var(--font-size-24); text-indent:0;}
+.wrap.integrated header .disc{display:inline-block; margin-bottom:.3rem; color:#fff; font-weight:500; font-size:var(--font-size-24); text-indent:0;}
 .wrap.integrated header .logo + .disc{position:relative;}
 .wrap.integrated header .logo + .disc::before{content:''; display:inline-block; position:absolute; top:50%; left:-1.5rem; width:.1rem; height:2rem; background:#fff; transform:translateY(-50%);}
 .wrap.integrated .h2-title{padding:8rem 0 6.2rem; color:#fff;}
@@ -928,13 +929,16 @@
 
 /* res-guide */
 .guide-box{display:flex; gap:2rem;}
-.guide-box li{width:100%; padding:4.4rem 2.5rem; text-align:center; background:#fff; border-radius:1rem;}
+.guide-box li{display:inline-flex; flex-direction:column; width:100%; min-height:30rem; padding:4.4rem 2.5rem 2.2rem; text-align:center; background:#fff; border-radius:1rem;}
 .guide-box li:nth-of-type(even){background:rgba(223, 227, 235, 0.8);}
 .guide-box li .frame img{display:block; height:6rem; margin:0 auto;}
 .guide-box li .tit{display:block; margin-top:3rem; font-weight:700; line-height:2.4rem; font-size:2.6rem;}
 .guide-box li .tit + .desc{margin-top:2rem;}
 .guide-box li .desc{display:inline-block; font-weight:400; line-height:2.4rem; font-size:1.8rem;}
 .guide-box li .desc .txt-point{color:#EB728E;}
+.guide-box li .btn-grp{justify-content:center; margin-top:1rem;}
+.guide-box li .btn-grp .btn{height:4rem;}
+
 
 .res-guide .info-box li{display:flex; gap:6rem;}
 .res-guide .info-box li + li{position:relative; padding-top:12rem;}
@@ -1642,12 +1646,15 @@
     .transport-list li .list dd{line-height:2.6rem; font-size:1.6rem;}
 
     .guide-box{flex-wrap:wrap;}
-    .guide-box li{display:flex; gap:2rem; align-items:center; width:100%; padding:2rem; text-align:left;}
-    .guide-box li .frame{display:block; width:6.2rem;}
+    .guide-box li{display:flex; flex-direction:row; gap:2rem; width:100%; min-height:unset; padding:2rem; text-align:left;}
+    .guide-box li .frame{flex:0 0 auto; align-self:center; display:block; width:6.2rem;}
     .guide-box li .frame img{max-width:100%; height:5rem;}
-    .guide-box li .txt-grp{text-align:left;}
-    .guide-box li .tit{margin-top:0;}
+    .guide-box li .txt-grp{flex-grow:1; text-align:left;}
+    .guide-box li .tit{margin-top:0; font-size:2rem;}
     .guide-box li .tit + .desc{margin-top:1rem;}
+    .guide-box li .desc{font-size:1.6rem; line-height:2.2rem;}
+    .guide-box li .btn-grp{justify-content:flex-start;}
+    .guide-box li .btn-grp .btn{min-width:14rem;}
     .res-guide .info-box li{flex-wrap:wrap;}
     .res-guide .info-box li + li{padding-top:8rem;}
     .res-guide .info-box li + li::before{top:4rem;}

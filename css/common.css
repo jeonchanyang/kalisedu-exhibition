@@ -155,11 +155,12 @@ select.ipt02{background:url(../images/common/icon_select_down.svg) right top .6r
 .footer-cont .link-area img{display:block;}
 
 .footer-cont .txt-list{display:flex; flex-wrap:wrap; gap:3rem 2rem; justify-content:space-between; margin-top:3.2rem; font-size:var(--font-size-16);}
+.footer-cont .txt-list > li{width:calc(50% - 2rem);}
 .footer-cont .txt-list li .tit{display:inline-flex; align-items:center; gap:1.2rem; font-weight:700; font-size:1.8rem;}
 .footer-cont .txt-list li .tit[class*='icon-']::before{content:''; display:inline-block; width:2rem; height:2rem; background-position:center center; background-size:100%; background-repeat:no-repeat;}
 .footer-cont .txt-list li .tit.icon-location::before{background-image:url(../images/common/icon_location.svg);}
 .footer-cont .txt-list li .tit.icon-counsel::before{background-image:url(../images/common/icon_counsel.svg);}
-.footer-cont .txt-list li dl{display:flex; flex-wrap:wrap; gap:1rem 3.5rem; max-width:42rem; margin-top:1.7rem;}
+.footer-cont .txt-list li dl{display:flex; flex-wrap:wrap; gap:1rem 3.5rem; margin-top:1.7rem;}
 .footer-cont .txt-list li dl dt{min-width:5.5rem; font-weight:700;}
 .footer-cont .txt-list li dl dd{flex-basis:calc(100% - 12rem); flex-grow:1;}
 .footer-cont address{margin-top:2.6rem; color:var(--font-color-gray);}
@@ -365,4 +366,5 @@ body.modal-open{height:100vh; overflow:hidden;}
     .address-grp address{position:absolute; bottom:6.5rem;}
     .footer-cont .link-area{position:absolute; top:2.7rem; padding-right:2rem;}
     .footer-cont .logo-grp{margin-top:10rem;}
+    .footer-cont .txt-list > li{width:100%;}
 }

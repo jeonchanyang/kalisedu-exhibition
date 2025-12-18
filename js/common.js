@@ -620,9 +620,11 @@ function scrollControlFn() {
             window.addEventListener('mouseup', onPointerUp);
 
             // touch
+            /*
             thumb.addEventListener('touchstart', onPointerDown, { passive: true });
             window.addEventListener('touchmove', onPointerMove, { passive: false });
             window.addEventListener('touchend', onPointerUp);
+            */
         }
 
         // track click
@@ -655,7 +657,6 @@ function scrollControlFn() {
         });
     };
 }
-
 
 //예약하기 인원추가
 function resAddFn(){
