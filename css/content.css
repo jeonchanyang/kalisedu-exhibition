@@ -1590,7 +1590,7 @@
     .wrap.integrated{background-image:none;}
     .wrap.integrated::before{height:17.7rem; background-image:url(/images/mo/mo_img_integrated_bg.webp);}
     .wrap.integrated header{gap:2rem;}
-    .wrap.integrated header .logo{width:16.1rem; height:3.9rem;}
+    .wrap.integrated header .logo{width:13.2rem; height:3.9rem;}
     .wrap.integrated header .disc{font-size:1.6rem;}
     .wrap.integrated header .logo + .disc::before{left:-1rem; height:1.4rem;}
     .wrap.integrated .h2-title{padding:4rem 0 3.6rem;}
