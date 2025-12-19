@@ -1507,15 +1507,15 @@
     .card-wrap li .badge-list li > *{flex:0 0 auto;}
     .card-wrap .btn-res{height:6.4rem;}
     .tab-container.full .tab-menu .cnt{font-size:1.6rem;}
-    .tab-container.full.type02 .tab-head li button{min-height:14rem; padding:1rem; font-size:2rem;}
+    .tab-container.full.type02 .tab-head li .tab-menu{min-height:14rem; padding:1rem; font-size:2rem;}
     .tab-container.full.type02 .tab-head li button .mo-sm{font-size:1.5rem;}
-    .tab-container.full.type02 > .tab-head > li:first-child button{border-radius:1.5rem 0 0 1.5rem;}
-    .tab-container.full.type02 > .tab-head > li:last-child button{border-radius:0 1.5rem 1.5rem 0;}
+    .tab-container.full.type02 > .tab-head > li:first-child .tab-menu{border-radius:1.5rem 0 0 1.5rem;}
+    .tab-container.full.type02 > .tab-head > li:last-child .tab-menu{border-radius:0 1.5rem 1.5rem 0;}
     .ex-bg-inner{height:auto; padding-top:0; background:none;}
     .ex-bg-inner strong{font-size:3.4rem;}
     .ex-bg-inner strong .sub{font-size:2.6rem;}
     .ex-bg-inner strong .cnt-point{font-size:2rem;}
-    .ex-bg-inner strong + .disc{margin:1.6rem 0 3.9rem;}
+    .ex-bg-inner strong + .disc{width:100%; margin:1.6rem 0 3.9rem;}
     .ex-bg-inner .disc{font-size:1.8rem;}
     .img-ex-tory{display:none;}
     .ex-bg-inner .map{display:block; width:100%; aspect-ratio: 371 / 270;}
