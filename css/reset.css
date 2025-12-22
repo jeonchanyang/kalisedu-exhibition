@@ -33,6 +33,14 @@
     src: url("../fonts/nanum-square-round/NanumSquareRoundB.woff2") format("woff2");
 }
 
+@font-face {
+    font-family: "NanumSquareRound";
+    font-display: swap;
+    font-style: normal;
+    font-weight: 800;
+    src: url("../fonts/nanum-square-round/NanumSquareRoundEB.woff2") format("woff2");
+}
+
 /* GmarketSans */
 @font-face {
     font-family: "GmarketSans";
