@@ -1396,7 +1396,7 @@
     .bbs-list.qna .bbs-gen-list li .list-answer,
     .bbs-list.qna .bbs-gen-list li .list-owner,
     .bbs-list.qna .bbs-gen-list li .list-date{width:auto;}
-    .bbs-list.qna .bbs-gen-list .list-txt ~ span{padding:0 1.5rem;}
+    .bbs-list.qna .bbs-gen-list .list-txt ~ span{padding:0 1rem;}
     .bbs-list.qna .bbs-gen-list li .list-answer,
     .bbs-list.qna .bbs-gen-list li .list-owner{font-size:var(--font-size-16);}
     .bbs-list.qna .bbs-gen-list li .list-answer{display:flex; flex-wrap:wrap; padding-left:0;}
@@ -1771,7 +1771,8 @@
 
 
 @media(max-width:768px){
-    
+    .bbs-list.qna .bbs-gen-list > li .list-answer, .bbs-list.qna .bbs-gen-list > li .list-owner{font-size:1.4rem;}
+    .bbs-list.qna .bbs-gen-list li .list-date{font-size:1.4rem;}
 }
 
 
