@@ -228,9 +228,15 @@
 
                             <div class="btn-grp">
                                 <a href="#" class="btn-ex" download>엑셀양식 다운로드<i class="ico icon-download"></i></a>
+                                <!-- 접근성 관련하여 수정 및 추가 -->
                                 <div class="btn-upload">
-                                    <label for="exFileUpload">엑셀양식 업로드 <i class="ico icon-upload"></i></label>
+                                    <button type="button" class="upload-btn">엑셀양식 업로드 <i class="ico icon-upload"></i></button>
                                     <input type="file" id="exFileUpload" class="sr-only">
+                                    <script>
+                                    document.querySelector('.upload-btn').addEventListener('click', () => {
+                                        document.getElementById('exFileUpload').click();
+                                    });
+                                    </script>
                                 </div>
                             </div>
                         </div>

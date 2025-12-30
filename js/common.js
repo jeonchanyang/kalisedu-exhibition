@@ -123,7 +123,7 @@ window.closeModal = closeModal;
 
 
 /* gnb (s) */
-let currentMode = null; // "pc" 또는 "mobile"
+let currentMode = null;
 
 function initGnbState() {
     const gnbList = document.querySelector(".gnb");
@@ -137,7 +137,7 @@ function initGnbState() {
 
 function bindMobileEvents() {
     const gnbList = document.querySelector(".gnb");
-    const anchors = gnbList.querySelectorAll(":scope > li > a");
+    const anchors = gnbList.querySelectorAll(":scope > li > .btn-tit");
 
     anchors.forEach(a => {
         a._mobileHandler = function(e) {
@@ -165,7 +165,7 @@ function bindMobileEvents() {
 
 function unbindMobileEvents() {
     const gnbList = document.querySelector(".gnb");
-    const anchors = gnbList.querySelectorAll(":scope > li > a");
+    const anchors = gnbList.querySelectorAll(":scope > li > .btn-tit");
 
     anchors.forEach(a => {
         if (a._mobileHandler) {
@@ -177,16 +177,32 @@ function unbindMobileEvents() {
 
 function bindPcEvents() {
     const gnbList = document.querySelector(".gnb");
+    if (!gnbList) return;
 
-    gnbList._pcEnter = function() {
-        if (currentMode === "pc") gnbList.classList.add("active");
-    };
-    gnbList._pcLeave = function() {
-        if (currentMode === "pc") gnbList.classList.remove("active");
+    gnbList._pcEnter = function () {
+        if (currentMode === "pc") {
+            gnbList.classList.add("active");
+        }
     };
 
+    gnbList._pcLeave = function () {
+        if (currentMode === "pc") {
+            gnbList.classList.remove("active");
+        }
+    };
+
+    // 마우스
     gnbList.addEventListener("mouseenter", gnbList._pcEnter);
     gnbList.addEventListener("mouseleave", gnbList._pcLeave);
+
+    // 키보드
+    gnbList.addEventListener("focusin", gnbList._pcEnter);
+    gnbList.addEventListener("focusout", (e) => {
+        // gnb 내부 포커스 이동이면 유지
+        if (!gnbList.contains(e.relatedTarget)) {
+            gnbList._pcLeave();
+        }
+    });
 }
 
 function unbindPcEvents() {
@@ -203,27 +219,35 @@ function unbindPcEvents() {
 }
 
 function gnbOpen() {
+    const gnbList = document.querySelector(".gnb");
+    if (!gnbList) return;
+
     const isMobile = window.innerWidth < 1024;
     const newMode = isMobile ? "mobile" : "pc";
 
-    if (currentMode === newMode) return; // 모드가 같으면 아무 것도 안 함 (중복 이벤트 방지)
-
-    // 모드 변경
+    if (currentMode === newMode) return;
     currentMode = newMode;
 
-    // 이벤트 초기화 + 상태 초기화
+    // 상태 초기화
+    gnbList.classList.remove("active");
+    gnbList.querySelectorAll(":scope > li.active").forEach(li => li.classList.remove("active"));
+
+    // 기존 이벤트 제거
     unbindMobileEvents();
     unbindPcEvents();
-    initGnbState();
 
-    // 모드별 이벤트 재등록
-    if (newMode === "mobile") {
-        bindMobileEvents();
-    } else {
+    // === PC 모드 진입 시 초기화
+    if (newMode === "pc") {
+        gnbList.classList.remove("active");
+        gnbList.querySelectorAll(":scope > li.active").forEach(li => li.classList.remove("active"));
         bindPcEvents();
+        return;
     }
+
+    // 모바일 모드
+    bindMobileEvents();
 }
-/* enb(e) */
+/* gnb (e) */
 
 // 상단 설문 종료버튼
 const topClose = () => {
@@ -249,6 +273,21 @@ const topClose = () => {
 };
 
 
+// 드롭다운 상태표시
+function setDropdownState(wrap, isOpen) {
+    const list = wrap.querySelector('.dropdown-list');
+
+    wrap.classList.toggle('is-open', isOpen);
+
+    if (isOpen) {
+        list.hidden = false;
+        list.removeAttribute('inert');
+    } else {
+        list.hidden = true;
+        list.setAttribute('inert', '');
+    }
+}
+
 // dropdown
 function DropdownMenus() {
     const dropdownButtons = document.querySelectorAll(".btn-dropdown");
@@ -264,11 +303,11 @@ function DropdownMenus() {
 
             // 모든 드롭다운 닫기
             document.querySelectorAll(".dropdown-wrap.is-open").forEach((openWrap) => {
-                openWrap.classList.remove("is-open");
+                setDropdownState(openWrap, false);
             });
 
             if (!isOpen) {
-                currentWrap.classList.add("is-open");
+                setDropdownState(currentWrap, true);
             }
         });
     });
@@ -283,7 +322,7 @@ function DropdownMenus() {
             const btn = wrap.querySelector(".btn-dropdown");
 
             btn.textContent = selectedText;
-            wrap.classList.remove("is-open");
+            setDropdownState(wrap, false);
         });
     });
 
@@ -291,15 +330,20 @@ function DropdownMenus() {
     document.querySelectorAll(".dropdown-link .dropdown-item").forEach((item) => {
         item.addEventListener("click", function () {
             const wrap = item.closest(".dropdown-wrap");
-            wrap.classList.remove("is-open");
+            setDropdownState(wrap, false);
         });
     });
 
     // 바깥 클릭 시 닫기
     document.addEventListener("click", function () {
         document.querySelectorAll(".dropdown-wrap.is-open").forEach((openWrap) => {
-            openWrap.classList.remove("is-open");
+            setDropdownState(openWrap, false);
         });
+    });
+
+    //페이지 로딩시
+    document.querySelectorAll(".dropdown-wrap").forEach(wrap => {
+        setDropdownState(wrap, false);
     });
 }
 
@@ -471,43 +515,38 @@ function moBtnSchFn(){
 
 // mobile - 상단 전체메뉴   
 function allMnuFn() {
+    const wrap = document.querySelector('.wrap') || document.getElementById('wrap');
+    const menu = document.querySelector('header .head-bottom');
     const header = document.querySelector('header');
     const btn = document.querySelector('.mo-btn-grp .mo-btn-mnu');
     const btnSch = document.querySelector('.mo-btn-grp .mo-btn-search');
     const target = document.querySelector('header .head-bottom');
     if(!header || !btn || !btnSch || !target) return;
-    const gnbBtn = target.querySelectorAll('.gnb > li');
 
     // 기존 핸들러 제거
     if(mobileMenuHandler) btn.removeEventListener('click', mobileMenuHandler);
 
     mobileMenuHandler = (e) => {
-        target.classList.toggle('mo-open');
+        const isOpen = target.classList.toggle('mo-open');
+
+        if(isOpen){
+            wrap.classList.add('menu-open');
+        }else{
+            wrap.classList.remove('menu-open');
+        }
+
         toggleClass(header,'bg');
         e.currentTarget.classList.toggle('close');
         if(e.currentTarget.classList.contains('close')){
             e.currentTarget.textContent = "메뉴닫기";
             btnSch.style.display = 'none';
-        } else {
+        }else{
             e.currentTarget.textContent = "메뉴열기";
             btnSch.style.display = 'block';
         }
     };
 
     btn.addEventListener('click', mobileMenuHandler);
-
-    gnbBtn.forEach((el)=>{
-        el.addEventListener('click',(e)=>{
-            e.stopPropagation();
-            const li = e.target.closest('li'); // 클릭 대상의 li
-            if(!li) return;
-
-            const isActive = li.classList.contains('active');
-            gnbBtn.forEach(l => removeClass(l,'active'));
-
-            if(!isActive) addClass(li,'active');
-        });
-    });
 }
 
 function destroyAllMnuFn(){
@@ -783,6 +822,22 @@ function accoOpenByAnchor() {
     });
 }
 
+const keyInit = function(){
+    let usingKeyboard = false;
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Tab') {
+        usingKeyboard = true;
+        document.body.classList.add('using-keyboard');
+        }
+    });
+
+    document.addEventListener('mousedown', () => {
+        usingKeyboard = false;
+        document.body.classList.remove('using-keyboard');
+    });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     DropdownMenus();
     initTabs('.tab-container.full');
@@ -793,6 +848,8 @@ document.addEventListener('DOMContentLoaded', () => {
     btnTopFn();
     accoOpenByAnchor();
     gnbOpen();
+    keyInit();
+
     initByMode();
 });
 

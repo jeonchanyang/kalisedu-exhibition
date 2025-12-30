@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>국토안전관리원 - 안전체험관</title>
-    <link rel="preload" href="/fonts/pretendard/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./fonts/pretendard/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/content.css">
     <link rel="stylesheet" href="./css/swiper-bundle.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
     <script src="./js/swiper-bundle.min.js"></script>
 </head>
 <body>
@@ -74,9 +73,9 @@
                 </div>
                 <div class="indicator">
                     <button type="button" class="btn-prev"><img src="./images/common/icon_noti_slide_prev.svg" alt="이전 이미지 보기"></button>
-                    <button type="button" class="swiper-autoplay-button">
-                        <img src="./images/common/icon_noti_slide_pause.svg" alt="영상 자동재생 정지 버튼이미지" class="pause">
-                        <img src="./images/common/icon_slide_play.svg" alt="영상 자동재생 시작 버튼이미지" class="play" style="display:none;">
+                    <button type="button" class="swiper-autoplay-button" aria-label="자동재생 정지" aria-pressed="true">
+                        <img src="./images/common/icon_noti_slide_pause.svg" alt="" class="pause">
+                        <img src="./images/common/icon_slide_play.svg" alt="" class="play" hidden>
                     </button>
                     <button type="button" class="btn-next"><img src="./images/common/icon_noti_slide_next.svg" alt="다음 이미지 보기"></button>
                 </div>
@@ -103,17 +102,22 @@
                 },
             });
 
-            document.querySelector(".control-wrap.noti .swiper-autoplay-button .pause").addEventListener("click", function() {
-                topNotiSwiper.autoplay.stop();
-                this.style.display = "none";
-                document.querySelector(".control-wrap.noti .swiper-autoplay-button .play").style.display = "block";
-            });
+            document.querySelector(".control-wrap.noti .swiper-autoplay-button").addEventListener("click", function () {
+                const isPlaying = this.getAttribute("aria-pressed") === "true";
 
-            // 재생 버튼
-            document.querySelector(".control-wrap.noti .swiper-autoplay-button .play").addEventListener("click", function() {
-                topNotiSwiper.autoplay.start();
-                this.style.display = "none";
-                document.querySelector(".control-wrap.noti .swiper-autoplay-button .pause").style.display = "block";
+                if (isPlaying) {
+                    topNotiSwiper.autoplay.stop();
+                    this.setAttribute("aria-pressed", "false");
+                    this.setAttribute("aria-label", "자동재생 시작");
+                    this.querySelector(".pause").hidden = true;
+                    this.querySelector(".play").hidden = false;
+                } else {
+                    topNotiSwiper.autoplay.start();
+                    this.setAttribute("aria-pressed", "true");
+                    this.setAttribute("aria-label", "자동재생 정지");
+                    this.querySelector(".pause").hidden = false;
+                    this.querySelector(".play").hidden = true;
+                }
             });
         </script>
         <header>
@@ -135,7 +139,7 @@
                 <nav id="gnb">
                     <ul class="gnb">
                         <li>
-                            <a href="#">안전체험관 소개</a>
+                            <button type="button" class="btn-tit">안전체험관 소개</button>
                             <ul class="gnb-depth2">
                                 <li class="tit">안전체험관 소개</li>
                                 <li>
@@ -153,7 +157,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#">이용안내</a>
+                            <button type="button" class="btn-tit">이용안내</button>
                             <ul class="gnb-depth2">
                                 <li class="tit">이용안내</li>
                                 <li>
@@ -168,7 +172,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#">예약하기</a>
+                            <button type="button" class="btn-tit">예약하기</button>
                             <ul class="gnb-depth2">
                                 <li class="tit">예약하기</li>
                                 <li>
@@ -183,7 +187,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#">커뮤니티</a>
+                            <button type="button" class="btn-tit">커뮤니티</button>
                             <ul class="gnb-depth2">
                                 <li class="tit">커뮤니티</li>
                                 <li>
@@ -458,21 +462,6 @@
                             prevEl: ".footer-banner-slider .swiper-button-prev",
                         },
                     });
-                    /* 자동재생 추후 적용 여부 확인 후 추가해서 적용
-                    // 정지 버튼 
-                    document.querySelector(".mySwiper.type02 .swiper-autoplay-button .pause").addEventListener("click", function() {
-                        swiper2.autoplay.stop();
-                        this.style.display = "none";
-                        document.querySelector(".mySwiper.type02 .swiper-autoplay-button .play").style.display = "block";
-                    });
-    
-                    // 재생 버튼
-                    document.querySelector(".mySwiper.type02 .swiper-autoplay-button .play").addEventListener("click", function() {
-                        swiper2.autoplay.start();
-                        this.style.display = "none";
-                        document.querySelector(".mySwiper.type02 .swiper-autoplay-button .pause").style.display = "block";
-                    });
-                    */
                     </script>
                 </div>
             </div>
