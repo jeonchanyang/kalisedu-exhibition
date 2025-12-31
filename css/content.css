@@ -846,7 +846,7 @@ button:focus:focus-visible,
 .wrap.integrated::before{content:''; display:block; position:absolute; top:0; width:100%; height:42.4rem; background:#034EA1 url(/images/common/img_integrated_bg.webp) center top no-repeat; z-index:-1;}
 .wrap.integrated .content-wrap{background:transparent;}
 .wrap.integrated header{flex-direction:row; gap:3rem; align-items:flex-end; width:100%; padding:2rem 1rem 0; background:transparent;}
-.wrap.integrated header .logo{display:inline-flex; width:23.9rem; height:5.8rem; text-indent:-9999px; background:url(/images/common/icon_main_logo2.svg) center center /  100% no-repeat;}
+.wrap.integrated header .logo{display:inline-flex; width:19.6rem; height:5.8rem; text-indent:-9999px; background:url(/images/common/icon_main_logo2.svg) center center /  100% no-repeat;}
 .wrap.integrated header .logo a{display:inline-block; width:100%; height:100%;}
 .wrap.integrated header .disc{display:inline-block; margin-bottom:.3rem; color:#fff; font-weight:500; font-size:var(--font-size-24); text-indent:0;}
 .wrap.integrated header .logo + .disc{position:relative;}
